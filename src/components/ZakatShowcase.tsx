@@ -10,38 +10,38 @@ const ZakatShowcase: React.FC = () => {
 
                     {/* Text Content */}
                     <motion.div
-                        className="flex-1 text-center lg:text-right order-2 lg:order-1"
+                        className="flex-1 text-center lg:text-right order-2 lg:order-1 w-full"
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-100 text-teal-700 rounded-full font-bold text-sm mb-6">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-100 text-teal-700 rounded-full font-bold text-sm mb-6 mx-auto lg:mx-0">
                             <FaHandHoldingHeart />
                             <span>منظومة الزكاة والصدقات</span>
                         </div>
 
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
+                        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
                             حساب دقيق، تتبع مستمر،
                             <br />
                             <span className="text-teal-600">وتقارير احترافية</span>
                         </h2>
 
-                        <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                        <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                             أدر عباداتك المالية بدقة متناهية. من حساب زكاة المال والذهب والأسهم، إلى تتبع صدقاتك اليومية وتاريخ إخراجها، مع تقارير PDF مفصلة جاهزة للطباعة.
                         </p>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-right">
                             {[
                                 { icon: <FaCalculator />, title: "حاسبة زكاة شاملة", desc: "تدعم كافة أنواع الأموال والأصول" },
                                 { icon: <FaFilePdf />, title: "تقارير PDF", desc: "وثق زكاتك بتقرير تفصيلي لعملك" },
                                 { icon: <FaHistory />, title: "سجل الصدقات", desc: "تتبع تاريخ صدقاتك ومواضعها" },
                                 { icon: <FaBell />, title: "تنبيهات الحول", desc: "تذكير ذكي بموعد إخراج الزكاة" }
                             ].map((item, index) => (
-                                <div key={index} className="flex items-start gap-4">
+                                <div key={index} className="flex items-start gap-4 p-4 rounded-xl hover:bg-white hover:shadow-sm transition-all">
                                     <div className="w-10 h-10 rounded-lg bg-teal-50 text-teal-600 flex items-center justify-center text-lg flex-shrink-0 mt-1">
                                         {item.icon}
                                     </div>
-                                    <div className="text-right">
+                                    <div>
                                         <h4 className="font-bold text-gray-900">{item.title}</h4>
                                         <p className="text-sm text-gray-500">{item.desc}</p>
                                     </div>
@@ -61,7 +61,7 @@ const ZakatShowcase: React.FC = () => {
                             <div className="absolute inset-0 bg-teal-200/20 blur-3xl rounded-full" />
 
                             {/* Main Card - Report Preview */}
-                            <div className="relative bg-white rounded-2xl shadow-2xl p-6 border border-gray-100 max-w-md mx-auto transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                            <div className="relative bg-white rounded-2xl shadow-2xl p-6 border border-gray-100 max-w-md mx-auto transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
                                 <div className="flex items-center justify-between mb-6 border-b border-gray-100 pb-4">
                                     <div className="flex items-center gap-3">
                                         <div className="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center text-white">
@@ -98,9 +98,10 @@ const ZakatShowcase: React.FC = () => {
                                 </div>
                             </div>
 
+
                             {/* Floating Element - Calculator */}
                             <motion.div
-                                className="absolute -bottom-10 -right-10 bg-slate-900 text-white p-5 rounded-2xl shadow-xl w-48"
+                                className="relative lg:absolute mt-6 lg:mt-0 lg:-bottom-10 lg:-left-10 bg-slate-900 text-white p-5 rounded-2xl shadow-xl w-full max-w-xs mx-auto lg:w-48"
                                 animate={{ y: [0, -10, 0] }}
                                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                             >

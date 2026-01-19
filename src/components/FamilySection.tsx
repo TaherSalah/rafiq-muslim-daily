@@ -6,11 +6,11 @@ const FamilySection: React.FC = () => {
     return (
         <section className="py-20 bg-white overflow-hidden">
             <div className="container mx-auto px-4">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4 text-gray-900">
                         تطبيق لكل أفراد الأسرة
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-4">
                         من تعليم الأطفال إلى تحصين النفس، رفيق المسلم يهتم بكل تفاصيل يومك
                     </p>
                 </div>

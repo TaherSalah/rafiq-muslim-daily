@@ -23,7 +23,7 @@ const FloatingCTA: React.FC = () => {
 
     const scrollToDownload = () => {
         window.scrollTo({
-            top: document.body.scrollHeight,
+            top: 0,
             behavior: 'smooth'
         });
     };

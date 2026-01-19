@@ -4,9 +4,9 @@ import { FaApple, FaGooglePlay } from 'react-icons/fa';
 
 const Hero: React.FC = () => {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden islamic-pattern">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden islamic-pattern py-24 lg:py-0">
             {/* Animated Background Elements */}
-            <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <motion.div
                     className="absolute top-20 right-20 w-72 h-72 bg-islamic-green/10 rounded-full blur-3xl"
                     animate={{
@@ -33,11 +33,11 @@ const Hero: React.FC = () => {
                 />
             </div>
 
-            <div className="container mx-auto px-4 py-20 relative z-10">
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="container mx-auto px-4 relative z-10">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
                     {/* Text Content */}
                     <motion.div
-                        className="flex-1 text-center lg:text-right"
+                        className="flex-1 text-center lg:text-right w-full"
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
@@ -51,22 +51,22 @@ const Hero: React.FC = () => {
                             <img
                                 src="/logo.png"
                                 alt="رفيق المسلم"
-                                className="w-32 h-32 mx-auto lg:mx-0 lg:mr-auto drop-shadow-2xl"
+                                className="w-24 h-24 lg:w-32 lg:h-32 mx-auto lg:mx-0 lg:mr-auto drop-shadow-2xl"
                             />
                         </motion.div>
 
-                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                             <span className="text-gradient">رفيق المسلم</span>
                             <br />
                             <span className="text-gray-800">في حياته اليومية</span>
                         </h1>
 
-                        <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 lg:mr-auto">
+                        <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 lg:mr-auto px-4 lg:px-0">
                             تطبيق إسلامي شامل يجمع كل ما يحتاجه المسلم من أوقات الصلاة، القرآن الكريم، الأحاديث النبوية، وأكثر من ذلك بكثير
                         </p>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center w-full sm:w-auto px-4 sm:px-0">
                             <motion.a
                                 href="#"
                                 className="btn-primary flex items-center gap-3 w-full sm:w-auto justify-center"
@@ -96,35 +96,35 @@ const Hero: React.FC = () => {
 
                         {/* Stats */}
                         <motion.div
-                            className="mt-12 grid grid-cols-3 gap-6 max-w-xl mx-auto lg:mx-0 lg:mr-auto"
+                            className="mt-12 grid grid-cols-3 gap-4 lg:gap-6 max-w-xl mx-auto lg:mx-0 lg:mr-auto"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6 }}
                         >
                             <div className="text-center lg:text-right">
-                                <div className="text-3xl font-bold text-gradient">300K+</div>
-                                <div className="text-sm text-gray-600">مستخدم نشط</div>
+                                <div className="text-2xl lg:text-3xl font-bold text-gradient">300K+</div>
+                                <div className="text-xs lg:text-sm text-gray-600">مستخدم نشط</div>
                             </div>
                             <div className="text-center lg:text-right">
-                                <div className="text-3xl font-bold text-gradient">15</div>
-                                <div className="text-sm text-gray-600">كتاب حديث</div>
+                                <div className="text-2xl lg:text-3xl font-bold text-gradient">15</div>
+                                <div className="text-xs lg:text-sm text-gray-600">كتاب حديث</div>
                             </div>
                             <div className="text-center lg:text-right">
-                                <div className="text-3xl font-bold text-gradient">4.8★</div>
-                                <div className="text-sm text-gray-600">تقييم المستخدمين</div>
+                                <div className="text-2xl lg:text-3xl font-bold text-gradient">4.8★</div>
+                                <div className="text-xs lg:text-sm text-gray-600">تقييم المستخدمين</div>
                             </div>
                         </motion.div>
                     </motion.div>
 
                     {/* Phone Mockup */}
                     <motion.div
-                        className="flex-1 relative"
+                        className="flex-1 relative w-full max-w-sm lg:max-w-md mx-auto mt-12 lg:mt-0"
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
                         <motion.div
-                            className="relative mx-auto w-full max-w-md"
+                            className="relative mx-auto w-full"
                             animate={{ y: [0, -20, 0] }}
                             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                         >
@@ -141,24 +141,24 @@ const Hero: React.FC = () => {
                                     </div>
                                 </div>
                                 {/* Notch */}
-                                <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-gray-900 rounded-full"></div>
+                                <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-24 lg:w-32 h-6 bg-gray-900 rounded-full"></div>
                             </div>
 
                             {/* Floating Elements */}
                             <motion.div
-                                className="absolute -top-10 -right-10 bg-white rounded-2xl shadow-xl p-4"
+                                className="absolute -top-6 -right-6 lg:-top-10 lg:-right-10 bg-white rounded-2xl shadow-xl p-3 lg:p-4"
                                 animate={{ y: [0, 10, 0] }}
                                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                             >
-                                <div className="text-2xl">🕌</div>
+                                <div className="text-xl lg:text-2xl">🕌</div>
                             </motion.div>
 
                             <motion.div
-                                className="absolute -bottom-10 -left-10 bg-white rounded-2xl shadow-xl p-4"
+                                className="absolute -bottom-6 -left-6 lg:-bottom-10 lg:-left-10 bg-white rounded-2xl shadow-xl p-3 lg:p-4"
                                 animate={{ y: [0, -10, 0] }}
                                 transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
                             >
-                                <div className="text-2xl">📿</div>
+                                <div className="text-xl lg:text-2xl">📿</div>
                             </motion.div>
                         </motion.div>
                     </motion.div>
@@ -167,11 +167,11 @@ const Hero: React.FC = () => {
 
             {/* Scroll Indicator */}
             <motion.div
-                className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+                className="absolute bottom-6 lg:bottom-10 left-1/2 transform -translate-x-1/2"
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
             >
-                <div className="w-6 h-10 border-2 border-islamic-green rounded-full flex items-start justify-center p-2">
+                <div className="w-6 h-10 border-2 border-islamic-green rounded-full flex items-start justify-center p-2 hidden lg:flex">
                     <motion.div
                         className="w-1.5 h-1.5 bg-islamic-green rounded-full"
                         animate={{ y: [0, 16, 0] }}

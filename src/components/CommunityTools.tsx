@@ -13,10 +13,10 @@ const CommunityTools: React.FC = () => {
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4">
                         أدوات ومجتمع متكامل
                     </h2>
-                    <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                    <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
                         تواصل مع قبلتك، واستمع لإذاعتك المفضلة، ونظم وقتك بالتقويم الهجري
                     </p>
                 </div>
