@@ -142,6 +142,42 @@ const Leaderboard: React.FC = () => {
                         </motion.div>
                     </div>
 
+                    {/* Mobile Top 3 (Visible only on mobile) */}
+                    <div className="md:hidden space-y-4 mb-4">
+                        {topUsers.slice(0, 3).map((user, index) => (
+                            <motion.div
+                                key={user.rank}
+                                initial={{ opacity: 0, x: 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className={`p-4 rounded-xl shadow-sm flex items-center gap-4 border-2 ${index === 0 ? 'bg-yellow-50 border-yellow-400' :
+                                    index === 1 ? 'bg-gray-50 border-gray-300' :
+                                        'bg-orange-50 border-orange-300'
+                                    }`}
+                            >
+                                <div className={`w-8 text-center font-bold ${index === 0 ? 'text-yellow-600' :
+                                    index === 1 ? 'text-gray-500' :
+                                        'text-orange-500'
+                                    }`}>#{user.rank}</div>
+                                <div className="w-12 h-12 rounded-full overflow-hidden bg-white border-2 border-white shadow-sm">
+                                    <img src={user.avatar} alt={user.name} className="w-full h-full object-cover" />
+                                </div>
+                                <div className="flex-1">
+                                    <div className="flex items-center gap-2">
+                                        <h4 className="font-bold text-gray-900">{user.name}</h4>
+                                        {index === 0 && <FaCrown className="text-yellow-500" />}
+                                    </div>
+                                    <span className="text-xs text-gray-600 px-2 py-0.5 bg-white/50 rounded-full">{user.badge}</span>
+                                </div>
+                                <div className="text-right">
+                                    <div className="font-bold text-indigo-600">{user.points.toLocaleString('ar-EG')}</div>
+                                    <div className="text-xs text-gray-400">نقطة</div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+
                     {/* List for rest (and Mobile Fallback) */}
                     <div className="space-y-4">
                         {topUsers.slice(3).map((user, index) => (

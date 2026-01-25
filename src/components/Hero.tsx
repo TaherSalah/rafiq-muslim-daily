@@ -4,7 +4,7 @@ import { FaApple, FaGooglePlay } from 'react-icons/fa';
 
 const Hero: React.FC = () => {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden islamic-pattern py-24 lg:py-0">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden islamic-pattern py-12 lg:py-0">
             {/* Animated Background Elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <motion.div
@@ -33,11 +33,11 @@ const Hero: React.FC = () => {
                 />
             </div>
 
-            <div className="container mx-auto px-4 relative z-10">
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+            <div className="container mx-auto px-4 relative z-10 max-w-5xl">
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20">
                     {/* Text Content */}
                     <motion.div
-                        className="flex-1 text-center lg:text-right w-full"
+                        className="w-full lg:w-1/2 text-center lg:text-right pt-6 lg:pt-0"
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
@@ -51,17 +51,17 @@ const Hero: React.FC = () => {
                             <img
                                 src="/logo.png"
                                 alt="رفيق المسلم"
-                                className="w-24 h-24 lg:w-32 lg:h-32 mx-auto lg:mx-0 lg:mr-auto drop-shadow-2xl"
+                                className="w-20 h-20 lg:w-32 lg:h-32 mx-auto lg:mx-0 lg:ms-0 drop-shadow-2xl"
                             />
                         </motion.div>
 
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-6 leading-tight">
                             <span className="text-gradient">رفيق المسلم</span>
                             <br />
                             <span className="text-gray-800">في حياته اليومية</span>
                         </h1>
 
-                        <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 lg:mr-auto px-4 lg:px-0">
+                        <p className="text-base md:text-lg lg:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 lg:ms-0 px-4 lg:px-0">
                             تطبيق إسلامي شامل يجمع كل ما يحتاجه المسلم من أوقات الصلاة، القرآن الكريم، الأحاديث النبوية، وأكثر من ذلك بكثير
                         </p>
 
@@ -96,7 +96,7 @@ const Hero: React.FC = () => {
 
                         {/* Stats */}
                         <motion.div
-                            className="mt-12 grid grid-cols-3 gap-4 lg:gap-6 max-w-xl mx-auto lg:mx-0 lg:mr-auto"
+                            className="mt-12 grid grid-cols-3 gap-4 lg:gap-6 max-w-xl mx-auto lg:mx-0 lg:ms-0"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6 }}
@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
 
                     {/* Phone Mockup */}
                     <motion.div
-                        className="flex-1 relative w-full max-w-sm lg:max-w-md mx-auto mt-12 lg:mt-0"
+                        className="relative w-full max-w-[260px] sm:max-w-sm lg:max-w-[320px] mx-auto lg:mx-0 mt-8 lg:mt-0"
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
@@ -129,8 +129,8 @@ const Hero: React.FC = () => {
                             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                         >
                             {/* Phone Frame */}
-                            <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-[3rem] p-4 shadow-2xl">
-                                <div className="bg-white rounded-[2.5rem] overflow-hidden aspect-[9/19]">
+                            <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-[3rem] p-3 shadow-2xl">
+                                <div className="bg-white rounded-[2.2rem] overflow-hidden aspect-[9/19]">
                                     {/* Placeholder for app screenshot */}
                                     <div className="w-full h-full bg-gradient-to-br from-islamic-green/20 to-primary-500/20 flex items-center justify-center">
                                         <img
@@ -150,7 +150,7 @@ const Hero: React.FC = () => {
                                 animate={{ y: [0, 10, 0] }}
                                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                             >
-                                <div className="text-xl lg:text-2xl">🕌</div>
+                                <div className="text-lg lg:text-2xl">🕌</div>
                             </motion.div>
 
                             <motion.div

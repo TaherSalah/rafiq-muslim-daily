@@ -24,8 +24,8 @@ const GroupKhatma: React.FC = () => {
                                 <h3 className="text-2xl font-bold mb-8">الختمة الجماعية الحالية</h3>
 
                                 {/* Progress Circle */}
-                                <div className="w-64 h-64 mx-auto mb-8 relative flex items-center justify-center">
-                                    <svg className="w-full h-full transform -rotate-90">
+                                <div className="w-48 h-48 md:w-64 md:h-64 mx-auto mb-8 relative flex items-center justify-center">
+                                    <svg className="w-full h-full transform -rotate-90" viewBox="0 0 256 256">
                                         <circle
                                             cx="128"
                                             cy="128"

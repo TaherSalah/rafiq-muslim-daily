@@ -92,7 +92,7 @@ const Screenshots: React.FC = () => {
                     </p>
                 </motion.div>
 
-                <div className="flex flex-wrap justify-center gap-8 md:gap-12 relative">
+                <div className="flex flex-wrap justify-center gap-4 md:gap-12 relative">
                     {/* Background Blob */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-r from-islamic-green/5 to-primary-500/5 rounded-full blur-3xl -z-10" />
 

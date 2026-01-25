@@ -58,7 +58,7 @@ const InteractiveTasbih: React.FC = () => {
                     <div className="flex-1 flex justify-center">
                         <div className="relative">
                             {/* Device Frame */}
-                            <div className="bg-gray-800 rounded-[3rem] p-4 shadow-2xl border-4 border-gray-700 w-80">
+                            <div className="bg-gray-800 rounded-[3rem] p-4 shadow-2xl border-4 border-gray-700 w-full max-w-sm mx-auto">
                                 <div className="bg-gray-900 rounded-[2.5rem] p-6 h-[500px] flex flex-col items-center justify-between relative overflow-hidden">
 
                                     {/* Screen Header */}

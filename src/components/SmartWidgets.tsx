@@ -15,7 +15,7 @@ const SmartWidgets: React.FC = () => {
                             <div className="absolute inset-0 bg-gradient-to-r from-teal-200 to-emerald-200 blur-3xl opacity-30 rounded-full" />
 
                             {/* Widgets Grid */}
-                            <div className="relative grid gap-6 w-80 md:w-96">
+                            <div className="relative grid gap-6 w-full max-w-sm md:max-w-md mx-auto">
                                 {/* Azan Widget */}
                                 <motion.div
                                     initial={{ x: -50, opacity: 0 }}
