@@ -1,17 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaQuran, FaUsers, FaArrowLeft, FaCheck } from 'react-icons/fa';
+import { FaQuran, FaUsers, FaArrowLeft, FaArrowRight, FaCheck } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 const GroupKhatma: React.FC = () => {
+    const { t, i18n } = useTranslation();
+    const isRtl = i18n.language === 'ar';
+
+    const benefits = t('groupKhatma.benefits', { returnObjects: true }) as string[];
+
     return (
         <section className="py-20 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 relative z-10">
-                <div className="flex flex-col lg:flex-row items-center gap-12">
+                <div className={`flex flex-col ${isRtl ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}>
 
                     {/* Visual Side */}
                     <motion.div
                         className="flex-1 w-full"
-                        initial={{ opacity: 0, x: 50 }}
+                        initial={{ opacity: 0, x: isRtl ? 50 : -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
@@ -21,7 +27,7 @@ const GroupKhatma: React.FC = () => {
                             <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
 
                             <div className="relative z-10 text-center">
-                                <h3 className="text-2xl font-bold mb-8">الختمة الجماعية الحالية</h3>
+                                <h3 className="text-2xl font-bold mb-8">{t('groupKhatma.cardTitle')}</h3>
 
                                 {/* Progress Circle */}
                                 <div className="w-48 h-48 md:w-64 md:h-64 mx-auto mb-8 relative flex items-center justify-center">
@@ -51,7 +57,7 @@ const GroupKhatma: React.FC = () => {
                                     </svg>
                                     <div className="absolute inset-0 flex flex-col items-center justify-center">
                                         <div className="text-5xl font-bold font-mono">75%</div>
-                                        <div className="text-sm opacity-80 mt-2">تم إنجازه</div>
+                                        <div className="text-sm opacity-80 mt-2">{t('groupKhatma.progressLabel')}</div>
                                     </div>
                                 </div>
 
@@ -60,18 +66,22 @@ const GroupKhatma: React.FC = () => {
                                     <div className="bg-white/10 rounded-xl p-4">
                                         <FaUsers className="text-xl mb-2 mx-auto text-blue-300" />
                                         <div className="text-2xl font-bold">1,420</div>
-                                        <div className="text-xs opacity-70">مشارك</div>
+                                        <div className="text-xs opacity-70">{t('groupKhatma.participants')}</div>
                                     </div>
                                     <div className="bg-white/10 rounded-xl p-4">
                                         <FaQuran className="text-xl mb-2 mx-auto text-emerald-300" />
                                         <div className="text-2xl font-bold">450</div>
-                                        <div className="text-xs opacity-70">جزء متبقي</div>
+                                        <div className="text-xs opacity-70">{t('groupKhatma.remainingJuz')}</div>
                                     </div>
                                 </div>
 
                                 <button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2 group">
-                                    شارك في الأجر
-                                    <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
+                                    {t('groupKhatma.cta')}
+                                    {isRtl ? (
+                                        <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
+                                    ) : (
+                                        <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                                    )}
                                 </button>
                             </div>
                         </div>
@@ -79,46 +89,39 @@ const GroupKhatma: React.FC = () => {
 
                     {/* Text Side */}
                     <motion.div
-                        className="flex-1 text-center lg:text-right"
-                        initial={{ opacity: 0, x: -50 }}
+                        className={`flex-1 text-center ${isRtl ? 'lg:text-right' : 'lg:text-left'}`}
+                        initial={{ opacity: 0, x: isRtl ? -50 : 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 text-indigo-600 rounded-full font-bold text-sm mb-6">
                             <FaUsers />
-                            <span>مجتمع رفيق المسلم</span>
+                            <span>{t('groupKhatma.tag')}</span>
                         </div>
 
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
-                            لا تقرأ القرآن وحيداً<br />
-                            <span className="text-indigo-600">شارك الملايين الختمة</span>
+                        <h2 className={`text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight ${isRtl ? 'text-right' : 'text-left'}`}>
+                            {t('groupKhatma.title')}<br />
+                            <span className="text-indigo-600">{t('groupKhatma.titleHighlight')}</span>
                         </h2>
 
-                        <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                            انضم إلى الختمات الجماعية حول العالم. حدد الجزء الذي تريد قراءته، وسيتم إضافته إلى تقدم الختمة العالمية فوراً.
-                            <br /><br />
-                            نظام ذكي يوزع الأجزاء لضمان إتمام الختمة بشكل متواصل، مع تنبيهات لتذكيرك بقراءة وردك.
+                        <p className={`text-xl text-gray-600 mb-8 leading-relaxed ${isRtl ? 'text-right' : 'text-left'}`}>
+                            {t('groupKhatma.description')}
                         </p>
 
                         <div className="space-y-4">
-                            {[
-                                "ختمات شهرية وموسمية",
-                                "تحديث لحظي لتقدم الختمة",
-                                "دعاء ختم القرآن جماعي",
-                                "شهادات إنجاز للمشاركين"
-                            ].map((item, index) => (
+                            {Array.isArray(benefits) && benefits.map((item, index) => (
                                 <motion.div
                                     key={index}
                                     initial={{ opacity: 0, y: 10 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
-                                    className="flex items-center gap-3 text-lg text-gray-700"
+                                    className={`flex items-center gap-3 text-lg text-gray-700 ${isRtl ? 'flex-row' : 'flex-row-reverse'}`}
                                 >
                                     <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0">
                                         <FaCheck className="text-xs" />
                                     </div>
-                                    {item}
+                                    <span className={isRtl ? 'text-right' : 'text-left'}>{item}</span>
                                 </motion.div>
                             ))}
                         </div>

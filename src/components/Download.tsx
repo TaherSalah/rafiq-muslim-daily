@@ -1,10 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaApple, FaGooglePlay, FaHeart } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 const Download: React.FC = () => {
+    const { t, i18n } = useTranslation();
+    const isRtl = i18n.language === 'ar';
+
     return (
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-white" id="download">
             <div className="container mx-auto px-4">
                 <div className="max-w-4xl mx-auto">
                     <motion.div
@@ -34,11 +38,11 @@ const Download: React.FC = () => {
                             </motion.div>
 
                             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                                ابدأ رحلتك الروحانية اليوم
+                                {t('download.title')}
                             </h2>
 
                             <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-                                حمّل التطبيق الآن واستمتع بتجربة إسلامية شاملة ومتكاملة
+                                {t('download.subtitle')}
                             </p>
 
                             {/* Download Buttons */}
@@ -50,9 +54,9 @@ const Download: React.FC = () => {
                                     whileTap={{ scale: 0.95 }}
                                 >
                                     <FaApple className="text-2xl" />
-                                    <div className="text-right">
-                                        <div className="text-xs opacity-70">حمّل من</div>
-                                        <div className="text-lg font-bold">App Store</div>
+                                    <div className={isRtl ? 'text-right' : 'text-left'}>
+                                        <div className="text-xs opacity-70">{t('hero.downloadLabel')}</div>
+                                        <div className="text-lg font-bold">{t('hero.downloadAppStore')}</div>
                                     </div>
                                 </motion.a>
 
@@ -63,15 +67,15 @@ const Download: React.FC = () => {
                                     whileTap={{ scale: 0.95 }}
                                 >
                                     <FaGooglePlay className="text-2xl" />
-                                    <div className="text-right">
-                                        <div className="text-xs opacity-70">حمّل من</div>
-                                        <div className="text-lg font-bold">Google Play</div>
+                                    <div className={isRtl ? 'text-right' : 'text-left'}>
+                                        <div className="text-xs opacity-70">{t('hero.downloadLabel')}</div>
+                                        <div className="text-lg font-bold">{t('hero.downloadGooglePlay')}</div>
                                     </div>
                                 </motion.a>
                             </div>
 
                             <p className="text-sm opacity-75">
-                                متوفر على iOS و Android • مجاني تماماً • بدون إعلانات
+                                {t('download.availability')}
                             </p>
                         </div>
                     </motion.div>

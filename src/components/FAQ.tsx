@@ -1,37 +1,19 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaPlus, FaMinus } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 interface FAQItem {
     question: string;
     answer: string;
 }
 
-const faqs: FAQItem[] = [
-    {
-        question: "هل التطبيق مجاني بالكامل؟",
-        answer: "نعم، تطبيق رفيق المسلم مجاني بالكامل ولا يحتوي على أي إعلانات مزعجة تؤثر على تجربتك الروحانية."
-    },
-    {
-        question: "كيف يتم حساب مواقيت الصلاة؟",
-        answer: "يعتمد التطبيق على الموقع الجغرافي (GPS) لحساب مواقيت الصلاة بدقة عالية وفقاً لأقرب طريقة حساب معتمدة في منطقتك، مع إمكانية التعديل اليدوي."
-    },
-    {
-        question: "هل يعمل التطبيق بدون إنترنت؟",
-        answer: "نعم، معظم ميزات التطبيق مثل القرآن الكريم، الأذكار، والمواقيت تعمل بدون الحاجة للاتصال بالإنترنت. فقط الميزات التي تتطلب تحديثاً مباشراً مثل الراديو وتحديث الموقع تحتاج لاتصال."
-    },
-    {
-        question: "هل يدعم التطبيق الوضع الليلي؟",
-        answer: "بالتأكيد! نوفر وضعاً ليلياً مريحاً للعين لقراءة القرآن والأذكار في الإضاءة المنخفضة."
-    },
-    {
-        question: "كيف يمكنني ختم القرآن باستخدام التطبيق؟",
-        answer: "يوفر التطبيق خطط ختم متعددة، يمكنك تحديد المدة التي تريد ختم القرآن فيها وسيقوم التطبيق بتقسيم الورد اليومي وتذكيرك به."
-    }
-];
-
 const FAQ: React.FC = () => {
+    const { t, i18n } = useTranslation();
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
+    const isRtl = i18n.language === 'ar';
+
+    const faqs = t('faq.items', { returnObjects: true }) as FAQItem[];
 
     return (
         <section className="py-20 bg-gray-50">
@@ -43,15 +25,15 @@ const FAQ: React.FC = () => {
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                        الأسئلة الشائعة
+                        {t('faq.title')}
                     </h2>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                        إجابات وافية على استفساراتك
+                        {t('faq.subtitle')}
                     </p>
                 </motion.div>
 
                 <div className="max-w-3xl mx-auto space-y-4">
-                    {faqs.map((faq, index) => (
+                    {Array.isArray(faqs) && faqs.map((faq, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
@@ -62,7 +44,7 @@ const FAQ: React.FC = () => {
                         >
                             <button
                                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                                className="w-full flex items-center justify-between p-6 text-right hover:bg-gray-50 transition-colors duration-300"
+                                className={`w-full flex items-center justify-between p-6 ${isRtl ? 'text-right' : 'text-left'} hover:bg-gray-50 transition-colors duration-300`}
                             >
                                 <span className={`text-lg font-bold ${activeIndex === index ? 'text-islamic-green' : 'text-gray-800'}`}>
                                     {faq.question}
@@ -80,7 +62,7 @@ const FAQ: React.FC = () => {
                                         exit={{ height: 0, opacity: 0 }}
                                         transition={{ duration: 0.3 }}
                                     >
-                                        <div className="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-100">
+                                        <div className={`p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-100 ${isRtl ? 'text-right' : 'text-left'}`}>
                                             {faq.answer}
                                         </div>
                                     </motion.div>

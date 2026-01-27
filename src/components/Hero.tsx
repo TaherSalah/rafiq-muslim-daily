@@ -1,8 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
+import image1 from "../assets/image.png";
 
 const Hero: React.FC = () => {
+    const { t, i18n } = useTranslation();
+    const isRtl = i18n.language === 'ar';
+
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden islamic-pattern py-12 lg:py-0">
             {/* Animated Background Elements */}
@@ -56,13 +61,13 @@ const Hero: React.FC = () => {
                         </motion.div>
 
                         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-6 leading-tight">
-                            <span className="text-gradient">رفيق المسلم</span>
+                            <span className="text-gradient">{t('hero.titlePrefix')}</span>
                             <br />
-                            <span className="text-gray-800">في حياته اليومية</span>
+                            <span className="text-gray-800">{t('hero.titleSuffix')}</span>
                         </h1>
 
                         <p className="text-base md:text-lg lg:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 lg:ms-0 px-4 lg:px-0">
-                            تطبيق إسلامي شامل يجمع كل ما يحتاجه المسلم من أوقات الصلاة، القرآن الكريم، الأحاديث النبوية، وأكثر من ذلك بكثير
+                            {t('hero.description')}
                         </p>
 
                         {/* CTA Buttons */}
@@ -74,9 +79,9 @@ const Hero: React.FC = () => {
                                 whileTap={{ scale: 0.95 }}
                             >
                                 <FaApple className="text-2xl" />
-                                <div className="text-right">
-                                    <div className="text-xs opacity-90">حمّل من</div>
-                                    <div className="text-lg font-bold">App Store</div>
+                                <div className={isRtl ? "text-right" : "text-left"}>
+                                    <div className="text-xs opacity-90">{t('hero.downloadLabel')}</div>
+                                    <div className="text-lg font-bold">{t('hero.downloadAppStore')}</div>
                                 </div>
                             </motion.a>
 
@@ -87,9 +92,9 @@ const Hero: React.FC = () => {
                                 whileTap={{ scale: 0.95 }}
                             >
                                 <FaGooglePlay className="text-2xl" />
-                                <div className="text-right">
-                                    <div className="text-xs opacity-90">حمّل من</div>
-                                    <div className="text-lg font-bold">Google Play</div>
+                                <div className={isRtl ? "text-right" : "text-left"}>
+                                    <div className="text-xs opacity-90">{t('hero.downloadLabel')}</div>
+                                    <div className="text-lg font-bold">{t('hero.downloadGooglePlay')}</div>
                                 </div>
                             </motion.a>
                         </div>
@@ -101,17 +106,17 @@ const Hero: React.FC = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6 }}
                         >
-                            <div className="text-center lg:text-right">
-                                <div className="text-2xl lg:text-3xl font-bold text-gradient">300K+</div>
-                                <div className="text-xs lg:text-sm text-gray-600">مستخدم نشط</div>
+                            <div className={isRtl ? "text-center lg:text-right" : "text-center lg:text-left"}>
+                                <div className="text-2xl lg:text-3xl font-bold text-gradient">{t('hero.stats.usersValue')}</div>
+                                <div className="text-xs lg:text-sm text-gray-600">{t('hero.stats.users')}</div>
                             </div>
-                            <div className="text-center lg:text-right">
-                                <div className="text-2xl lg:text-3xl font-bold text-gradient">15</div>
-                                <div className="text-xs lg:text-sm text-gray-600">كتاب حديث</div>
+                            <div className={isRtl ? "text-center lg:text-right" : "text-center lg:text-left"}>
+                                <div className="text-2xl lg:text-3xl font-bold text-gradient">{t('hero.stats.booksValue')}</div>
+                                <div className="text-xs lg:text-sm text-gray-600">{t('hero.stats.books')}</div>
                             </div>
-                            <div className="text-center lg:text-right">
-                                <div className="text-2xl lg:text-3xl font-bold text-gradient">4.8★</div>
-                                <div className="text-xs lg:text-sm text-gray-600">تقييم المستخدمين</div>
+                            <div className={isRtl ? "text-center lg:text-right" : "text-center lg:text-left"}>
+                                <div className="text-2xl lg:text-3xl font-bold text-gradient">{t('hero.stats.ratingValue')}</div>
+                                <div className="text-xs lg:text-sm text-gray-600">{t('hero.stats.rating')}</div>
                             </div>
                         </motion.div>
                     </motion.div>
@@ -134,14 +139,14 @@ const Hero: React.FC = () => {
                                     {/* Placeholder for app screenshot */}
                                     <div className="w-full h-full bg-gradient-to-br from-islamic-green/20 to-primary-500/20 flex items-center justify-center">
                                         <img
-                                            src="/logo.png"
-                                            alt="App Screenshot"
-                                            className="w-32 h-32 opacity-50"
+                                            src={image1}
+                                            alt={t('hero.altText')}
+                                            className="w-full h-full object-cover object-top"
                                         />
                                     </div>
                                 </div>
                                 {/* Notch */}
-                                <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-24 lg:w-32 h-6 bg-gray-900 rounded-full"></div>
+                                <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-24 lg:w-32 h-6 bg-gray-900 rounded-full z-20"></div>
                             </div>
 
                             {/* Floating Elements */}

@@ -2,37 +2,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface Stat {
-    value: string;
-    label: string;
+    valueEnd: number;
+    labelKey: string;
     suffix?: string;
+    isRating?: boolean;
 }
 
-const stats: Stat[] = [
-    {
-        value: "300,000",
-        label: "مستخدم نشط",
-        suffix: "+"
-    },
-    {
-        value: "600,000,000",
-        label: "صلاة تم تتبعها",
-        suffix: "+"
-    },
-    {
-        value: "50,000,000",
-        label: "آية تمت قراءتها",
-        suffix: "+"
-    },
-    {
-        value: "4.8",
-        label: "تقييم المستخدمين",
-        suffix: "★"
-    }
-];
-
-const CountUpAnimation: React.FC<{ end: number; suffix?: string }> = ({ end, suffix = "" }) => {
+const CountUpAnimation: React.FC<{ end: number; suffix?: string; locale: string }> = ({ end, suffix = "", locale }) => {
     const [count, setCount] = React.useState(0);
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
@@ -59,18 +38,43 @@ const CountUpAnimation: React.FC<{ end: number; suffix?: string }> = ({ end, suf
 
     return (
         <span ref={ref}>
-            {count.toLocaleString('ar-EG')}{suffix}
+            {count.toLocaleString(locale === 'ar' ? 'ar-EG' : 'en-US')}{suffix}
         </span>
     );
 };
 
 const Statistics: React.FC = () => {
+    const { t, i18n } = useTranslation();
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
+    const isRtl = i18n.language === 'ar';
+
+    const statsList: Stat[] = [
+        {
+            valueEnd: 300000,
+            labelKey: "stats.metrics.users",
+            suffix: "+"
+        },
+        {
+            valueEnd: 600000000,
+            labelKey: "stats.metrics.prayers",
+            suffix: "+"
+        },
+        {
+            valueEnd: 50000000,
+            labelKey: "stats.metrics.verses",
+            suffix: "+"
+        },
+        {
+            valueEnd: 4.8,
+            labelKey: "stats.metrics.rating",
+            suffix: "★",
+            isRating: true
+        }
+    ];
 
     return (
         <section className="py-20 bg-gradient-to-br from-islamic-green to-primary-600 text-white relative overflow-hidden">
-            {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
                 <div className="absolute inset-0" style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -90,19 +94,19 @@ const Statistics: React.FC = () => {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
                         </span>
-                        <span className="text-sm font-bold">إحصائيات مباشرة من لوحة التحكم</span>
+                        <span className="text-sm font-bold">{t('stats.liveLabel')}</span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                        مجتمع ينمو كل لحظة
+                        {t('stats.title')}
                     </h2>
                     <p className="text-xl opacity-90 max-w-2xl mx-auto">
-                        نفتخر بخدمة المسلمين في شتى بقاع الأرض، وهذه أرقامنا تتحدث
+                        {t('stats.subtitle')}
                     </p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {stats.map((stat, index) => (
+                    {statsList.map((stat, index) => (
                         <motion.div
                             key={index}
                             className="text-center group"
@@ -112,41 +116,41 @@ const Statistics: React.FC = () => {
                         >
                             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 border border-white/10 hover:border-white/30 hover:-translate-y-2 shadow-lg">
                                 <div className="text-4xl md:text-5xl font-bold mb-4 font-mono tracking-tight bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent">
-                                    {stat.value.includes(',') ? (
-                                        <CountUpAnimation
-                                            end={parseInt(stat.value.replace(/,/g, ''))}
-                                            suffix={stat.suffix}
-                                        />
+                                    {stat.isRating ? (
+                                        `${stat.valueEnd}${stat.suffix}`
                                     ) : (
-                                        `${stat.value}${stat.suffix || ''}`
+                                        <CountUpAnimation
+                                            end={stat.valueEnd}
+                                            suffix={stat.suffix}
+                                            locale={i18n.language}
+                                        />
                                     )}
                                 </div>
                                 <div className="h-px w-12 bg-white/30 mx-auto mb-4 group-hover:w-24 transition-all duration-300"></div>
-                                <div className="text-lg font-medium text-white/90">{stat.label}</div>
+                                <div className="text-lg font-medium text-white/90">{t(stat.labelKey)}</div>
                             </div>
                         </motion.div>
                     ))}
                 </div>
 
-                {/* Additional Dashboard Metrics */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                     transition={{ delay: 0.6 }}
                     className="mt-16 bg-black/20 backdrop-blur-sm rounded-3xl p-8 max-w-4xl mx-auto border border-white/10"
                 >
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x md:divide-x-reverse divide-white/10">
+                    <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 ${isRtl ? 'md:divide-x md:divide-x-reverse' : 'md:divide-x'} divide-white/10`}>
                         <div className="py-4 md:py-0">
-                            <div className="text-sm opacity-70 mb-1">ختمات مكتملة هذا الشهر</div>
-                            <div className="text-3xl font-bold">12,540</div>
+                            <div className="text-sm opacity-70 mb-1">{t('stats.metrics.khatmaMonthly')}</div>
+                            <div className="text-3xl font-bold tabular-nums">{t('stats.metrics.khatmaMonthlyValue')}</div>
                         </div>
                         <div className="py-4 md:py-0">
-                            <div className="text-sm opacity-70 mb-1">مساجد مضافة</div>
-                            <div className="text-3xl font-bold">8,920</div>
+                            <div className="text-sm opacity-70 mb-1">{t('stats.metrics.mosques')}</div>
+                            <div className="text-3xl font-bold tabular-nums">{t('stats.metrics.mosquesValue')}</div>
                         </div>
                         <div className="py-4 md:py-0">
-                            <div className="text-sm opacity-70 mb-1">دول نشطة</div>
-                            <div className="text-3xl font-bold">142</div>
+                            <div className="text-sm opacity-70 mb-1">{t('stats.metrics.countries')}</div>
+                            <div className="text-3xl font-bold tabular-nums">{t('stats.metrics.countriesValue')}</div>
                         </div>
                     </div>
                 </motion.div>

@@ -1,80 +1,82 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaClock, FaBookOpen, FaMosque, FaQuran } from 'react-icons/fa';
-
-const screens = [
-    {
-        id: 1,
-        title: "الشاشة الرئيسية",
-        icon: <FaMosque />,
-        color: "bg-emerald-500",
-        content: (
-            <div className="flex flex-col h-full">
-                <div className="bg-emerald-600 h-32 rounded-b-3xl p-6 text-white relative">
-                    <div className="flex justify-between items-center mb-4">
-                        <div className="text-sm">الفجر</div>
-                        <div className="text-xl font-bold">04:30 ص</div>
-                    </div>
-                    <div className="text-center mt-2">
-                        <div className="text-xs opacity-80">المتبقى للصلاة القادمة</div>
-                        <div className="text-3xl font-bold mt-1">00:45:20</div>
-                    </div>
-                </div>
-                <div className="p-4 grid grid-cols-2 gap-4">
-                    <div className="bg-gray-50 p-4 rounded-xl text-center">
-                        <FaBookOpen className="text-emerald-500 text-2xl mx-auto mb-2" />
-                        <div className="text-sm font-bold">القرآن</div>
-                    </div>
-                    <div className="bg-gray-50 p-4 rounded-xl text-center">
-                        <FaClock className="text-emerald-500 text-2xl mx-auto mb-2" />
-                        <div className="text-sm font-bold">المواقيت</div>
-                    </div>
-                </div>
-            </div>
-        )
-    },
-    {
-        id: 2,
-        title: "القرآن الكريم",
-        icon: <FaQuran />,
-        color: "bg-amber-500",
-        content: (
-            <div className="flex flex-col h-full bg-[#fffcf2]">
-                <div className="bg-amber-600 h-16 flex items-center justify-center text-white font-bold">
-                    سورة البقرة
-                </div>
-                <div className="p-6 text-center leading-loose font-serif text-lg">
-                    بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
-                    <br />
-                    الم (1) ذَلِكَ الْكِتَابُ لَا رَيْبَ فِيهِ هُدًى لِلْمُتَّقِينَ (2)
-                </div>
-            </div>
-        )
-    },
-    {
-        id: 3,
-        title: "الأذكار",
-        icon: <FaBookOpen />,
-        color: "bg-blue-500",
-        content: (
-            <div className="flex flex-col h-full bg-gray-50">
-                <div className="bg-blue-600 h-20 rounded-b-3xl p-4 text-white text-center font-bold flex items-center justify-center">
-                    أذكار الصباح
-                </div>
-                <div className="p-4 space-y-3">
-                    <div className="bg-white p-4 rounded-xl shadow-sm border-r-4 border-blue-500">
-                        <p className="text-sm">أصبحنا وأصبح الملك لله...</p>
-                    </div>
-                    <div className="bg-white p-4 rounded-xl shadow-sm border-r-4 border-blue-500">
-                        <p className="text-sm">اللهم بك أصبحنا...</p>
-                    </div>
-                </div>
-            </div>
-        )
-    }
-];
+import { useTranslation } from 'react-i18next';
 
 const Screenshots: React.FC = () => {
+    const { t, i18n } = useTranslation();
+    const isRtl = i18n.language === 'ar';
+
+    const screens = [
+        {
+            id: 1,
+            title: t('screenshots.screen1.title'),
+            icon: <FaMosque />,
+            color: "bg-emerald-500",
+            content: (
+                <div className="flex flex-col h-full">
+                    <div className="bg-emerald-600 h-32 rounded-b-3xl p-6 text-white relative">
+                        <div className={`flex justify-between items-center mb-4 ${isRtl ? 'flex-row' : 'flex-row-reverse'}`}>
+                            <div className="text-sm">{t('screenshots.screen1.prayer')}</div>
+                            <div className="text-xl font-bold">{t('screenshots.screen1.time')}</div>
+                        </div>
+                        <div className="text-center mt-2">
+                            <div className="text-xs opacity-80">{t('screenshots.screen1.nextPrayer')}</div>
+                            <div className="text-3xl font-bold mt-1 tabular-nums">{t('screenshots.screen1.countdown')}</div>
+                        </div>
+                    </div>
+                    <div className="p-4 grid grid-cols-2 gap-4">
+                        <div className="bg-gray-50 p-4 rounded-xl text-center">
+                            <FaBookOpen className="text-emerald-500 text-2xl mx-auto mb-2" />
+                            <div className="text-sm font-bold">{t('screenshots.screen1.quran')}</div>
+                        </div>
+                        <div className="bg-gray-50 p-4 rounded-xl text-center">
+                            <FaClock className="text-emerald-500 text-2xl mx-auto mb-2" />
+                            <div className="text-sm font-bold">{t('screenshots.screen1.timings')}</div>
+                        </div>
+                    </div>
+                </div>
+            )
+        },
+        {
+            id: 2,
+            title: t('screenshots.screen2.title'),
+            icon: <FaQuran />,
+            color: "bg-amber-500",
+            content: (
+                <div className="flex flex-col h-full bg-[#fffcf2]">
+                    <div className="bg-amber-600 h-16 flex items-center justify-center text-white font-bold">
+                        {t('screenshots.screen2.surah')}
+                    </div>
+                    <div className={`p-6 text-center leading-loose ${isRtl ? 'font-serif text-lg' : 'text-sm'} text-gray-800`}>
+                        {t('screenshots.screen2.verse')}
+                    </div>
+                </div>
+            )
+        },
+        {
+            id: 3,
+            title: t('screenshots.screen3.title'),
+            icon: <FaBookOpen />,
+            color: "bg-blue-500",
+            content: (
+                <div className="flex flex-col h-full bg-gray-50">
+                    <div className="bg-blue-600 h-20 rounded-b-3xl p-4 text-white text-center font-bold flex items-center justify-center">
+                        {t('screenshots.screen3.morning')}
+                    </div>
+                    <div className="p-4 space-y-3">
+                        <div className={`bg-white p-4 rounded-xl shadow-sm border-r-4 border-blue-500 ${isRtl ? 'text-right' : 'text-left'}`}>
+                            <p className="text-sm">{t('screenshots.screen3.adhkar1')}</p>
+                        </div>
+                        <div className={`bg-white p-4 rounded-xl shadow-sm border-r-4 border-blue-500 ${isRtl ? 'text-right' : 'text-left'}`}>
+                            <p className="text-sm">{t('screenshots.screen3.adhkar2')}</p>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+    ];
+
     return (
         <section className="py-20 bg-white overflow-hidden">
             <div className="container mx-auto px-4">
@@ -85,10 +87,10 @@ const Screenshots: React.FC = () => {
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                        نظرة من الداخل
+                        {t('screenshots.title')}
                     </h2>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                        واجهة مستخدم عصرية وسهلة الاستخدام، مصممة لراحتك
+                        {t('screenshots.subtitle')}
                     </p>
                 </motion.div>
 

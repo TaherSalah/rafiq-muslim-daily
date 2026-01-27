@@ -1,0 +1,421 @@
+{
+    "hero": {
+        "titlePrefix": "Daily Muslim Companion",
+        "titleSuffix": "in his daily life",
+        "description": "A comprehensive Islamic application that brings together everything a Muslim needs from prayer times, the Holy Quran, Prophetic Hadiths, and much more",
+        "downloadAppStore": "App Store",
+        "downloadGooglePlay": "Google Play",
+        "downloadLabel": "Download from",
+        "stats": {
+            "users": "Active User",
+            "usersValue": "300K+",
+            "books": "Hadith Book",
+            "booksValue": "15",
+            "rating": "User Rating",
+            "ratingValue": "4.8★"
+        },
+        "altText": "App screenshot"
+    },
+    "features": {
+        "title": "Comprehensive Features for an Integrated Islamic Life",
+        "subtitle": "Everything a Muslim needs in one application, carefully designed to facilitate worship and remembrance",
+        "more": "And much more!",
+        "moreDesc": "Hijri calendar, achievement system, sharing Islamic cards, night mode, multi-language support, and offline work",
+        "items": {
+            "quran": {
+                "title": "Holy Quran",
+                "desc": "Comfortable reading with simplified interpretation, reflecting on verses, tracking completion, and saving stopping point"
+            },
+            "adhkar": {
+                "title": "Muslim Adhkar",
+                "desc": "Morning and evening Adhkar, sleep Adhkar, Hisn al-Muslim, and everything a Muslim needs for remembrance"
+            },
+            "sibha": {
+                "title": "Electronic Sibha",
+                "desc": "Advanced smart Sibha that helps you praise and remember anywhere with an achievement log"
+            },
+            "prayer": {
+                "title": "Prayer Times",
+                "desc": "Accurate calculation of prayer times according to your geographical location with Azan and Adhkar notifications"
+            },
+            "calendar": {
+                "title": "Hijri Calendar",
+                "desc": "Hijri and Gregorian calendar with display of Islamic events and easy conversion between them"
+            },
+            "qibla": {
+                "title": "Qibla Direction",
+                "desc": "Accurate compass to determine Qibla direction from anywhere in the world using phone sensors"
+            },
+            "hadith": {
+                "title": "Hadith Encyclopedia",
+                "desc": "Thousands of authentic prophetic Hadiths with their explanation and extraction to access the Prophetic Sunnah easily"
+            },
+            "radio": {
+                "title": "Holy Quran Radio",
+                "desc": "Live broadcast of Holy Quran radio and various stations for favorite reciters around the clock"
+            },
+            "awrad": {
+                "title": "Your Adhkar Wirds",
+                "desc": "Daily follow-up system for your Wirds and Sunnah prayers to help you persist in obedience and worship"
+            },
+            "khatma": {
+                "title": "Group Khatma",
+                "desc": "Participate in group Quranic completions with other users and encourage each other to complete the Book of Allah"
+            },
+            "zakat": {
+                "title": "Zakat Calculator",
+                "desc": "Calculate your Zakat accurately and easily according to the gold, silver, and various currencies Nisab in simple steps"
+            },
+            "mosques": {
+                "title": "Nearby Mosques",
+                "desc": "Search for the nearest mosques to you and find out their locations to join the congregational prayer on time"
+            },
+            "fajr": {
+                "title": "Fajr Alarm",
+                "desc": "Smart alerts for Fajr prayer to wake you up at the right time to ensure not missing the Fajr prayer"
+            },
+            "books": {
+                "title": "Hadith Books",
+                "desc": "A comprehensive library including the most important books of Prophetic Sunnah and approved Hadith compilations for students of knowledge"
+            }
+        }
+    },
+    "download": {
+        "title": "Start Your Spiritual Journey Today",
+        "subtitle": "Download the app now and enjoy a comprehensive and integrated Islamic experience",
+        "availability": "Available on iOS and Android • Completely free • No ads"
+    },
+    "testimonials": {
+        "title": "What do our users say?",
+        "subtitle": "Real opinions from users who found their destination in Rafiq Al-Muslim",
+        "roles": {
+            "new": "New User",
+            "old": "User for a year"
+        }
+    },
+    "footer": {
+        "about": "A comprehensive Islamic application that brings together everything a Muslim needs in his daily life from worship, remembrance, reading the Quran, and more.",
+        "quickLinks": "Quick Links",
+        "links": {
+            "features": "Features",
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Use",
+            "contact": "Contact Us"
+        },
+        "followUs": "Follow Us",
+        "madeWith": "Made with",
+        "forMuslims": "for Muslims everywhere",
+        "rights": "All rights reserved.",
+        "blessing": "May Allah place it in our balance of good deeds and yours",
+        "appName": "Daily Muslim Companion"
+    },
+    "stats": {
+        "liveLabel": "Live stats from the control panel",
+        "title": "A community that grows every moment",
+        "subtitle": "We are proud to serve Muslims in various parts of the world, and our numbers speak for themselves",
+        "metrics": {
+            "users": "Active User",
+            "prayers": "Tracked Prayer",
+            "verses": "Read Verse",
+            "rating": "User Rating",
+            "khatmaMonthly": "Completions this month",
+            "khatmaMonthlyValue": "12,540",
+            "mosques": "Added Mosque",
+            "mosquesValue": "8,920",
+            "countries": "Active Country",
+            "countriesValue": "142"
+        }
+    },
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Comprehensive answers to your inquiries",
+        "items": [
+            {
+                "question": "Is the application completely free?",
+                "answer": "Yes, Rafiq Al-Muslim app is completely free and contains no annoying ads that affect your spiritual experience."
+            },
+            {
+                "question": "How are prayer times calculated?",
+                "answer": "The app relies on geographical location (GPS) to calculate prayer times with high accuracy according to the nearest approved calculation method in your area, with the possibility of manual adjustment."
+            },
+            {
+                "question": "Does the app work without internet?",
+                "answer": "Yes, most of the app's features such as the Holy Quran, Adhkar, and prayer times work without the need for an internet connection. Only features requiring live updates like the radio and location update need a connection."
+            },
+            {
+                "question": "Does the app support night mode?",
+                "answer": "Certainly! We provide a comfortable eye-friendly night mode for reading the Quran and Adhkar in low light."
+            },
+            {
+                "question": "How can I complete the Quran using the app?",
+                "answer": "The app provides multiple completion plans; you can specify the duration you want to complete the Quran in, and the app will divide the daily Wird and remind you of it."
+            }
+        ]
+    },
+    "journey": {
+        "title": "Your Companion Throughout the Day",
+        "subtitle": "How our app accompanies you at every moment of your day",
+        "steps": [
+            {
+                "time": "Fajr",
+                "title": "A Blessed Start to the Day",
+                "desc": "Wake up to the calm Azan sound, and read the morning Adhkar to start your day with activity and peace of mind."
+            },
+            {
+                "time": "Dhuhr",
+                "title": "A Faith Break",
+                "desc": "Accurate prayer time alert reminds you to take a break from your work to stand before Allah."
+            },
+            {
+                "time": "Asr",
+                "title": "Daily Quran Wird",
+                "desc": "The optimal time to read your daily Wird from the Holy Quran, with an automatic stop saving feature."
+            },
+            {
+                "time": "Maghrib & Isha",
+                "title": "Evening Adhkar",
+                "desc": "End your day by reading the evening Adhkar and track your prayers in the daily worship log."
+            },
+            {
+                "time": "Before Sleep",
+                "title": "Comfort and Tranquility",
+                "desc": "Listen to humble recitations or Islamic radio to sleep on the remembrance of Allah."
+            }
+        ]
+    },
+    "groupKhatma": {
+        "tag": "Rafiq Al-Muslim Community",
+        "title": "Don't Read the Quran Alone",
+        "titleHighlight": "Share the Completion with Millions",
+        "description": "Join group completions around the world. Select the part you want to read, and it will be added to the global completion progress immediately.\n\nSmart system distributes parts to ensure completion continuously, with alerts to remind you to read your Wird.",
+        "cardTitle": "Current Group Khatma",
+        "progressLabel": "Accomplished",
+        "participants": "Participant",
+        "remainingJuz": "Remaining Juz",
+        "cta": "Share in the Reward",
+        "benefits": [
+            "Monthly and seasonal completions",
+            "Real-time update of completion progress",
+            "Group Dua for Quran completion",
+            "Achievement certificates for participants"
+        ]
+    },
+    "audioShowcase": {
+        "title": "Sweetness of Sound and Spirituality",
+        "subtitle": "Listen to the most beautiful voices of Muezzins and reciters in high quality",
+        "moreSounds": "* More sounds are available in the app settings",
+        "tracks": [
+            {
+                "title": "Fajr Azan",
+                "reciter": "Abdulbasit Abdulsamad"
+            },
+            {
+                "title": "Surah Al-Fatihah",
+                "reciter": "Mishary Alafasy"
+            },
+            {
+                "title": "Makkah Al-Mukarramah Azan",
+                "reciter": "Ali Mulla"
+            },
+            {
+                "title": "Ayat Al-Kursi",
+                "reciter": "Maher Al-Muaiqly"
+            }
+        ]
+    },
+    "familySection": {
+        "title": "An App for Every Family Member",
+        "subtitle": "From teaching children to self-protection, Rafiq Al-Muslim cares about every detail of your day",
+        "kids": {
+            "title": "Muslim Child's Corner",
+            "desc": "Safe and educational content for your children. Stories of the prophets, teaching ablution and prayer, and easy Adhkar, designed with colors and drawings that attract the child and make them love their religion.",
+            "card1": "Lion's Story",
+            "card2": "Mosque Manners",
+            "card3": "Eating Dua"
+        },
+        "roqya": {
+            "title": "Ruqyah Shariah and Protection",
+            "desc": "Fortify yourself and your home with Ruqyah Shariah from the Book and Sunnah in the voices of the most famous reciters. Listen humbly and calmly anytime and anywhere.",
+            "trackTitle": "Protection Ruqyah",
+            "trackReciter": "Mishary Alafasy",
+            "offlineMode": "Works offline"
+        }
+    },
+    "communityTools": {
+        "title": "Integrated Tools and Community",
+        "subtitle": "Connect with your Qibla, listen to your favorite radio, and organize your time with the Hijri calendar",
+        "mosque": {
+            "title": "Nearby Mosques",
+            "desc": "Don't miss congregational prayer. Discover the nearest mosques to your current location with accurate distance and direction determination on the map.",
+            "name": "Al-Noor Mosque",
+            "distance": "300 meters away"
+        },
+        "radio": {
+            "title": "Holy Quran Radio",
+            "desc": "Live broadcast of Holy Quran radio from Cairo and Makkah Al-Mukarramah. Listen to humble recitations and religious lessons 24 hours a day.",
+            "live": "Live now"
+        },
+        "calendar": {
+            "title": "Hijri Calendar",
+            "desc": "Follow the Hijri date and important Islamic events. Organize your worship and fasting schedule (White Days, Ashura) easily.",
+            "today": "Today",
+            "date": "15 Rajab",
+            "year": "1446 AH"
+        },
+        "tryBadge": "Click here to try!"
+    },
+    "floatingCTA": {
+        "text": "Download the App Now"
+    },
+    "interactiveTasbih": {
+        "title": "Electronic Sibha",
+        "subtitle": "Accompany your remembrance with an artistic touch",
+        "desc": "A unique interactive experience that reimagines the traditional rosary with a modern touch.",
+        "praise": "Glory be to Allah",
+        "target": "Target",
+        "reset": "Reset"
+    },
+    "leaderboard": {
+        "badge": "Honor Roll",
+        "title": "Top Participants This Month",
+        "subtitle": "Compete in good deeds and be among the foremost. Your points increase with every prayer, Quran reading, or remembrance.",
+        "points": "Point",
+        "viewAll": "View Full List",
+        "users": [
+            {
+                "name": "Abdullah Ahmed",
+                "badge": "Golden Khatma"
+            },
+            {
+                "name": "Mohamed Ali",
+                "badge": "Silver Khatma"
+            },
+            {
+                "name": "Omar Farouk",
+                "badge": "Persistent"
+            },
+            {
+                "name": "Khalid ibn al-Walid",
+                "badge": "Active"
+            },
+            {
+                "name": "Sa'd ibn Mu'adh",
+                "badge": "New"
+            }
+        ]
+    },
+    "screenshots": {
+        "title": "A Look Inside",
+        "subtitle": "Modern and easy-to-use user interface, designed for your comfort",
+        "screen1": {
+            "title": "Home Screen",
+            "prayer": "Fajr",
+            "time": "04:30 AM",
+            "nextPrayer": "Remaining for next prayer",
+            "countdown": "00:45:20",
+            "quran": "Quran",
+            "timings": "Timings"
+        },
+        "screen2": {
+            "title": "Holy Quran",
+            "surah": "Surah Al-Baqarah",
+            "verse": "In the name of Allah, the Beneficent, the Merciful\nAlif. Lam. Mim. (1) This is the Scripture whereof there is no doubt, a guidance unto those who ward off (evil). (2)"
+        },
+        "screen3": {
+            "title": "Adhkar",
+            "morning": "Morning Adhkar",
+            "adhkar1": "We have reached the morning and at this very time...",
+            "adhkar2": "O Allah, by You we have reached the morning..."
+        }
+    },
+    "smartWidgets": {
+        "title": "Home Screen Widgets",
+        "subtitle": "Always Organized and Connected",
+        "desc": "No need to open the app every time. With Rafiq Al-Muslim widgets, prayer times, Hijri date, and Adhkar are always before your eyes on your home screen.",
+        "feature1": {
+            "title": "Diverse Widgets",
+            "desc": "Choose from multiple shapes and sizes to suit your taste and organize your screen."
+        },
+        "feature2": {
+            "title": "Smart Alerts",
+            "desc": "Custom notifications for Azan, night prayer, and fasting on White Days."
+        },
+        "azan": {
+            "name": "Maghrib",
+            "location": "Cairo, Egypt",
+            "time": "06:15",
+            "period": "PM",
+            "remaining": "Remaining 00:45:20"
+        },
+        "hijri": {
+            "date": "15 Ramadan",
+            "year": "1447 AH",
+            "dhikr": "\"O Allah, You are Forgiving and love forgiveness, so forgive us\""
+        },
+        "notification": {
+            "title": "Friday Sunnah Reminder",
+            "desc": "Don't forget to read Surah Al-Kahf and send blessings upon the Prophet"
+        }
+    },
+    "socialFeatures": {
+        "title": "Share Goodness and Your Personal Touches",
+        "subtitle": "Make your app express you, and share the reward with those you love in creative ways",
+        "feature1": {
+            "praise": "\"Glory be to Allah and His is the praise and by the number of His creation and His pleasure and the weight of His throne and the ink of His words\"",
+            "appName": "Rafiq Al-Muslim",
+            "title": "Share Adhkar as Images",
+            "desc": "Turn any Dhikr or verse into a beautiful Da'wah card with one touch. Choose the background and font, and share it directly on WhatsApp or Instagram."
+        },
+        "feature2": {
+            "title": "Daily Healing Wird",
+            "item1": "Surah Al-Fatihah (7 times)",
+            "item2": "Ayat Al-Kursi",
+            "cta": "Create your own Wird",
+            "mainTitle": "Design Your Daily Wird",
+            "mainDesc": "Don't just stick to ready-made Wirds. Collect your favorite supplications, set the number of repetitions, and create your own worship plan with custom alerts."
+        }
+    },
+    "zakatShowcase": {
+        "badge": "Zakat & Sadaqah System",
+        "title": "Accurate Calculation, Constant Tracking,",
+        "titleHighlight": "and Professional Reports",
+        "desc": "Manage your financial worship with extreme precision. From calculating Zakat on money, gold, and stocks, to tracking your daily Sadaqah and its payment history, with detailed PDF reports ready for printing.",
+        "features": [
+            {
+                "title": "Comprehensive Zakat Calculator",
+                "desc": "Supports all types of money and assets"
+            },
+            {
+                "title": "PDF Reports",
+                "desc": "Document your Zakat with a detailed report of your work"
+            },
+            {
+                "title": "Sadaqah Log",
+                "desc": "Track the history and places of your Sadaqah"
+            },
+            {
+                "title": "Hawl Alerts",
+                "desc": "Smart reminder for Zakat payment date"
+            }
+        ],
+        "report": {
+            "title": "Annual Zakat Report",
+            "hijri": "1446 AH",
+            "gregorian": "2025 AD",
+            "status": "Completed",
+            "liquidMoney": "Liquid Money Zakat",
+            "goldSilver": "Gold & Silver Zakat",
+            "total": "Total Outstanding",
+            "paid": "75% Paid",
+            "currency": "EGP",
+            "liquidMoneyValue": "12,500",
+            "goldSilverValue": "4,250",
+            "totalValue": "16,750"
+        },
+        "calculator": {
+            "label": "Enter amount (Nisab)",
+            "value": "85.0g",
+            "info": "Calculated automatically"
+        }
+    }
+}

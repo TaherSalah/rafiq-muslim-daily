@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaFingerprint, FaRedo } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 const InteractiveTasbih: React.FC = () => {
+    const { t, i18n } = useTranslation();
+    const isRtl = i18n.language === 'ar';
     const [count, setCount] = useState(0);
     const [showPraise, setShowPraise] = useState(false);
 
@@ -28,28 +31,28 @@ const InteractiveTasbih: React.FC = () => {
         <section className="py-20 bg-gradient-to-br from-gray-900 to-islamic-green text-white relative overflow-hidden">
             {/* Background Decorations */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
-                <div className="absolute top-10 left-10 text-9xl">📿</div>
-                <div className="absolute bottom-10 right-10 text-9xl">🕌</div>
+                <div className={`absolute top-10 ${isRtl ? 'left-10' : 'right-10'} text-9xl`}>📿</div>
+                <div className={`absolute bottom-10 ${isRtl ? 'right-10' : 'left-10'} text-9xl`}>🕌</div>
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div className={`flex flex-col ${isRtl ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center justify-between gap-12`}>
 
                     {/* Text Side */}
                     <motion.div
-                        className="flex-1 text-center lg:text-right"
-                        initial={{ opacity: 0, x: -50 }}
+                        className={`flex-1 text-center ${isRtl ? 'lg:text-right' : 'lg:text-left'}`}
+                        initial={{ opacity: 0, x: isRtl ? -50 : 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                            جرب السبحة الإلكترونية
+                        <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isRtl ? 'text-right' : 'text-left'}`}>
+                            {t('interactiveTasbih.title')}
                         </h2>
-                        <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                            استشعر روحانية الذكر في أي وقت ومكان. تصميم أنيق، اهتزاز تفاعلي، وحفظ تلقائي لعدد التسبيحات.
+                        <p className={`text-xl text-gray-300 mb-8 leading-relaxed ${isRtl ? 'text-right' : 'text-left'}`}>
+                            {t('interactiveTasbih.desc')}
                             <br />
                             <span className="text-emerald-400 font-bold mt-2 block">
-                                جربها الآن بنفسك 👇
+                                {t('interactiveTasbih.tryIt')}
                             </span>
                         </p>
                     </motion.div>
@@ -63,7 +66,7 @@ const InteractiveTasbih: React.FC = () => {
 
                                     {/* Screen Header */}
                                     <div className="text-center w-full pt-4">
-                                        <div className="text-emerald-500 text-sm font-bold mb-1">سبحان الله</div>
+                                        <div className="text-emerald-500 text-sm font-bold mb-1">{t('interactiveTasbih.subhanAllah')}</div>
                                         <div className="h-1 w-16 bg-gray-800 mx-auto rounded-full"></div>
                                     </div>
 
@@ -104,8 +107,8 @@ const InteractiveTasbih: React.FC = () => {
                                     {/* Reset Button */}
                                     <button
                                         onClick={handleReset}
-                                        className="absolute top-6 right-6 text-gray-500 hover:text-white transition-colors p-2"
-                                        title="إعادة تعيين"
+                                        className={`absolute top-6 ${isRtl ? 'right-6' : 'left-6'} text-gray-500 hover:text-white transition-colors p-2`}
+                                        title={t('interactiveTasbih.reset')}
                                     >
                                         <FaRedo className="text-sm" />
                                     </button>
@@ -116,9 +119,9 @@ const InteractiveTasbih: React.FC = () => {
                             <motion.div
                                 animate={{ y: [0, -10, 0] }}
                                 transition={{ duration: 2, repeat: Infinity }}
-                                className="absolute -top-6 -right-6 bg-yellow-500 text-gray-900 font-bold px-4 py-2 rounded-full shadow-lg transform rotate-12"
+                                className={`absolute -top-6 ${isRtl ? '-right-6' : '-left-6'} bg-yellow-500 text-gray-900 font-bold px-4 py-2 rounded-full shadow-lg transform ${isRtl ? 'rotate-12' : '-rotate-12'}`}
                             >
-                                اضغط هنا للتجربة!
+                                {t('interactiveTasbih.tryBadge')}
                             </motion.div>
                         </div>
                     </div>

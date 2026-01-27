@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaTrophy, FaMedal, FaCrown } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 interface User {
     rank: number;
@@ -10,49 +11,58 @@ interface User {
     badge: string;
 }
 
-const topUsers: User[] = [
-    {
-        rank: 1,
-        name: "عبد الله أحمد",
-        points: 15420,
-        avatar: "https://randomuser.me/api/portraits/men/1.jpg",
-        badge: "ختمة ذهبية"
-    },
-    {
-        rank: 2,
-        name: "محمد علي",
-        points: 14850,
-        avatar: "https://randomuser.me/api/portraits/men/3.jpg",
-        badge: "ختمة فضية"
-    },
-    {
-        rank: 3,
-        name: "عمر فاروق",
-        points: 13200,
-        avatar: "https://randomuser.me/api/portraits/men/5.jpg",
-        badge: "مثابر"
-    },
-    {
-        rank: 4,
-        name: "خالد بن الوليد",
-        points: 12100,
-        avatar: "https://randomuser.me/api/portraits/men/7.jpg",
-        badge: "نشيط"
-    },
-    {
-        rank: 5,
-        name: "سعد بن معاذ",
-        points: 11500,
-        avatar: "https://randomuser.me/api/portraits/men/9.jpg",
-        badge: "جديد"
-    }
-];
-
 const Leaderboard: React.FC = () => {
+    const { t, i18n } = useTranslation();
+    const isRtl = i18n.language === 'ar';
+
+    const usersData = t('leaderboard.users', { returnObjects: true }) as { name: string; badge: string }[];
+
+    const topUsers: User[] = [
+        {
+            rank: 1,
+            name: usersData[0]?.name || "عبد الله أحمد",
+            points: 15420,
+            avatar: "https://randomuser.me/api/portraits/men/1.jpg",
+            badge: usersData[0]?.badge || "ختمة ذهبية"
+        },
+        {
+            rank: 2,
+            name: usersData[1]?.name || "محمد علي",
+            points: 14850,
+            avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+            badge: usersData[1]?.badge || "ختمة فضية"
+        },
+        {
+            rank: 3,
+            name: usersData[2]?.name || "عمر فاروق",
+            points: 13200,
+            avatar: "https://randomuser.me/api/portraits/men/5.jpg",
+            badge: usersData[2]?.badge || "مثابر"
+        },
+        {
+            rank: 4,
+            name: usersData[3]?.name || "خالد بن الوليد",
+            points: 12100,
+            avatar: "https://randomuser.me/api/portraits/men/7.jpg",
+            badge: usersData[3]?.badge || "نشيط"
+        },
+        {
+            rank: 5,
+            name: usersData[4]?.name || "سعد بن معاذ",
+            points: 11500,
+            avatar: "https://randomuser.me/api/portraits/men/9.jpg",
+            badge: usersData[4]?.badge || "جديد"
+        }
+    ];
+
+    const formatNumber = (num: number) => {
+        return num.toLocaleString(isRtl ? 'ar-EG' : 'en-US');
+    };
+
     return (
         <section className="py-20 bg-gray-50 relative overflow-hidden">
             {/* Background Decoration */}
-            <div className="absolute top-0 right-0 p-10 opacity-5">
+            <div className={`absolute top-0 ${isRtl ? 'right-0' : 'left-0'} p-10 opacity-5`}>
                 <FaTrophy className="text-9xl text-yellow-600" />
             </div>
 
@@ -65,14 +75,14 @@ const Leaderboard: React.FC = () => {
                 >
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-100 text-yellow-700 rounded-full font-bold text-sm mb-6">
                         <FaCrown />
-                        <span>لوحة الشرف</span>
+                        <span>{t('leaderboard.badge')}</span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-                        أبرز المشاركين هذا الشهر
+                        {t('leaderboard.title')}
                     </h2>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                        تنافس في الخيرات وكن من السابقين. نقاطك تزيد مع كل صلاة، قراءة قرآن، أو ذكر.
+                        {t('leaderboard.subtitle')}
                     </p>
                 </motion.div>
 
@@ -90,13 +100,13 @@ const Leaderboard: React.FC = () => {
                             <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full border-4 border-gray-300 overflow-hidden shadow-xl">
                                 <img src={topUsers[1].avatar} alt={topUsers[1].name} className="w-full h-full object-cover" />
                             </div>
-                            <div className="absolute top-8 right-6 text-gray-300">
+                            <div className={`absolute top-8 ${isRtl ? 'right-6' : 'left-6'} text-gray-300`}>
                                 <FaMedal className="text-3xl" />
                             </div>
                             <h3 className="text-xl font-bold mt-2">{topUsers[1].name}</h3>
                             <div className="text-sm text-gray-500 mb-2">{topUsers[1].badge}</div>
-                            <div className="text-2xl font-black text-indigo-600">{topUsers[1].points.toLocaleString('ar-EG')}</div>
-                            <div className="text-xs text-gray-400">نقطة</div>
+                            <div className="text-2xl font-black text-indigo-600">{formatNumber(topUsers[1].points)}</div>
+                            <div className="text-xs text-gray-400">{t('leaderboard.points')}</div>
                             <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-white font-bold mx-auto mt-4 shadow-md">2</div>
                         </motion.div>
 
@@ -115,8 +125,8 @@ const Leaderboard: React.FC = () => {
                             </div>
                             <h3 className="text-2xl font-bold mt-2 text-gray-900">{topUsers[0].name}</h3>
                             <div className="text-sm text-yellow-600 font-bold mb-2">{topUsers[0].badge}</div>
-                            <div className="text-3xl font-black text-indigo-600">{topUsers[0].points.toLocaleString('ar-EG')}</div>
-                            <div className="text-sm text-gray-500">نقطة</div>
+                            <div className="text-3xl font-black text-indigo-600">{formatNumber(topUsers[0].points)}</div>
+                            <div className="text-sm text-gray-500">{t('leaderboard.points')}</div>
                             <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mt-6 shadow-md shadow-yellow-200">1</div>
                         </motion.div>
 
@@ -131,13 +141,13 @@ const Leaderboard: React.FC = () => {
                             <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full border-4 border-orange-300 overflow-hidden shadow-xl">
                                 <img src={topUsers[2].avatar} alt={topUsers[2].name} className="w-full h-full object-cover" />
                             </div>
-                            <div className="absolute top-8 right-6 text-orange-300">
+                            <div className={`absolute top-8 ${isRtl ? 'right-6' : 'left-6'} text-orange-300`}>
                                 <FaMedal className="text-3xl" />
                             </div>
                             <h3 className="text-xl font-bold mt-2">{topUsers[2].name}</h3>
                             <div className="text-sm text-gray-500 mb-2">{topUsers[2].badge}</div>
-                            <div className="text-2xl font-black text-indigo-600">{topUsers[2].points.toLocaleString('ar-EG')}</div>
-                            <div className="text-xs text-gray-400">نقطة</div>
+                            <div className="text-2xl font-black text-indigo-600">{formatNumber(topUsers[2].points)}</div>
+                            <div className="text-xs text-gray-400">{t('leaderboard.points')}</div>
                             <div className="w-8 h-8 bg-orange-300 rounded-full flex items-center justify-center text-white font-bold mx-auto mt-4 shadow-md">3</div>
                         </motion.div>
                     </div>
@@ -147,11 +157,11 @@ const Leaderboard: React.FC = () => {
                         {topUsers.slice(0, 3).map((user, index) => (
                             <motion.div
                                 key={user.rank}
-                                initial={{ opacity: 0, x: 20 }}
+                                initial={{ opacity: 0, x: isRtl ? 20 : -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className={`p-4 rounded-xl shadow-sm flex items-center gap-4 border-2 ${index === 0 ? 'bg-yellow-50 border-yellow-400' :
+                                className={`p-4 rounded-xl shadow-sm flex items-center gap-4 border-2 ${isRtl ? 'flex-row' : 'flex-row-reverse'} ${index === 0 ? 'bg-yellow-50 border-yellow-400' :
                                     index === 1 ? 'bg-gray-50 border-gray-300' :
                                         'bg-orange-50 border-orange-300'
                                     }`}
@@ -164,15 +174,15 @@ const Leaderboard: React.FC = () => {
                                     <img src={user.avatar} alt={user.name} className="w-full h-full object-cover" />
                                 </div>
                                 <div className="flex-1">
-                                    <div className="flex items-center gap-2">
+                                    <div className={`flex items-center gap-2 ${isRtl ? 'flex-row' : 'flex-row-reverse'}`}>
                                         <h4 className="font-bold text-gray-900">{user.name}</h4>
                                         {index === 0 && <FaCrown className="text-yellow-500" />}
                                     </div>
-                                    <span className="text-xs text-gray-600 px-2 py-0.5 bg-white/50 rounded-full">{user.badge}</span>
+                                    <span className={`text-xs text-gray-600 px-2 py-0.5 bg-white/50 rounded-full ${isRtl ? 'text-right' : 'text-left'}`}>{user.badge}</span>
                                 </div>
-                                <div className="text-right">
-                                    <div className="font-bold text-indigo-600">{user.points.toLocaleString('ar-EG')}</div>
-                                    <div className="text-xs text-gray-400">نقطة</div>
+                                <div className={isRtl ? 'text-right' : 'text-left'}>
+                                    <div className="font-bold text-indigo-600">{formatNumber(user.points)}</div>
+                                    <div className="text-xs text-gray-400">{t('leaderboard.points')}</div>
                                 </div>
                             </motion.div>
                         ))}
@@ -183,23 +193,23 @@ const Leaderboard: React.FC = () => {
                         {topUsers.slice(3).map((user, index) => (
                             <motion.div
                                 key={user.rank}
-                                initial={{ opacity: 0, x: 20 }}
+                                initial={{ opacity: 0, x: isRtl ? 20 : -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="bg-white p-4 rounded-xl shadow-sm flex items-center gap-4 hover:shadow-md transition-shadow"
+                                className={`bg-white p-4 rounded-xl shadow-sm flex items-center gap-4 hover:shadow-md transition-shadow ${isRtl ? 'flex-row' : 'flex-row-reverse'}`}
                             >
                                 <div className="w-8 text-center font-bold text-gray-400">#{user.rank}</div>
                                 <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-100">
                                     <img src={user.avatar} alt={user.name} className="w-full h-full object-cover" />
                                 </div>
                                 <div className="flex-1">
-                                    <h4 className="font-bold text-gray-900">{user.name}</h4>
-                                    <span className="text-xs text-gray-500 px-2 py-0.5 bg-gray-100 rounded-full">{user.badge}</span>
+                                    <h4 className={`font-bold text-gray-900 ${isRtl ? 'text-right' : 'text-left'}`}>{user.name}</h4>
+                                    <span className={`text-xs text-gray-500 px-2 py-0.5 bg-gray-100 rounded-full ${isRtl ? 'text-right' : 'text-left'}`}>{user.badge}</span>
                                 </div>
-                                <div className="text-right">
-                                    <div className="font-bold text-indigo-600">{user.points.toLocaleString('ar-EG')}</div>
-                                    <div className="text-xs text-gray-400">نقطة</div>
+                                <div className={isRtl ? 'text-right' : 'text-left'}>
+                                    <div className="font-bold text-indigo-600">{formatNumber(user.points)}</div>
+                                    <div className="text-xs text-gray-400">{t('leaderboard.points')}</div>
                                 </div>
                             </motion.div>
                         ))}
@@ -207,7 +217,7 @@ const Leaderboard: React.FC = () => {
 
                     <div className="mt-12 text-center">
                         <button className="bg-white border-2 border-indigo-600 text-indigo-600 px-8 py-3 rounded-full font-bold hover:bg-indigo-600 hover:text-white transition-all duration-300 transform hover:scale-105 shadow-md">
-                            عرض القائمة الكاملة
+                            {t('leaderboard.viewAll')}
                         </button>
                     </div>
                 </div>
