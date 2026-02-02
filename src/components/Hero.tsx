@@ -169,7 +169,6 @@ const Hero: React.FC = () => {
                     </motion.div>
                 </div>
             </div>
-
             {/* Scroll Indicator */}
             <motion.div
                 className="absolute bottom-6 lg:bottom-10 left-1/2 transform -translate-x-1/2"
@@ -187,5 +186,4 @@ const Hero: React.FC = () => {
         </section>
     );
 };
-
 export default Hero;

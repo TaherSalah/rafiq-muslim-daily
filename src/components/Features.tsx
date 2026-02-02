@@ -117,7 +117,6 @@ const Features: React.FC = () => {
             color: "from-sky-500 to-sky-600"
         }
     ];
-
     return (
         <section className="py-20 bg-gradient-to-b from-white to-gray-50" id="features">
             <div className="container mx-auto px-4">
@@ -151,7 +150,6 @@ const Features: React.FC = () => {
         </section>
     );
 };
-
 const ContentHeader: React.FC<{ t: any }> = ({ t }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
