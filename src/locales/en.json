@@ -272,8 +272,12 @@
         "subtitle": "Accompany your remembrance with an artistic touch",
         "desc": "A unique interactive experience that reimagines the traditional rosary with a modern touch.",
         "praise": "Glory be to Allah",
+        "subhanAllah": "Subhan Allah",
+        "tryIt": "Tap the fingerprint to start",
+        "tryBadge": "Try it now!",
         "target": "Target",
-        "reset": "Reset"
+        "reset": "Reset",
+        "fastTasbih": "Fast Tasbih"
     },
     "leaderboard": {
         "badge": "Honor Roll",
@@ -308,7 +312,7 @@
         "title": "A Look Inside",
         "subtitle": "Modern and easy-to-use user interface, designed for your comfort",
         "screen1": {
-            "title": "Home Screen",
+            "title": "The Nine Books",
             "prayer": "Fajr",
             "time": "04:30 AM",
             "nextPrayer": "Remaining for next prayer",
@@ -326,6 +330,30 @@
             "morning": "Morning Adhkar",
             "adhkar1": "We have reached the morning and at this very time...",
             "adhkar2": "O Allah, by You we have reached the morning..."
+        },
+        "screen4": {
+            "title": "Electronic Sibha"
+        },
+        "screen5": {
+            "title": "Quran Search"
+        },
+        "screen6": {
+            "title": "Surah Index"
+        },
+        "screen7": {
+            "title": "Group Khatma"
+        },
+        "screen8": {
+            "title": "Journey of Heroes"
+        },
+        "screen9": {
+            "title": "Custom Sharing"
+        },
+        "screen10": {
+            "title": "Quran Tafsir"
+        },
+        "screen11": {
+            "title": "Modern Digital Sibha"
         }
     },
     "smartWidgets": {

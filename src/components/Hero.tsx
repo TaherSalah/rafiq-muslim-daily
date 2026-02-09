@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import image1 from "../assets/image.png";
+import HeroImage from "../assets/IMG_20260209_102138_900.jpg";
 
 const Hero: React.FC = () => {
     const { t, i18n } = useTranslation();
@@ -139,7 +139,7 @@ const Hero: React.FC = () => {
                                     {/* Placeholder for app screenshot */}
                                     <div className="w-full h-full bg-gradient-to-br from-islamic-green/20 to-primary-500/20 flex items-center justify-center">
                                         <img
-                                            src={image1}
+                                            src={HeroImage}
                                             alt={t('hero.altText')}
                                             className="w-full h-full object-cover object-top"
                                         />

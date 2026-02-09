@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
 import Hero from './components/Hero'
-import Features from './components/Features'
+import FeatureShowcase from './components/FeatureShowcase'
 import Journey from './components/Journey'
 import GroupKhatma from './components/GroupKhatma'
 import Screenshots from './components/Screenshots'
@@ -42,7 +42,7 @@ function App() {
     <div className="min-h-screen">
       <LanguageSwitcher />
       <Hero />
-      <Features />
+      <FeatureShowcase />
       <Journey />
       <GroupKhatma />
       <ZakatShowcase />

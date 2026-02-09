@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaShareAlt, FaPenFancy, FaImage, FaListUl } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
+import ScreenShare from '../assets/Screenshot_2026_02_09_12_56_57_76_4bfa514ba3a89880002cd1121a611476.jpg';
 
 const SocialFeatures: React.FC = () => {
     const { t, i18n } = useTranslation();
@@ -28,20 +29,18 @@ const SocialFeatures: React.FC = () => {
                         viewport={{ once: true }}
                         className="bg-gray-50 rounded-3xl p-8 border border-gray-100 group hover:shadow-xl transition-all duration-300"
                     >
-                        <div className="h-64 bg-slate-200 rounded-2xl mb-8 relative overflow-hidden flex items-center justify-center">
-                            {/* Dummy Image Editor Preview */}
-                            <div className="absolute inset-0 bg-cover bg-center opacity-50" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)' }}></div>
-                            <div className="relative z-10 bg-black/40 backdrop-blur-sm p-6 rounded-xl text-white text-center max-w-xs mx-auto border border-white/20 shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
-                                <p className={`${isRtl ? 'font-serif text-lg' : 'text-sm'} mb-2 leading-loose`}>
-                                    {t('socialFeatures.feature1.praise')}
-                                </p>
-                                <div className="text-xs opacity-70">{t('socialFeatures.feature1.appName')}</div>
+                        <div className="h-64 bg-gray-900 rounded-2xl mb-8 relative overflow-hidden flex items-center justify-center">
+                            {/* Real App Screenshot Overlay */}
+                            <img src={ScreenShare} alt="Share as Image Feature" className="absolute inset-0 w-full h-full object-cover object-top opacity-80 group-hover:scale-110 transition-transform duration-700" />
+
+                            <div className="relative z-10 bg-black/40 backdrop-blur-sm px-6 py-3 rounded-full text-white text-sm font-bold border border-white/20 shadow-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                {t('socialFeatures.feature1.title')}
                             </div>
 
                             {/* Floating Tools */}
-                            <div className={`absolute bottom-4 ${isRtl ? 'right-4' : 'left-4'} flex gap-2`}>
+                            <div className={`absolute bottom-4 ${isRtl ? 'right-4' : 'left-4'} flex gap-2 z-20`}>
                                 <div className="w-8 h-8 rounded-full bg-white text-gray-600 flex items-center justify-center shadow-lg"><FaImage size={14} /></div>
-                                <div className="w-8 h-8 rounded-full bg-indigo-500 text-white flex items-center justify-center shadow-lg"><FaShareAlt size={14} /></div>
+                                <div className="w-8 h-8 rounded-full bg-indigo-500 text-white flex items-center justify-center shadow-lg group-hover:animate-bounce"><FaShareAlt size={14} /></div>
                             </div>
                         </div>
 

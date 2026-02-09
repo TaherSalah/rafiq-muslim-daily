@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaQuran, FaUsers, FaArrowLeft, FaArrowRight, FaCheck } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
+import ScreenKhatma from '../assets/9.jpg';
 
 const GroupKhatma: React.FC = () => {
     const { t, i18n } = useTranslation();
@@ -16,11 +17,24 @@ const GroupKhatma: React.FC = () => {
 
                     {/* Visual Side */}
                     <motion.div
-                        className="flex-1 w-full"
+                        className="flex-1 w-full relative"
                         initial={{ opacity: 0, x: isRtl ? 50 : -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
+                        {/* Real App Screenshot Phone */}
+                        <motion.div
+                            className={`absolute z-20 ${isRtl ? '-right-4 md:-right-12' : '-left-4 md:-left-12'} -bottom-12 w-48 md:w-56 hidden md:block`}
+                            initial={{ y: 20 }}
+                            animate={{ y: [0, -15, 0] }}
+                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                        >
+                            <div className="relative aspect-[9/19] border-4 border-gray-900 rounded-[2rem] bg-gray-900 shadow-2xl overflow-hidden">
+                                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-4 bg-gray-900 rounded-b-lg z-20"></div>
+                                <img src={ScreenKhatma} alt="Group Khatma System" className="w-full h-full object-cover object-top" />
+                            </div>
+                        </motion.div>
+
                         <div className="bg-gradient-to-br from-indigo-900 to-indigo-800 rounded-3xl p-8 text-white shadow-2xl relative overflow-hidden">
                             {/* Decorative Circles */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />

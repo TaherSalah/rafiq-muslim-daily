@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaCalculator, FaFilePdf, FaHandHoldingHeart, FaHistory, FaBell } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
+import ScreenZakat from '../assets/6.jpg';
+import PDFReport from '../assets/photo_5787532109005130988_y.jpg';
 
 const ZakatShowcase: React.FC = () => {
     const { t, i18n } = useTranslation();
@@ -60,15 +62,41 @@ const ZakatShowcase: React.FC = () => {
                     {/* Visual Interface */}
                     <div className="flex-1 w-full order-1 lg:order-2">
                         <motion.div
-                            className="relative"
+                            className="relative flex justify-center items-center h-[500px]"
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                         >
                             <div className="absolute inset-0 bg-teal-200/20 blur-3xl rounded-full" />
 
+                            {/* Phone Frame - REAL APP */}
+                            <motion.div
+                                className={`absolute z-20 ${isRtl ? 'left-0' : 'right-0'} top-0 w-56 hidden md:block`}
+                                initial={{ y: 20 }}
+                                animate={{ y: [0, -10, 0] }}
+                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                            >
+                                <div className="relative aspect-[9/19] border-4 border-gray-900 rounded-[2rem] bg-gray-900 shadow-2xl overflow-hidden">
+                                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-4 bg-gray-900 rounded-b-lg z-20"></div>
+                                    <img src={ScreenZakat} alt="Zakat Application" className="w-full h-full object-cover object-top" />
+                                </div>
+                            </motion.div>
+
+                            {/* Floating PDF Report */}
+                            <motion.div
+                                className={`absolute z-30 ${isRtl ? 'right-0' : 'left-0'} -bottom-10 w-48 hidden lg:block border-2 border-white rounded-lg shadow-2xl overflow-hidden rotate-3`}
+                                initial={{ y: 50, opacity: 0 }}
+                                whileInView={{ y: 0, opacity: 1 }}
+                                viewport={{ once: true }}
+                                animate={{ rotate: [3, -3, 3] }}
+                                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                            >
+                                <img src={PDFReport} alt="Zakat PDF Report" className="w-full h-auto" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+                            </motion.div>
+
                             {/* Main Card - Report Preview */}
-                            <div className={`relative bg-white rounded-2xl shadow-2xl p-6 border border-gray-100 max-w-md mx-auto transform hover:rotate-0 transition-transform duration-500 ${isRtl ? 'lg:rotate-2' : 'lg:-rotate-2'}`}>
+                            <div className={`relative z-10 bg-white rounded-2xl shadow-2xl p-6 border border-gray-100 w-full max-w-[340px] transform transition-transform duration-500 md:translate-x-0 ${isRtl ? 'lg:-translate-x-16' : 'lg:translate-x-16'}`}>
                                 <div className={`flex items-center justify-between mb-6 border-b border-gray-100 pb-4 ${isRtl ? 'flex-row' : 'flex-row-reverse'}`}>
                                     <div className={`flex items-center gap-3 ${isRtl ? 'flex-row' : 'flex-row-reverse'}`}>
                                         <div className="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center text-white">
@@ -104,24 +132,6 @@ const ZakatShowcase: React.FC = () => {
                                     <span className="text-xs font-bold text-gray-500">{t('zakatShowcase.report.paid')}</span>
                                 </div>
                             </div>
-
-
-                            {/* Floating Element - Calculator */}
-                            <motion.div
-                                className={`relative lg:absolute mt-6 lg:mt-0 lg:-bottom-10 ${isRtl ? 'lg:-left-10' : 'lg:-right-10'} bg-slate-900 text-white p-5 rounded-2xl shadow-xl w-full max-w-xs mx-auto lg:w-48`}
-                                animate={{ y: [0, -10, 0] }}
-                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                            >
-                                <div className={`text-xs text-gray-400 mb-1 ${isRtl ? 'text-right' : 'text-left'}`}>{t('zakatShowcase.calculator.label')}</div>
-                                <div className={`text-2xl font-mono font-bold text-teal-400 mb-2 tabular-nums ${isRtl ? 'text-right' : 'text-left'}`}>{t('zakatShowcase.calculator.value')}</div>
-                                <div className="h-1 w-full bg-gray-700 rounded-full mb-3">
-                                    <div className="h-full bg-teal-500 w-full"></div>
-                                </div>
-                                <div className={`flex items-center gap-2 text-xs ${isRtl ? 'flex-row' : 'flex-row-reverse'}`}>
-                                    <FaCalculator />
-                                    <span>{t('zakatShowcase.calculator.info')}</span>
-                                </div>
-                            </motion.div>
                         </motion.div>
                     </div>
                 </div>
