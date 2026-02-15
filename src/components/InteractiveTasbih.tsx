@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaFingerprint, FaRedo, FaBolt } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import ScreenTasbih from '../assets/Screenshot_2026_02_09_12_55_43_19_4bfa514ba3a89880002cd1121a611476.jpg';
+import ScreenTasbih from '../assets/sebha.jpg';
 
 const InteractiveTasbih: React.FC = () => {
     const { t, i18n } = useTranslation();

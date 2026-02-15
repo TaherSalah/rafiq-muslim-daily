@@ -7,12 +7,14 @@ import {
 } from 'react-icons/fa';
 
 // Import Assets
-import ScreenPrayer from '../assets/5.jpg';
-import ScreenAzkar from '../assets/3.jpg';
+import ScreenPrayer from '../assets/prayerView.jpg';
+import ScreenAzkar from '../assets/7.jpg';
+import ScreenSebha from '../assets/sebha.jpg';
+
 import ScreenQuran from '../assets/2.jpg';
-import ScreenLibrary from '../assets/10.jpg';
-import ScreenKhatma from '../assets/9.jpg';
-import ScreenCommunity from '../assets/Screenshot_2026_02_09_12_56_57_76_4bfa514ba3a89880002cd1121a611476.jpg';
+import ScreenLibrary from '../assets/5.jpg';
+import ScreenKhatma from '../assets/golbal1.jpg';
+import ScreenCommunity from '../assets/radio.jpg';
 
 interface ShowcaseItem {
     id: number;
@@ -37,12 +39,12 @@ const FeatureShowcase: React.FC = () => {
     const items: ShowcaseItem[] = [
         {
             id: 1,
-            titleKey: "features.items.prayer.title",
-            descKey: "features.items.prayer.desc",
-            phoneImg: ScreenPrayer,
-            bgImg: "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=1000&auto=format&fit=crop",
-            icon: <FaMosque />,
-            color: "emerald"
+            titleKey: "features.items.quran.title",
+            descKey: "features.items.quran.desc",
+            phoneImg: ScreenQuran,
+            bgImg: "https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=1000&auto=format&fit=crop",
+            icon: <FaQuran />,
+            color: "amber"
         },
         {
             id: 2,
@@ -55,15 +57,45 @@ const FeatureShowcase: React.FC = () => {
         },
         {
             id: 3,
-            titleKey: "features.items.quran.title",
-            descKey: "features.items.quran.desc",
-            phoneImg: ScreenQuran,
-            bgImg: "https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=1000&auto=format&fit=crop",
-            icon: <FaQuran />,
-            color: "amber"
+            titleKey: "features.items.sibha.title",
+            descKey: "features.items.sibha.desc",
+            phoneImg: ScreenSebha,
+            bgImg: "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?q=80&w=1000&auto=format&fit=crop",
+            icon: <FaPrayingHands />,
+            color: "indigo"
         },
         {
             id: 4,
+            titleKey: "features.items.prayer.title",
+            descKey: "features.items.prayer.desc",
+            phoneImg: ScreenPrayer,
+            bgImg: "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=1000&auto=format&fit=crop",
+            icon: <FaMosque />,
+            color: "emerald"
+        },
+
+
+        {
+            id: 5,
+            titleKey: "features.items.kids.title",
+            descKey: "features.items.kids.desc",
+            phoneImg: ScreenLibrary,
+            bgImg: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1000&auto=format&fit=crop",
+            icon: <FaBook />,
+            color: "cyan"
+        },
+
+        {
+            id: 7,
+            titleKey: "features.items.hadith.title",
+            descKey: "features.items.hadith.desc",
+            phoneImg: ScreenLibrary,
+            bgImg: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1000&auto=format&fit=crop",
+            icon: <FaBook />,
+            color: "cyan"
+        },
+        {
+            id: 6,
             titleKey: "features.items.books.title",
             descKey: "features.items.books.desc",
             phoneImg: ScreenLibrary,

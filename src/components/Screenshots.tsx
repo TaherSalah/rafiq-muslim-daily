@@ -12,7 +12,7 @@ import ScreenKhatma from '../assets/9.jpg';
 import ScreenJourney from '../assets/Screenshot_2026_02_09_12_55_51_55_4bfa514ba3a89880002cd1121a611476.jpg';
 import ScreenShare from '../assets/Screenshot_2026_02_09_12_56_57_76_4bfa514ba3a89880002cd1121a611476.jpg';
 import ScreenTafsir from '../assets/Screenshot_2026_02_09_12_58_39_69_4bfa514ba3a89880002cd1121a611476.jpg';
-import ScreenModernSibha from '../assets/Screenshot_2026_02_09_12_55_43_19_4bfa514ba3a89880002cd1121a611476.jpg';
+import ScreenModernSibha from '../assets/sebha.jpg';
 
 const Screenshots: React.FC = () => {
     const { t } = useTranslation();
