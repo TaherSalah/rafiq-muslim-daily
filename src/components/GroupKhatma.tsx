@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaQuran, FaUsers, FaArrowLeft, FaArrowRight, FaCheck } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import ScreenKhatma from '../assets/9.jpg';
 
 const GroupKhatma: React.FC = () => {
     const { t, i18n } = useTranslation();
@@ -11,136 +10,129 @@ const GroupKhatma: React.FC = () => {
     const benefits = t('groupKhatma.benefits', { returnObjects: true }) as string[];
 
     return (
-        <section className="py-20 bg-white relative overflow-hidden">
+        <section className="py-20 bg-slate-50/50 relative overflow-hidden">
             <div className="container mx-auto px-4 relative z-10">
-                <div className={`flex flex-col ${isRtl ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}>
-
-                    {/* Visual Side */}
+                <div className="flex flex-col items-center gap-12">
+                    {/* Visual Card Side */}
                     <motion.div
-                        className="flex-1 w-full relative"
-                        initial={{ opacity: 0, x: isRtl ? 50 : -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        className="w-full max-w-sm"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                     >
-                        {/* Real App Screenshot Phone */}
-                        <motion.div
-                            className={`absolute z-20 ${isRtl ? '-right-4 md:-right-12' : '-left-4 md:-left-12'} -bottom-12 w-48 md:w-56 hidden md:block`}
-                            initial={{ y: 20 }}
-                            animate={{ y: [0, -15, 0] }}
-                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                        >
-                            <div className="relative aspect-[9/19] border-4 border-gray-900 rounded-[2rem] bg-gray-900 shadow-2xl overflow-hidden">
-                                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-4 bg-gray-900 rounded-b-lg z-20"></div>
-                                <img src={ScreenKhatma} alt="Group Khatma System" className="w-full h-full object-cover object-top" />
+                        <div className="bg-gradient-to-br from-indigo-700 via-indigo-800 to-indigo-900 rounded-[2.5rem] p-8 text-white shadow-2xl relative overflow-hidden border border-white/10">
+                            {/* Wave Pattern Background */}
+                            <div className="absolute inset-0 opacity-10">
+                                <svg viewBox="0 0 400 400" className="w-full h-full">
+                                    <path d="M0,200 C100,100 300,300 400,200 L400,400 L0,400 Z" fill="white" />
+                                </svg>
                             </div>
-                        </motion.div>
-
-                        <div className="bg-gradient-to-br from-indigo-900 to-indigo-800 rounded-3xl p-8 text-white shadow-2xl relative overflow-hidden">
-                            {/* Decorative Circles */}
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-                            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
 
                             <div className="relative z-10 text-center">
-                                <h3 className="text-2xl font-bold mb-8">{t('groupKhatma.cardTitle')}</h3>
+                                <h3 className="text-xl font-bold mb-8 text-indigo-100">{t('groupKhatma.cardTitle')}</h3>
 
-                                {/* Progress Circle */}
-                                <div className="w-48 h-48 md:w-64 md:h-64 mx-auto mb-8 relative flex items-center justify-center">
+                                {/* Progress Circle with Glow */}
+                                <div className="w-44 h-44 mx-auto mb-10 relative flex items-center justify-center">
+                                    <div className="absolute inset-0 bg-emerald-500/20 rounded-full blur-2xl" />
                                     <svg className="w-full h-full transform -rotate-90" viewBox="0 0 256 256">
                                         <circle
                                             cx="128"
                                             cy="128"
-                                            r="120"
-                                            fill="transparent"
+                                            r="110"
+                                            fill="none"
                                             stroke="rgba(255,255,255,0.1)"
-                                            strokeWidth="12"
+                                            strokeWidth="10"
                                         />
                                         <motion.circle
                                             cx="128"
                                             cy="128"
-                                            r="120"
-                                            fill="transparent"
-                                            stroke="#4ade80"
+                                            r="110"
+                                            fill="none"
+                                            stroke="#10b981"
                                             strokeWidth="12"
-                                            strokeDasharray={2 * Math.PI * 120}
-                                            initial={{ strokeDashoffset: 2 * Math.PI * 120 }}
-                                            whileInView={{ strokeDashoffset: 2 * Math.PI * 120 * (1 - 0.75) }}
+                                            strokeDasharray={2 * Math.PI * 110}
+                                            initial={{ strokeDashoffset: 2 * Math.PI * 110 }}
+                                            whileInView={{ strokeDashoffset: 2 * Math.PI * 110 * (1 - 0.75) }}
                                             viewport={{ once: true }}
                                             transition={{ duration: 2, ease: "easeOut" }}
                                             strokeLinecap="round"
                                         />
                                     </svg>
                                     <div className="absolute inset-0 flex flex-col items-center justify-center">
-                                        <div className="text-5xl font-bold font-mono">75%</div>
-                                        <div className="text-sm opacity-80 mt-2">{t('groupKhatma.progressLabel')}</div>
+                                        <div className="text-5xl font-black text-white">75%</div>
+                                        <div className="text-xs font-bold text-emerald-400 mt-1 uppercase tracking-widest">{t('groupKhatma.progressLabel')}</div>
                                     </div>
                                 </div>
 
-                                {/* Stats Grid */}
+                                {/* Stats Grid Cards */}
                                 <div className="grid grid-cols-2 gap-4 mb-8">
-                                    <div className="bg-white/10 rounded-xl p-4">
-                                        <FaUsers className="text-xl mb-2 mx-auto text-blue-300" />
-                                        <div className="text-2xl font-bold">1,420</div>
-                                        <div className="text-xs opacity-70">{t('groupKhatma.participants')}</div>
+                                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10 flex flex-col items-center">
+                                        <div className="w-8 h-8 rounded-full bg-indigo-500/30 flex items-center justify-center text-indigo-300 mb-2">
+                                            <FaQuran size={14} />
+                                        </div>
+                                        <div className="text-2xl font-black">450</div>
+                                        <div className="text-[10px] font-bold text-indigo-200 uppercase">{t('groupKhatma.remainingJuz')}</div>
                                     </div>
-                                    <div className="bg-white/10 rounded-xl p-4">
-                                        <FaQuran className="text-xl mb-2 mx-auto text-emerald-300" />
-                                        <div className="text-2xl font-bold">450</div>
-                                        <div className="text-xs opacity-70">{t('groupKhatma.remainingJuz')}</div>
+                                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10 flex flex-col items-center">
+                                        <div className="w-8 h-8 rounded-full bg-emerald-500/30 flex items-center justify-center text-emerald-300 mb-2">
+                                            <FaUsers size={14} />
+                                        </div>
+                                        <div className="text-2xl font-black">1,420</div>
+                                        <div className="text-[10px] font-bold text-emerald-200 uppercase">{t('groupKhatma.participants')}</div>
                                     </div>
                                 </div>
 
-                                <button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2 group">
+                                <motion.button
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-4 rounded-2xl font-black transition-all flex items-center justify-center gap-3 shadow-xl text-lg shadow-emerald-900/40"
+                                >
                                     {t('groupKhatma.cta')}
-                                    {isRtl ? (
-                                        <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
-                                    ) : (
-                                        <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-                                    )}
-                                </button>
+                                    {isRtl ? <FaArrowLeft /> : <FaArrowRight />}
+                                </motion.button>
                             </div>
                         </div>
                     </motion.div>
 
-                    {/* Text Side */}
-                    <motion.div
-                        className={`flex-1 text-center ${isRtl ? 'lg:text-right' : 'lg:text-left'}`}
-                        initial={{ opacity: 0, x: isRtl ? -50 : 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 text-indigo-600 rounded-full font-bold text-sm mb-6">
-                            <FaUsers />
+                    {/* Text Content */}
+                    <div className="text-center w-full px-4 mt-4">
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-100/50 text-indigo-600 rounded-full font-black text-xs mb-6 shadow-sm border border-indigo-200/50"
+                        >
+                            <FaUsers size={12} />
                             <span>{t('groupKhatma.tag')}</span>
-                        </div>
+                        </motion.div>
 
-                        <h2 className={`text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight ${isRtl ? 'text-right' : 'text-left'}`}>
+                        <h2 className="text-3xl sm:text-4xl font-black mb-6 text-slate-900 leading-tight">
                             {t('groupKhatma.title')}<br />
                             <span className="text-indigo-600">{t('groupKhatma.titleHighlight')}</span>
                         </h2>
 
-                        <p className={`text-xl text-gray-600 mb-8 leading-relaxed ${isRtl ? 'text-right' : 'text-left'}`}>
+                        <p className="text-slate-600 text-lg mb-10 leading-relaxed max-w-xs mx-auto">
                             {t('groupKhatma.description')}
                         </p>
 
-                        <div className="space-y-4">
+                        <div className="flex flex-col gap-4 max-w-xs mx-auto">
                             {Array.isArray(benefits) && benefits.map((item, index) => (
                                 <motion.div
                                     key={index}
-                                    initial={{ opacity: 0, y: 10 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
-                                    className={`flex items-center gap-3 text-lg text-gray-700 ${isRtl ? 'flex-row' : 'flex-row-reverse'}`}
+                                    className="flex items-center gap-4 bg-white rounded-2xl p-4 shadow-sm border border-slate-100 group hover:border-indigo-200 transition-colors"
                                 >
-                                    <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0">
-                                        <FaCheck className="text-xs" />
+                                    <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                        <FaCheck size={12} />
                                     </div>
-                                    <span className={isRtl ? 'text-right' : 'text-left'}>{item}</span>
+                                    <span className="text-sm font-bold text-slate-700">{item}</span>
                                 </motion.div>
                             ))}
                         </div>
-                    </motion.div>
-
+                    </div>
                 </div>
             </div>
         </section>

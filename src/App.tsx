@@ -39,27 +39,31 @@ function App() {
   }, [i18n.language]);
 
   return (
-    <div className="min-h-screen">
-      <LanguageSwitcher />
-      <Hero />
-      <FeatureShowcase />
-      <Journey />
-      <GroupKhatma />
-      <ZakatShowcase />
-      <Screenshots />
-      <SocialFeatures />
-      <FamilySection />
-      <CommunityTools />
-      <SmartWidgets />
-      <AudioShowcase />
-      <InteractiveTasbih />
-      <Leaderboard />
-      <Statistics />
-      <Testimonials />
-      <FAQ />
-      <Download />
-      <Footer />
-      <FloatingCTA />
+    <div className="min-h-screen bg-slate-100 flex justify-center overflow-x-hidden">
+      <div className="w-full max-w-[430px] bg-white shadow-2xl relative flex flex-col min-h-screen">
+        <LanguageSwitcher />
+        <main className="flex-1 w-full flex flex-col">
+          <Hero />
+          <FeatureShowcase />
+          <Journey />
+          <GroupKhatma />
+          <ZakatShowcase />
+          <Screenshots />
+          <SocialFeatures />
+          <FamilySection />
+          <CommunityTools />
+          <SmartWidgets />
+          <AudioShowcase />
+          <InteractiveTasbih />
+          <Leaderboard />
+          <Statistics />
+          <Testimonials />
+          <FAQ />
+          <Download />
+          <Footer />
+        </main>
+        <FloatingCTA />
+      </div>
     </div>
   )
 }

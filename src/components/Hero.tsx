@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
+import { SiHuawei } from 'react-icons/si';
 import { useTranslation } from 'react-i18next';
 import HeroImage from "../assets/IMG_20260209_102138_900.jpg";
 
@@ -9,180 +10,166 @@ const Hero: React.FC = () => {
     const isRtl = i18n.language === 'ar';
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden islamic-pattern py-12 lg:py-0">
-            {/* Animated Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <motion.div
-                    className="absolute top-20 right-20 w-72 h-72 bg-islamic-green/10 rounded-full blur-3xl"
-                    animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [0.3, 0.5, 0.3],
-                    }}
-                    transition={{
-                        duration: 4,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    }}
-                />
-                <motion.div
-                    className="absolute bottom-20 left-20 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"
-                    animate={{
-                        scale: [1.2, 1, 1.2],
-                        opacity: [0.5, 0.3, 0.5],
-                    }}
-                    transition={{
-                        duration: 5,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    }}
-                />
-            </div>
-
+        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-slate-50/50 islamic-pattern py-8">
             <div className="container mx-auto px-4 relative z-10 max-w-5xl">
-                <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20">
-                    {/* Text Content */}
+                <div className="flex flex-col items-center justify-center gap-6">
+                    {/* Header/Logo */}
                     <motion.div
-                        className="w-full lg:w-1/2 text-center lg:text-right pt-6 lg:pt-0"
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
+                        className="mb-2"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 0.5, type: "spring" }}
                     >
-                        <motion.div
-                            className="inline-block mb-6"
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                        >
+                        <div className="relative w-20 h-20">
                             <img
                                 src="/logo.png"
                                 alt="رفيق المسلم"
-                                className="w-20 h-20 lg:w-32 lg:h-32 mx-auto lg:mx-0 lg:ms-0 drop-shadow-2xl"
+                                className="w-full h-full object-contain drop-shadow-xl"
                             />
-                        </motion.div>
+                        </div>
+                    </motion.div>
 
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-6 leading-tight">
-                            <span className="text-gradient">{t('hero.titlePrefix')}</span>
-                            <br />
-                            <span className="text-gray-800">{t('hero.titleSuffix')}</span>
+                    {/* Typography */}
+                    <motion.div
+                        className="text-center"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight flex flex-col gap-1">
+                            <span className="text-emerald-600 drop-shadow-sm">{t('hero.titlePrefix')}</span>
+                            <span className="text-slate-800 text-3xl sm:text-4xl">{t('hero.titleSuffix')}</span>
                         </h1>
 
-                        <p className="text-base md:text-lg lg:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 lg:ms-0 px-4 lg:px-0">
+                        <p className="text-lg text-slate-600 mb-8 max-w-xs mx-auto leading-relaxed">
                             {t('hero.description')}
                         </p>
+                    </motion.div>
 
-                        {/* CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center w-full sm:w-auto px-4 sm:px-0">
+                    {/* Phone Mockup Row */}
+                    <div className="relative w-full flex justify-center items-center py-4">
+                        <motion.div
+                            className="relative w-48 z-10"
+                            initial={{ opacity: 0, x: -30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <div className="relative bg-slate-900 rounded-[2.5rem] p-2.5 shadow-2xl border-4 border-slate-800">
+                                <div className="bg-white rounded-[1.8rem] overflow-hidden aspect-[9/19]">
+                                    <img
+                                        src={HeroImage}
+                                        alt={t('hero.altText')}
+                                        className="w-full h-full object-cover object-top"
+                                    />
+                                </div>
+                                {/* Floating Icons */}
+                                <motion.div
+                                    className="absolute -top-4 -right-4 bg-white rounded-2xl shadow-lg p-2.5 border border-slate-100"
+                                    animate={{ y: [0, 8, 0] }}
+                                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                                >
+                                    <span className="text-xl">🕌</span>
+                                </motion.div>
+                                <motion.div
+                                    className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-lg p-2.5 border border-slate-100"
+                                    animate={{ y: [0, -8, 0] }}
+                                    transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                                >
+                                    <span className="text-xl">📿</span>
+                                </motion.div>
+                            </div>
+                        </motion.div>
+
+                        {/* CTA Buttons - Floating Right (Mobile specific) */}
+                        <div className="flex flex-col gap-3 ml-[-15px] z-20">
                             <motion.a
-                                href="#"
-                                className="btn-primary flex items-center gap-3 w-full sm:w-auto justify-center"
+                                href={t('hero.links.appStore')}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-emerald-600 text-white rounded-full py-2.5 px-5 shadow-xl flex items-center gap-3 border-2 border-emerald-600 hover:bg-emerald-700 transition-all min-w-[155px]"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <FaApple className="text-2xl" />
-                                <div className={isRtl ? "text-right" : "text-left"}>
-                                    <div className="text-xs opacity-90">{t('hero.downloadLabel')}</div>
-                                    <div className="text-lg font-bold">{t('hero.downloadAppStore')}</div>
+                                <div className="flex-1 text-right">
+                                    <div className="text-[9px] opacity-80 leading-none mb-0.5">{t('hero.downloadLabel')}</div>
+                                    <div className="text-xs font-bold leading-none">{t('hero.downloadAppStore')}</div>
                                 </div>
+                                <FaApple className="text-xl" />
                             </motion.a>
 
                             <motion.a
-                                href="#"
-                                className="btn-secondary flex items-center gap-3 w-full sm:w-auto justify-center"
+                                href={t('hero.links.googlePlay')}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-white text-emerald-600 rounded-full py-2.5 px-5 shadow-xl flex items-center gap-3 border-2 border-emerald-600 hover:bg-emerald-50 transition-all min-w-[155px]"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <FaGooglePlay className="text-2xl" />
-                                <div className={isRtl ? "text-right" : "text-left"}>
-                                    <div className="text-xs opacity-90">{t('hero.downloadLabel')}</div>
-                                    <div className="text-lg font-bold">{t('hero.downloadGooglePlay')}</div>
+                                <div className="flex-1 text-right">
+                                    <div className="text-[9px] opacity-80 leading-none mb-0.5">{t('hero.downloadLabel')}</div>
+                                    <div className="text-xs font-bold leading-none">{t('hero.downloadGooglePlay')}</div>
                                 </div>
+                                <FaGooglePlay className="text-lg" />
+                            </motion.a>
+
+                            <motion.a
+                                href={t('hero.links.appGallery')}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-white text-emerald-600 rounded-full py-2.5 px-5 shadow-xl flex items-center gap-3 border-2 border-emerald-600 hover:bg-emerald-50 transition-all min-w-[155px]"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <div className="flex-1 text-right">
+                                    <div className="text-[9px] opacity-80 leading-none mb-0.5">{t('hero.downloadLabel')}</div>
+                                    <div className="text-xs font-bold leading-none">{t('hero.downloadAppGallery')}</div>
+                                </div>
+                                <SiHuawei className="text-lg" />
                             </motion.a>
                         </div>
+                    </div>
 
-                        {/* Stats */}
-                        <motion.div
-                            className="mt-12 grid grid-cols-3 gap-4 lg:gap-6 max-w-xl mx-auto lg:mx-0 lg:ms-0"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.6 }}
-                        >
-                            <div className={isRtl ? "text-center lg:text-right" : "text-center lg:text-left"}>
-                                <div className="text-2xl lg:text-3xl font-bold text-gradient">{t('hero.stats.usersValue')}</div>
-                                <div className="text-xs lg:text-sm text-gray-600">{t('hero.stats.users')}</div>
-                            </div>
-                            <div className={isRtl ? "text-center lg:text-right" : "text-center lg:text-left"}>
-                                <div className="text-2xl lg:text-3xl font-bold text-gradient">{t('hero.stats.booksValue')}</div>
-                                <div className="text-xs lg:text-sm text-gray-600">{t('hero.stats.books')}</div>
-                            </div>
-                            <div className={isRtl ? "text-center lg:text-right" : "text-center lg:text-left"}>
-                                <div className="text-2xl lg:text-3xl font-bold text-gradient">{t('hero.stats.ratingValue')}</div>
-                                <div className="text-xs lg:text-sm text-gray-600">{t('hero.stats.rating')}</div>
-                            </div>
-                        </motion.div>
-                    </motion.div>
-
-                    {/* Phone Mockup */}
+                    {/* Stats Horizontal Row */}
                     <motion.div
-                        className="relative w-full max-w-[260px] sm:max-w-sm lg:max-w-[320px] mx-auto lg:mx-0 mt-8 lg:mt-0"
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="w-full max-w-sm mt-4 bg-white/40 backdrop-blur-sm rounded-3xl p-4 flex justify-around items-center border border-white/50"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.6 }}
                     >
-                        <motion.div
-                            className="relative mx-auto w-full"
-                            animate={{ y: [0, -20, 0] }}
-                            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                        >
-                            {/* Phone Frame */}
-                            <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-[3rem] p-3 shadow-2xl">
-                                <div className="bg-white rounded-[2.2rem] overflow-hidden aspect-[9/19]">
-                                    {/* Placeholder for app screenshot */}
-                                    <div className="w-full h-full bg-gradient-to-br from-islamic-green/20 to-primary-500/20 flex items-center justify-center">
-                                        <img
-                                            src={HeroImage}
-                                            alt={t('hero.altText')}
-                                            className="w-full h-full object-cover object-top"
-                                        />
-                                    </div>
-                                </div>
-                                {/* Notch */}
-                                <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-24 lg:w-32 h-6 bg-gray-900 rounded-full z-20"></div>
+                        <div className="text-center">
+                            <div className="text-xl font-black text-slate-800 tabular-nums">300ألف+</div>
+                            <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">{t('hero.stats.users')}</div>
+                        </div>
+                        <div className="w-px h-8 bg-slate-200" />
+                        <div className="text-center">
+                            <div className="text-xl font-black text-slate-800 tabular-nums">15</div>
+                            <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">{t('hero.stats.books')}</div>
+                        </div>
+                        <div className="w-px h-8 bg-slate-200" />
+                        <div className="text-center">
+                            <div className="text-xl font-black text-slate-800 flex items-center gap-0.5">
+                                <span className="text-amber-400 text-sm">★</span>4.8
                             </div>
-
-                            {/* Floating Elements */}
-                            <motion.div
-                                className="absolute -top-6 -right-6 lg:-top-10 lg:-right-10 bg-white rounded-2xl shadow-xl p-3 lg:p-4"
-                                animate={{ y: [0, 10, 0] }}
-                                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                            >
-                                <div className="text-lg lg:text-2xl">🕌</div>
-                            </motion.div>
-
-                            <motion.div
-                                className="absolute -bottom-6 -left-6 lg:-bottom-10 lg:-left-10 bg-white rounded-2xl shadow-xl p-3 lg:p-4"
-                                animate={{ y: [0, -10, 0] }}
-                                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-                            >
-                                <div className="text-xl lg:text-2xl">📿</div>
-                            </motion.div>
-                        </motion.div>
+                            <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">تقييم</div>
+                        </div>
                     </motion.div>
+
+                    {/* Scroll Indicator */}
+                    <div className="mt-8">
+                        <motion.div
+                            className="w-6 h-10 border-2 border-emerald-600/30 rounded-full flex items-start justify-center p-1"
+                            animate={{ y: [0, 5, 0] }}
+                            transition={{ duration: 2, repeat: Infinity }}
+                        >
+                            <motion.div
+                                className="w-1.5 h-1.5 bg-emerald-600 rounded-full"
+                                animate={{ y: [0, 15, 0], opacity: [1, 0, 1] }}
+                                transition={{ duration: 2, repeat: Infinity }}
+                            />
+                        </motion.div>
+                    </div>
                 </div>
             </div>
-            {/* Scroll Indicator */}
-            <motion.div
-                className="absolute bottom-6 lg:bottom-10 left-1/2 transform -translate-x-1/2"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-            >
-                <div className="w-6 h-10 border-2 border-islamic-green rounded-full flex items-start justify-center p-2 hidden lg:flex">
-                    <motion.div
-                        className="w-1.5 h-1.5 bg-islamic-green rounded-full"
-                        animate={{ y: [0, 16, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                    />
-                </div>
-            </motion.div>
         </section>
     );
 };

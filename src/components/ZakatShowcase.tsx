@@ -18,13 +18,13 @@ const ZakatShowcase: React.FC = () => {
     };
 
     return (
-        <section className="py-20 bg-slate-50 overflow-hidden">
+        <section className="py-16 bg-slate-50 overflow-hidden">
             <div className="container mx-auto px-4">
-                <div className={`flex flex-col ${isRtl ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-16`}>
+                <div className={`flex flex-col items-center gap-12`}>
 
                     {/* Text Content */}
                     <motion.div
-                        className={`flex-1 text-center ${isRtl ? 'lg:text-right' : 'lg:text-left'} order-2 lg:order-1 w-full`}
+                        className={`flex-1 text-center w-full`}
                         initial={{ opacity: 0, x: isRtl ? 50 : -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
@@ -34,17 +34,17 @@ const ZakatShowcase: React.FC = () => {
                             <span>{t('zakatShowcase.badge')}</span>
                         </div>
 
-                        <h2 className={`text-3xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight ${isRtl ? 'text-right' : 'text-left'}`}>
+                        <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900 leading-tight">
                             {t('zakatShowcase.title')}
                             <br />
                             <span className="text-teal-600">{t('zakatShowcase.titleHighlight')}</span>
                         </h2>
 
-                        <p className={`text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto ${isRtl ? 'lg:mx-0' : 'lg:mx-0'} ${isRtl ? 'text-right' : 'text-left'}`}>
+                        <p className={`text-base text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto px-2`}>
                             {t('zakatShowcase.desc')}
                         </p>
 
-                        <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${isRtl ? 'text-right' : 'text-left'}`}>
+                        <div className={`grid grid-cols-1 gap-4`}>
                             {features.map((item, index) => (
                                 <div key={index} className={`flex items-start gap-4 p-4 rounded-xl hover:bg-white hover:shadow-sm transition-all ${isRtl ? 'flex-row' : 'flex-row-reverse'}`}>
                                     <div className="w-10 h-10 rounded-lg bg-teal-50 text-teal-600 flex items-center justify-center text-lg flex-shrink-0 mt-1">
@@ -60,43 +60,19 @@ const ZakatShowcase: React.FC = () => {
                     </motion.div>
 
                     {/* Visual Interface */}
-                    <div className="flex-1 w-full order-1 lg:order-2">
+                    <div className="flex-1 w-full">
                         <motion.div
-                            className="relative flex justify-center items-center h-[500px]"
+                            className="relative flex justify-center items-center h-[420px]"
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                         >
                             <div className="absolute inset-0 bg-teal-200/20 blur-3xl rounded-full" />
 
-                            {/* Phone Frame - REAL APP */}
-                            <motion.div
-                                className={`absolute z-20 ${isRtl ? 'left-0' : 'right-0'} top-0 w-56 hidden md:block`}
-                                initial={{ y: 20 }}
-                                animate={{ y: [0, -10, 0] }}
-                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            >
-                                <div className="relative aspect-[9/19] border-4 border-gray-900 rounded-[2rem] bg-gray-900 shadow-2xl overflow-hidden">
-                                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-4 bg-gray-900 rounded-b-lg z-20"></div>
-                                    <img src={ScreenZakat} alt="Zakat Application" className="w-full h-full object-cover object-top" />
-                                </div>
-                            </motion.div>
-
-                            {/* Floating PDF Report */}
-                            <motion.div
-                                className={`absolute z-30 ${isRtl ? 'right-0' : 'left-0'} -bottom-10 w-48 hidden lg:block border-2 border-white rounded-lg shadow-2xl overflow-hidden rotate-3`}
-                                initial={{ y: 50, opacity: 0 }}
-                                whileInView={{ y: 0, opacity: 1 }}
-                                viewport={{ once: true }}
-                                animate={{ rotate: [3, -3, 3] }}
-                                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                            >
-                                <img src={PDFReport} alt="Zakat PDF Report" className="w-full h-auto" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-                            </motion.div>
+                            {/* Removed Floating side elements for cleaner mobile look */}
 
                             {/* Main Card - Report Preview */}
-                            <div className={`relative z-10 bg-white rounded-2xl shadow-2xl p-6 border border-gray-100 w-full max-w-[340px] transform transition-transform duration-500 md:translate-x-0 ${isRtl ? 'lg:-translate-x-16' : 'lg:translate-x-16'}`}>
+                            <div className="relative z-10 bg-white rounded-2xl shadow-xl p-5 border border-gray-100 w-full max-w-[310px]">
                                 <div className={`flex items-center justify-between mb-6 border-b border-gray-100 pb-4 ${isRtl ? 'flex-row' : 'flex-row-reverse'}`}>
                                     <div className={`flex items-center gap-3 ${isRtl ? 'flex-row' : 'flex-row-reverse'}`}>
                                         <div className="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center text-white">

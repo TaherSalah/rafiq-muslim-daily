@@ -10,39 +10,39 @@ const Footer: React.FC = () => {
     return (
         <footer className="bg-gray-900 text-white py-12">
             <div className="container mx-auto px-4">
-                <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 ${isRtl ? 'text-right' : 'text-left'}`}>
+                <div className={`flex flex-col gap-10 mb-8 items-center text-center`}>
                     {/* About */}
-                    <div>
-                        <div className={`flex items-center gap-3 mb-4 ${isRtl ? 'justify-start' : 'justify-start'}`}>
-                            <img src="/logo.png" alt={t('footer.appName')} className="w-12 h-12" />
-                            <h3 className="text-2xl font-bold">{t('footer.appName')}</h3>
+                    <div className="flex flex-col items-center">
+                        <div className="flex items-center gap-3 mb-4">
+                            <img src="/logo.png" alt={t('footer.appName')} className="w-10 h-10" />
+                            <h3 className="text-xl font-bold">{t('footer.appName')}</h3>
                         </div>
-                        <p className="text-gray-400 leading-relaxed">
+                        <p className="text-gray-400 leading-relaxed text-sm px-4">
                             {t('footer.about')}
                         </p>
                     </div>
 
                     {/* Quick Links */}
-                    <div>
-                        <h4 className="text-xl font-bold mb-4">{t('footer.quickLinks')}</h4>
-                        <ul className="space-y-2">
+                    <div className="flex flex-col items-center">
+                        <h4 className="text-lg font-bold mb-4">{t('footer.quickLinks')}</h4>
+                        <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
                             <li>
-                                <a href="#features" className="text-gray-400 hover:text-white transition-colors">
+                                <a href="#features" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     {t('footer.links.features')}
                                 </a>
                             </li>
                             <li>
-                                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                                <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     {t('footer.links.privacy')}
                                 </a>
                             </li>
                             <li>
-                                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                                <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     {t('footer.links.terms')}
                                 </a>
                             </li>
                             <li>
-                                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                                <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     {t('footer.links.contact')}
                                 </a>
                             </li>
@@ -50,39 +50,39 @@ const Footer: React.FC = () => {
                     </div>
 
                     {/* Social Media */}
-                    <div>
-                        <h4 className="text-xl font-bold mb-4">{t('footer.followUs')}</h4>
-                        <div className={`flex gap-4 mb-4 ${isRtl ? '' : ''}`}>
+                    <div className="flex flex-col items-center">
+                        <h4 className="text-lg font-bold mb-4">{t('footer.followUs')}</h4>
+                        <div className="flex gap-4 mb-4">
                             <a
                                 href="#"
-                                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-islamic-green transition-colors"
+                                className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-islamic-green transition-colors"
                                 aria-label="Facebook"
                             >
-                                <FaFacebook />
+                                <FaFacebook size={18} />
                             </a>
                             <a
                                 href="#"
-                                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-islamic-green transition-colors"
+                                className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-islamic-green transition-colors"
                                 aria-label="Twitter"
                             >
-                                <FaTwitter />
+                                <FaTwitter size={18} />
                             </a>
                             <a
                                 href="#"
-                                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-islamic-green transition-colors"
+                                className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-islamic-green transition-colors"
                                 aria-label="Instagram"
                             >
-                                <FaInstagram />
+                                <FaInstagram size={18} />
                             </a>
                             <a
                                 href="#"
-                                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-islamic-green transition-colors"
+                                className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-islamic-green transition-colors"
                                 aria-label="YouTube"
                             >
-                                <FaYoutube />
+                                <FaYoutube size={18} />
                             </a>
                         </div>
-                        <div className="flex items-center gap-2 text-gray-400">
+                        <div className="flex items-center gap-2 text-gray-400 text-sm">
                             <FaEnvelope />
                             <a href="mailto:info@muslimdaily.app" className="hover:text-white transition-colors">
                                 info@muslimdaily.app

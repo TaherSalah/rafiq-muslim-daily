@@ -30,19 +30,20 @@ const Journey: React.FC = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-12"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                    <h2 className="text-3xl font-bold mb-3">
                         {t('journey.title')}
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto px-4">
                         {t('journey.subtitle')}
                     </p>
                 </motion.div>
 
                 <div className="relative max-w-4xl mx-auto">
                     {/* Vertical Line */}
-                    <div className={`absolute top-0 bottom-0 w-1 bg-gray-100 hidden md:block ${isRtl ? 'right-1/2 translate-x-1/2' : 'left-1/2 -translate-x-1/2'}`} />
+                    <div className={`absolute top-0 bottom-0 w-1 bg-gray-100 ${isRtl ? 'right-6' : 'left-6'} md:hidden`} />
+                    <div className={`absolute top-0 bottom-0 w-1 bg-gray-100 hidden md:block ${isRtl ? 'right-6' : 'left-6'}`} />
 
                     <div className="space-y-12">
                         {Array.isArray(steps) && steps.map((step, index) => (
@@ -55,11 +56,11 @@ const Journey: React.FC = () => {
                                 className={`relative flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? (isRtl ? 'md:flex-row' : 'md:flex-row-reverse') : (isRtl ? 'md:flex-row-reverse' : 'md:flex-row')
                                     }`}
                             >
-                                {/* Timeline Dot (Desktop only) */}
-                                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-4 border-islamic-green rounded-full z-10 hidden md:block" />
+                                {/* Timeline Dot */}
+                                <div className={`absolute ${isRtl ? 'right-[22px]' : 'left-[22px]'} top-2 w-3 h-3 bg-white border-2 border-islamic-green rounded-full z-10`} />
 
                                 {/* Content Card */}
-                                <div className="flex-1 w-full md:w-auto">
+                                <div className={`flex-1 w-full ${isRtl ? 'pr-12' : 'pl-12'}`}>
                                     <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-50 relative overflow-hidden group">
                                         <div className={`absolute top-0 ${isRtl ? 'right-0' : 'left-0'} w-2 h-full ${stepIcons[index % stepIcons.length].color}`} />
 
@@ -82,9 +83,6 @@ const Journey: React.FC = () => {
                                         </p>
                                     </div>
                                 </div>
-
-                                {/* Spacer for Timeline Alignment */}
-                                <div className="flex-1 hidden md:block" />
                             </motion.div>
                         ))}
                     </div>

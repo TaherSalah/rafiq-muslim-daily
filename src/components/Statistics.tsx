@@ -87,25 +87,25 @@ const Statistics: React.FC = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
+                    className="text-center mb-12"
                 >
-                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full mb-6 border border-white/20">
-                        <span className="relative flex h-3 w-3">
+                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full mb-6 border border-white/20">
+                        <span className="relative flex h-2.5 w-2.5">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
                         </span>
-                        <span className="text-sm font-bold">{t('stats.liveLabel')}</span>
+                        <span className="text-xs font-bold">{t('stats.liveLabel')}</span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                    <h2 className="text-3xl font-bold mb-3">
                         {t('stats.title')}
                     </h2>
-                    <p className="text-xl opacity-90 max-w-2xl mx-auto">
+                    <p className="text-lg opacity-90 max-w-2xl mx-auto px-4">
                         {t('stats.subtitle')}
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-2 gap-4">
                     {statsList.map((stat, index) => (
                         <motion.div
                             key={index}
@@ -114,8 +114,8 @@ const Statistics: React.FC = () => {
                             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                         >
-                            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 border border-white/10 hover:border-white/30 hover:-translate-y-2 shadow-lg">
-                                <div className="text-4xl md:text-5xl font-bold mb-4 font-mono tracking-tight bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent">
+                            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:border-white/30 transition-all shadow-lg">
+                                <div className="text-2xl font-bold mb-2 font-mono tracking-tight text-white">
                                     {stat.isRating ? (
                                         `${stat.valueEnd}${stat.suffix}`
                                     ) : (
@@ -126,8 +126,8 @@ const Statistics: React.FC = () => {
                                         />
                                     )}
                                 </div>
-                                <div className="h-px w-12 bg-white/30 mx-auto mb-4 group-hover:w-24 transition-all duration-300"></div>
-                                <div className="text-lg font-medium text-white/90">{t(stat.labelKey)}</div>
+                                <div className="h-px w-8 bg-white/30 mx-auto mb-2"></div>
+                                <div className="text-xs font-medium text-white/90">{t(stat.labelKey)}</div>
                             </div>
                         </motion.div>
                     ))}
@@ -139,18 +139,18 @@ const Statistics: React.FC = () => {
                     transition={{ delay: 0.6 }}
                     className="mt-16 bg-black/20 backdrop-blur-sm rounded-3xl p-8 max-w-4xl mx-auto border border-white/10"
                 >
-                    <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 ${isRtl ? 'md:divide-x md:divide-x-reverse' : 'md:divide-x'} divide-white/10`}>
-                        <div className="py-4 md:py-0">
-                            <div className="text-sm opacity-70 mb-1">{t('stats.metrics.khatmaMonthly')}</div>
-                            <div className="text-3xl font-bold tabular-nums">{t('stats.metrics.khatmaMonthlyValue')}</div>
+                    <div className={`grid grid-cols-1 gap-6 text-center divide-y divide-white/10`}>
+                        <div className="py-4">
+                            <div className="text-xs opacity-70 mb-1">{t('stats.metrics.khatmaMonthly')}</div>
+                            <div className="text-2xl font-bold tabular-nums">{t('stats.metrics.khatmaMonthlyValue')}</div>
                         </div>
-                        <div className="py-4 md:py-0">
-                            <div className="text-sm opacity-70 mb-1">{t('stats.metrics.mosques')}</div>
-                            <div className="text-3xl font-bold tabular-nums">{t('stats.metrics.mosquesValue')}</div>
+                        <div className="py-4">
+                            <div className="text-xs opacity-70 mb-1">{t('stats.metrics.mosques')}</div>
+                            <div className="text-2xl font-bold tabular-nums">{t('stats.metrics.mosquesValue')}</div>
                         </div>
-                        <div className="py-4 md:py-0">
-                            <div className="text-sm opacity-70 mb-1">{t('stats.metrics.countries')}</div>
-                            <div className="text-3xl font-bold tabular-nums">{t('stats.metrics.countriesValue')}</div>
+                        <div className="py-4">
+                            <div className="text-xs opacity-70 mb-1">{t('stats.metrics.countries')}</div>
+                            <div className="text-2xl font-bold tabular-nums">{t('stats.metrics.countriesValue')}</div>
                         </div>
                     </div>
                 </motion.div>

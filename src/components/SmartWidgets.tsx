@@ -9,122 +9,125 @@ const SmartWidgets: React.FC = () => {
 
     return (
         <section className="py-20 bg-white overflow-hidden">
-            <div className="container mx-auto px-4">
-                <div className={`flex flex-col ${isRtl ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-16`}>
+            <div className="container mx-auto px-4 max-w-lg">
+                <div className="text-center mb-16">
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        className="text-5xl font-black mb-4 text-slate-900 leading-[1.1]"
+                    >
+                        {t('smartWidgets.title')}
+                    </motion.h2>
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl sm:text-5xl font-black text-emerald-500 mb-6 flex flex-col items-center"
+                    >
+                        {t('smartWidgets.subtitle')}
+                    </motion.div>
+                    <motion.p 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="text-slate-500 text-lg leading-relaxed max-w-sm mx-auto"
+                    >
+                        {t('smartWidgets.desc')}
+                    </motion.p>
+                </div>
 
-                    {/* Visual Side */}
-                    <div className="flex-1 w-full flex justify-center lg:justify-end">
-                        <div className="relative">
-                            {/* Background Glow */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-teal-200 to-emerald-200 blur-3xl opacity-30 rounded-full" />
-
-                            {/* Widgets Grid */}
-                            <div className="relative grid gap-6 w-full max-w-sm md:max-w-md mx-auto">
-                                {/* Azan Widget */}
-                                <motion.div
-                                    initial={{ x: isRtl ? -50 : 50, opacity: 0 }}
-                                    whileInView={{ x: 0, opacity: 1 }}
-                                    viewport={{ once: true }}
-                                    className="bg-white p-6 rounded-3xl shadow-xl border border-gray-100 relative overflow-hidden"
-                                >
-                                    <div className={`absolute top-0 ${isRtl ? 'right-0' : 'left-0'} w-2 h-full bg-emerald-500`} />
-                                    <div className={`flex justify-between items-start mb-4 ${isRtl ? 'flex-row' : 'flex-row-reverse'}`}>
-                                        <div className={isRtl ? 'text-right' : 'text-left'}>
-                                            <h4 className="font-bold text-gray-900">{t('smartWidgets.azan.name')}</h4>
-                                            <p className="text-sm text-gray-500">{t('smartWidgets.azan.location')}</p>
-                                        </div>
-                                        <FaPray className="text-emerald-500 text-xl" />
-                                    </div>
-                                    <div className={`text-4xl font-bold text-gray-900 mb-2 tabular-nums ${isRtl ? 'text-right' : 'text-left'}`}>
-                                        {t('smartWidgets.azan.time')} <span className="text-base text-gray-400 font-normal">{t('smartWidgets.azan.period')}</span>
-                                    </div>
-                                    <p className={`text-xs text-emerald-600 font-bold tabular-nums ${isRtl ? 'text-right' : 'text-left'}`}>
-                                        {t('smartWidgets.azan.remaining')}
-                                    </p>
-                                </motion.div>
-
-                                {/* Date & Dhikr Widget */}
-                                <motion.div
-                                    initial={{ x: isRtl ? 50 : -50, opacity: 0 }}
-                                    whileInView={{ x: 0, opacity: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: 0.2 }}
-                                    className="bg-slate-900 p-6 rounded-3xl shadow-xl text-white relative overflow-hidden"
-                                >
-                                    <div className={`flex items-center gap-4 mb-4 ${isRtl ? 'flex-row' : 'flex-row-reverse'}`}>
-                                        <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-xl">
-                                            <FaCalendarAlt />
-                                        </div>
-                                        <div className={isRtl ? 'text-right' : 'text-left'}>
-                                            <div className="font-bold text-lg">{t('smartWidgets.hijri.date')}</div>
-                                            <div className="text-sm opacity-60">{t('smartWidgets.hijri.year')}</div>
-                                        </div>
-                                    </div>
-                                    <div className="bg-white/5 rounded-xl p-3 text-center text-sm">
-                                        {t('smartWidgets.hijri.dhikr')}
-                                    </div>
-                                </motion.div>
-
-                                {/* Notification Card */}
-                                <motion.div
-                                    initial={{ y: 50, opacity: 0 }}
-                                    whileInView={{ y: 0, opacity: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: 0.4 }}
-                                    className={`bg-white/80 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-gray-100 flex items-center gap-4 transform ${isRtl ? 'translate-x-8' : '-translate-x-8'} ${isRtl ? 'flex-row' : 'flex-row-reverse'}`}
-                                >
-                                    <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-white text-lg">
-                                        <FaBell />
-                                    </div>
-                                    <div className={isRtl ? 'text-right' : 'text-left'}>
-                                        <div className="text-sm font-bold text-gray-900">{t('smartWidgets.notification.title')}</div>
-                                        <div className="text-xs text-gray-500">{t('smartWidgets.notification.desc')}</div>
-                                    </div>
-                                </motion.div>
+                <div className="flex flex-col gap-6 relative">
+                    {/* Widget 1: Prayer Time */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="bg-white p-6 rounded-[2.5rem] shadow-2xl border border-slate-50 relative overflow-hidden ring-1 ring-slate-100"
+                    >
+                        <div className="absolute top-0 right-0 w-2 h-full bg-emerald-500 rounded-full" />
+                        <div className="flex justify-between items-start mb-6">
+                            <div className="w-10 h-10 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-xl">
+                                <FaPray />
+                            </div>
+                            <div className="text-right">
+                                <h4 className="font-black text-slate-900 text-lg">{t('smartWidgets.azan.name')}</h4>
+                                <p className="text-xs text-slate-400 font-bold uppercase tracking-widest">{t('smartWidgets.azan.location')}</p>
                             </div>
                         </div>
-                    </div>
-
-                    {/* Text Side */}
-                    <motion.div
-                        className={`flex-1 text-center ${isRtl ? 'lg:text-right' : 'lg:text-left'}`}
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        <h2 className={`text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight ${isRtl ? 'text-right' : 'text-left'}`}>
-                            {t('smartWidgets.title')}
-                            <br />
-                            <span className="text-emerald-500">{t('smartWidgets.subtitle')}</span>
-                        </h2>
-
-                        <p className={`text-xl text-gray-600 mb-8 leading-relaxed ${isRtl ? 'text-right' : 'text-left'}`}>
-                            {t('smartWidgets.desc')}
-                        </p>
-
-                        <div className="space-y-6">
-                            <div className={`flex items-start gap-4 ${isRtl ? 'flex-row' : 'flex-row-reverse'}`}>
-                                <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl flex-shrink-0 mt-1">
-                                    <FaCalendarAlt />
-                                </div>
-                                <div className={isRtl ? 'text-right' : 'text-left'}>
-                                    <h4 className="text-xl font-bold text-gray-900 mb-1">{t('smartWidgets.feature1.title')}</h4>
-                                    <p className="text-gray-600">{t('smartWidgets.feature1.desc')}</p>
-                                </div>
+                        <div className="text-center">
+                            <div className="text-[5rem] font-black text-slate-900 leading-none mb-2 tabular-nums">
+                                06:15
                             </div>
+                            <div className="text-2xl font-bold text-slate-300">م</div>
+                        </div>
+                        <div className="text-center mt-4">
+                            <span className="bg-emerald-50 text-emerald-600 px-4 py-1.5 rounded-full text-xs font-black tracking-wide tabular-nums">
+                                {t('smartWidgets.azan.remaining')}
+                            </span>
+                        </div>
+                    </motion.div>
 
-                            <div className={`flex items-start gap-4 ${isRtl ? 'flex-row' : 'flex-row-reverse'}`}>
-                                <div className="w-12 h-12 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl flex-shrink-0 mt-1">
-                                    <FaMoon />
-                                </div>
-                                <div className={isRtl ? 'text-right' : 'text-left'}>
-                                    <h4 className="text-xl font-bold text-gray-900 mb-1">{t('smartWidgets.feature2.title')}</h4>
-                                    <p className="text-gray-600">{t('smartWidgets.feature2.desc')}</p>
-                                </div>
+                    {/* Widget 2: Hijri & Dhikr (Dark Mode) */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="bg-slate-900 p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden"
+                    >
+                        <div className="flex flex-col items-center text-center">
+                            <div className="text-4xl font-black text-white mb-1">15</div>
+                            <div className="text-2xl font-black text-white mb-1">{t('smartWidgets.hijri.date')}</div>
+                            <div className="text-xs text-slate-500 font-bold uppercase mb-4 tracking-tighter">1447 هجري</div>
+                            
+                            <div className="bg-white/5 backdrop-blur-md rounded-3xl p-6 border border-white/10 w-full mt-4">
+                                <p className="text-white text-lg font-bold leading-relaxed">
+                                    {t('smartWidgets.hijri.dhikr')}
+                                </p>
                             </div>
                         </div>
                     </motion.div>
 
+                    {/* Widget 3: Notification */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4 }}
+                        className="bg-white/80 backdrop-blur-xl p-6 rounded-[2rem] shadow-xl border border-white flex items-center gap-5 ring-1 ring-slate-100"
+                    >
+                        <div className="w-14 h-14 bg-indigo-500 rounded-3xl flex items-center justify-center text-white text-2xl shadow-lg shadow-indigo-500/20">
+                            <FaBell />
+                        </div>
+                        <div className="flex-1">
+                            <h4 className="text-sm font-black text-slate-900 mb-1 leading-none">{t('smartWidgets.notification.title')}</h4>
+                            <p className="text-[10px] text-slate-400 font-bold leading-relaxed">
+                                {t('smartWidgets.notification.desc')}
+                            </p>
+                        </div>
+                    </motion.div>
+
+                    {/* Widget Mini-Features */}
+                    <div className="grid grid-cols-1 gap-8 mt-12 px-4">
+                        <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl shadow-inner">
+                                <FaCalendarAlt />
+                            </div>
+                            <div>
+                                <h4 className="text-lg font-black text-slate-900 leading-none mb-1">{t('smartWidgets.feature1.title')}</h4>
+                                <p className="text-xs text-slate-500 leading-normal">{t('smartWidgets.feature1.desc')}</p>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 rounded-full bg-indigo-50 text-indigo-500 flex items-center justify-center text-xl shadow-inner">
+                                <FaMoon />
+                            </div>
+                            <div>
+                                <h4 className="text-lg font-black text-slate-900 leading-none mb-1">{t('smartWidgets.feature2.title')}</h4>
+                                <p className="text-xs text-slate-500 leading-normal">{t('smartWidgets.feature2.desc')}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

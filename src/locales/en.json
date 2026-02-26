@@ -5,7 +5,13 @@
         "description": "A comprehensive Islamic application that brings together everything a Muslim needs from prayer times, the Holy Quran, Prophetic Hadiths, and much more",
         "downloadAppStore": "App Store",
         "downloadGooglePlay": "Google Play",
+        "downloadAppGallery": "AppGallery",
         "downloadLabel": "Download from",
+        "links": {
+            "appStore": "https://apps.apple.com/ai/app/%D8%B1%D9%81%D9%8A%D9%82-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D9%85-%D8%A7%D9%84%D9%8A%D9%88%D9%85%D9%8A/id6749927338",
+            "googlePlay": "https://play.google.com/store/apps/details?id=com.rafiq.muslimdaily&hl=en-US",
+            "appGallery": "https://appgallery.huawei.com/app/C114956477"
+        },
         "stats": {
             "users": "Active User",
             "usersValue": "300K+",
@@ -77,6 +83,18 @@
             "books": {
                 "title": "Hadith Books",
                 "desc": "A comprehensive library including the most important books of Prophetic Sunnah and approved Hadith compilations for students of knowledge"
+            },
+            "inheritance": {
+                "title": "Inheritance Calculator",
+                "desc": "A precise system for calculating the legal inheritance distribution for heirs with detailed reports for each case according to Islamic Sharia"
+            },
+            "expiation": {
+                "title": "Expiation Calculator",
+                "desc": "Calculate fasting expiations, Fidyah, and other expiations easily with knowledge of the legal recipients for each"
+            },
+            "muslimCorner": {
+                "title": "Muslim Corner",
+                "desc": "An integrated space that brings together the most important things for a Muslim in his daily life from rulings and worship in one interface"
             }
         }
     },
@@ -153,8 +171,8 @@
         ]
     },
     "journey": {
-        "title": "Your Companion Throughout the Day",
-        "subtitle": "How our app accompanies you at every moment of your day",
+        "title": "Your Spiritual Journey, Moment by Moment",
+        "subtitle": "More than an app—a faithful companion guiding your heart from the first light of Dawn to the stillness of Night",
         "steps": [
             {
                 "time": "Fajr",
@@ -354,6 +372,12 @@
         },
         "screen11": {
             "title": "Modern Digital Sibha"
+        },
+        "screen12": {
+            "title": "Inheritance Calculator"
+        },
+        "screen13": {
+            "title": "Expiation Calculator"
         }
     },
     "smartWidgets": {
