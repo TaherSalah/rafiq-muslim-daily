@@ -84,8 +84,8 @@ const Footer: React.FC = () => {
                         </div>
                         <div className="flex items-center gap-2 text-gray-400 text-sm">
                             <FaEnvelope />
-                            <a href="mailto:info@muslimdaily.app" className="hover:text-white transition-colors">
-                                info@muslimdaily.app
+                            <a href="mailto:dev.tahersalah@gmail.com" className="hover:text-white transition-colors">
+                                dev.tahersalah@gmail.com
                             </a>
                         </div>
                     </div>
@@ -93,9 +93,9 @@ const Footer: React.FC = () => {
 
                 {/* Bottom Bar */}
                 <div className="border-t border-gray-800 pt-8 text-center">
-                    <p className="text-gray-400 flex items-center justify-center gap-2">
+                    {/* <p className="text-gray-400 flex items-center justify-center gap-2">
                         {t('footer.madeWith')} <FaHeart className="text-red-500" /> {t('footer.forMuslims')}
-                    </p>
+                    </p> */}
                     <p className="text-gray-500 mt-2">
                         © {currentYear} {t('footer.appName')}. {t('footer.rights')}
                     </p>

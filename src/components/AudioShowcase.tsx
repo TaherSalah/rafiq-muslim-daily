@@ -18,7 +18,8 @@ const AudioShowcase: React.FC = () => {
         { id: 1, duration: "01:10" },
         { id: 2, duration: "03:45" },
         { id: 3, duration: "02:30" },
-        { id: 4, duration: "04:12" }
+        { id: 4, duration: "01:45" },
+        { id: 5, duration: "04:12" }
     ];
 
     const togglePlay = (id: number) => {
@@ -51,22 +52,20 @@ const AudioShowcase: React.FC = () => {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                             onClick={() => togglePlay(track.id)}
-                            className={`p-5 rounded-[2rem] border transition-all duration-500 cursor-pointer relative group ${
-                                activeId === track.id
+                            className={`p-5 rounded-[2rem] border transition-all duration-500 cursor-pointer relative group ${activeId === track.id
                                     ? 'bg-slate-800/80 border-emerald-500 shadow-2xl shadow-emerald-500/10'
                                     : 'bg-slate-900/40 border-white/5 hover:border-white/10'
-                            }`}
+                                }`}
                         >
                             <div className="flex flex-col gap-4">
                                 <div className="flex justify-between items-start">
                                     <span className="text-[10px] font-black text-slate-500 tabular-nums">{track.duration}</span>
-                                    <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
-                                        activeId === track.id ? 'bg-emerald-500 text-white shadow-lg' : 'bg-slate-800 text-slate-400'
-                                    }`}>
+                                    <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${activeId === track.id ? 'bg-emerald-500 text-white shadow-lg' : 'bg-slate-800 text-slate-400'
+                                        }`}>
                                         {activeId === track.id ? <FaPause size={12} /> : <FaPlay className="ml-0.5" size={12} />}
                                     </div>
                                 </div>
-                                
+
                                 <div>
                                     <h3 className="text-sm font-black text-white mb-1 line-clamp-1">
                                         {trackTranslations[index]?.title}

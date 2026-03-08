@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
 import Hero from './components/Hero'
 import FeatureShowcase from './components/FeatureShowcase'
+import QuranSection from './components/QuranSection'
 import Journey from './components/Journey'
 import GroupKhatma from './components/GroupKhatma'
 import Screenshots from './components/Screenshots'
@@ -45,6 +46,7 @@ function App() {
         <main className="flex-1 w-full flex flex-col">
           <Hero />
           <FeatureShowcase />
+          <QuranSection />
           <Journey />
           <GroupKhatma />
           <ZakatShowcase />

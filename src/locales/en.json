@@ -20,7 +20,16 @@
             "rating": "User Rating",
             "ratingValue": "4.8★"
         },
-        "altText": "App screenshot"
+        "altText": "App screenshot",
+        "nextPrayer": "Next Prayer",
+        "remaining": "Time Remaining",
+        "prayers": {
+            "fajr": "Fajr",
+            "dhuhr": "Dhuhr",
+            "asr": "Asr",
+            "maghrib": "Maghrib",
+            "isha": "Isha"
+        }
     },
     "features": {
         "title": "Comprehensive Features for an Integrated Islamic Life",
@@ -236,6 +245,10 @@
                 "reciter": "Ali Mulla"
             },
             {
+                "title": "Madinah Azan",
+                "reciter": "Haram Azan"
+            },
+            {
                 "title": "Ayat Al-Kursi",
                 "reciter": "Maher Al-Muaiqly"
             }
@@ -246,10 +259,7 @@
         "subtitle": "From teaching children to self-protection, Rafiq Al-Muslim cares about every detail of your day",
         "kids": {
             "title": "Muslim Child's Corner",
-            "desc": "Safe and educational content for your children. Stories of the prophets, teaching ablution and prayer, and easy Adhkar, designed with colors and drawings that attract the child and make them love their religion.",
-            "card1": "Lion's Story",
-            "card2": "Mosque Manners",
-            "card3": "Eating Dua"
+            "desc": "Safe and educational content for children including Stories of the Prophets, teaching Wudu and Prayer, and simplified Adhkar"
         },
         "roqya": {
             "title": "Ruqyah Shariah and Protection",
@@ -469,5 +479,89 @@
             "value": "85.0g",
             "info": "Calculated automatically"
         }
+    },
+    "quranSection": {
+        "title": "Holy Quran",
+        "subtitle": "Immersive Reading Experience",
+        "desc": "Read the Holy Quran with a comfortable design that makes it easy for you to reflect on the verses of Allah, with advanced features that help you in your journey with the Book of Allah.",
+        "features": [
+            {
+                "title": "Night Reading",
+                "desc": "Comfortable eye-friendly night mode for reading in low light."
+            },
+            {
+                "title": "Simplified Tafsir",
+                "desc": "Understand the meanings of the verses through the direct interpretation of each verse."
+            },
+            {
+                "title": "Khatma Tracker",
+                "desc": "Smart system to follow your reading progress and save your stopping point."
+            },
+            {
+                "title": "Quick Search",
+                "desc": "Search for any verse or word in the Quran in seconds."
+            },
+            {
+                "title": "Voice Search",
+                "desc": "Voice search by Surah, Juz, Hizb, or specific verses effortlessly."
+            },
+            {
+                "title": "Reading Statistics",
+                "desc": "Accurate tracking of your daily progress and Quran reciting statistics."
+            },
+            {
+                "title": "Notes & Reflections",
+                "desc": "Jot down your reflections and spiritual thoughts for each page or verse."
+            },
+            {
+                "title": "Add Bookmarks",
+                "desc": "Add multiple bookmarks to easily return to them later."
+            },
+            {
+                "title": "Tajweed Colors",
+                "desc": "Color-coded Tajweed rules to facilitate correct recitation."
+            },
+            {
+                "title": "Syntax & Qira'at",
+                "desc": "Word morphology, syntax parsing, and the 10 Qira'at for every verse."
+            },
+            {
+                "title": "Audio Recitation",
+                "desc": "Listen to the sweet recitation of your favorite Qari while reading."
+            },
+            {
+                "title": "Flexible Reading Mode",
+                "desc": "Supports both portrait and landscape reading modes for ultimate comfort."
+            },
+            {
+                "title": "Background Customization",
+                "desc": "Choose the most eye-friendly background color theme to reduce eye strain."
+            },
+            {
+                "title": "Auto-Scroll",
+                "desc": "Automatic page scrolling with customizable reading speed."
+            },
+            {
+                "title": "Share as Charity",
+                "desc": "Easily share Quran pages as Sadaqah Jariyah for your loved ones."
+            },
+            {
+                "title": "Keep Screen On",
+                "desc": "Prevent the phone screen from locking automatically for uninterrupted reading."
+            },
+            {
+                "title": "Brightness Control",
+                "desc": "Easily adjust screen brightness directly within the reading page."
+            },
+            {
+                "title": "Dua Khatm Al-Quran",
+                "desc": "Quick access to the completion Dua whenever you finish your blessed recitation."
+            },
+            {
+                "title": "Virtues of Reading",
+                "desc": "Constant reminders of the rewards of reciting to renew your intention daily."
+            }
+        ],
+        "cta": "Start Reading Now"
     }
 }

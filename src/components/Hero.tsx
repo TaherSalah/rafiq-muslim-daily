@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
 import { SiHuawei } from 'react-icons/si';
@@ -7,7 +7,56 @@ import HeroImage from "../assets/IMG_20260209_102138_900.jpg";
 
 const Hero: React.FC = () => {
     const { t, i18n } = useTranslation();
-    const isRtl = i18n.language === 'ar';
+    const [nextPrayerData, setNextPrayerData] = useState({
+        name: '',
+        timeStr: '',
+        remaining: '00:00:00'
+    });
+
+    useEffect(() => {
+        const updatePrayer = () => {
+            const now = new Date();
+            const prayerTimes = [
+                { id: 'fajr', hour: 4, minute: 45 },
+                { id: 'dhuhr', hour: 12, minute: 5 },
+                { id: 'asr', hour: 15, minute: 25 },
+                { id: 'maghrib', hour: 18, minute: 5 },
+                { id: 'isha', hour: 19, minute: 20 }
+            ];
+
+            let next = prayerTimes.find(p => {
+                const pDate = new Date();
+                pDate.setHours(p.hour, p.minute, 0, 0);
+                return pDate > now;
+            });
+
+            const nextDate = new Date();
+            if (!next) {
+                next = prayerTimes[0];
+                nextDate.setDate(nextDate.getDate() + 1);
+            }
+            nextDate.setHours(next.hour, next.minute, 0, 0);
+
+            const diff = nextDate.getTime() - now.getTime();
+            const h = Math.floor(diff / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const s = Math.floor((diff % 60000) / 1000);
+
+            const pad = (n: number) => n.toString().padStart(2, '0');
+            const isPm = next.hour >= 12;
+            const displayHour = next.hour % 12 || 12;
+
+            setNextPrayerData({
+                name: t(`hero.prayers.${next.id}`),
+                timeStr: `${pad(displayHour)}:${pad(next.minute)} ${isPm ? (i18n.language === 'ar' ? 'م' : 'PM') : (i18n.language === 'ar' ? 'ص' : 'AM')}`,
+                remaining: `${pad(h)}:${pad(m)}:${pad(s)}`
+            });
+        };
+
+        const timer = setInterval(updatePrayer, 1000);
+        updatePrayer();
+        return () => clearInterval(timer);
+    }, [t, i18n.language]);
 
     return (
         <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-slate-50/50 islamic-pattern py-8">
@@ -44,6 +93,29 @@ const Hero: React.FC = () => {
                         <p className="text-lg text-slate-600 mb-8 max-w-xs mx-auto leading-relaxed">
                             {t('hero.description')}
                         </p>
+                    </motion.div>
+
+                    {/* Next Prayer Widget */}
+                    <motion.div
+                        className="mb-4 bg-emerald-500/10 backdrop-blur-md rounded-2xl p-4 border border-emerald-500/20 flex flex-col items-center gap-1 shadow-sm"
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                    >
+                        <div className="flex items-center gap-2 text-emerald-700 font-black text-sm uppercase tracking-wider">
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
+                            </span>
+                            {t('hero.nextPrayer')}
+                        </div>
+                        <div className="text-2xl font-black text-emerald-900 leading-none py-1">
+                            {nextPrayerData.name} • {nextPrayerData.timeStr}
+                        </div>
+                        <div className="text-[10px] text-emerald-600 font-bold flex items-center gap-1.5 bg-white/50 px-3 py-1 rounded-full">
+                            <span className="opacity-70">{t('hero.remaining')}</span>
+                            <span className="tabular-nums font-black text-xs">{nextPrayerData.remaining}</span>
+                        </div>
                     </motion.div>
 
                     {/* Phone Mockup Row */}
@@ -137,20 +209,20 @@ const Hero: React.FC = () => {
                         transition={{ delay: 0.6 }}
                     >
                         <div className="text-center">
-                            <div className="text-xl font-black text-slate-800 tabular-nums">300ألف+</div>
+                            <div className="text-xl font-black text-slate-800 tabular-nums">{t('hero.stats.usersValue')}</div>
                             <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">{t('hero.stats.users')}</div>
                         </div>
                         <div className="w-px h-8 bg-slate-200" />
                         <div className="text-center">
-                            <div className="text-xl font-black text-slate-800 tabular-nums">15</div>
+                            <div className="text-xl font-black text-slate-800 tabular-nums">{t('hero.stats.booksValue')}</div>
                             <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">{t('hero.stats.books')}</div>
                         </div>
                         <div className="w-px h-8 bg-slate-200" />
                         <div className="text-center">
                             <div className="text-xl font-black text-slate-800 flex items-center gap-0.5">
-                                <span className="text-amber-400 text-sm">★</span>4.8
+                                <span className="text-amber-400 text-sm">★</span>{t('hero.stats.ratingValue')}
                             </div>
-                            <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">تقييم</div>
+                            <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">{t('hero.stats.rating')}</div>
                         </div>
                     </motion.div>
 
