@@ -1,10 +1,9 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaEnvelope, FaHeart } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaEnvelope } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
-    const { t, i18n } = useTranslation();
-    const isRtl = i18n.language === 'ar';
+    const { t } = useTranslation();
     const currentYear = new Date().getFullYear();
 
     return (

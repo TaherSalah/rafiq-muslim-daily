@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaFingerprint, FaBolt } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import ScreenTasbih from '../assets/sebha.jpg';
+
 
 const InteractiveTasbih: React.FC = () => {
     const { t, i18n } = useTranslation();
@@ -27,9 +27,9 @@ const InteractiveTasbih: React.FC = () => {
 
             <div className="container mx-auto px-4">
                 <div className="flex flex-col items-center justify-center gap-12">
-                    
+
                     {/* Text Side */}
-                    <motion.div 
+                    <motion.div
                         className={`flex-1 ${isRtl ? 'text-right' : 'text-left'} max-w-xl w-full relative z-10`}
                         initial={{ opacity: 0, x: isRtl ? 50 : -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -53,7 +53,7 @@ const InteractiveTasbih: React.FC = () => {
                     <div className="flex-1 w-full max-w-[360px]">
                         <div className="bg-slate-800/20 backdrop-blur-xl rounded-[3rem] p-3 border border-white/5 shadow-2xl shadow-emerald-500/5">
                             <div className="bg-[#0B101B] rounded-[2.5rem] p-6 h-[550px] flex flex-col items-center justify-between border border-white/10 relative overflow-hidden">
-                                
+
                                 {/* Top Stats */}
                                 <div className="w-full grid grid-cols-2 gap-3 z-10">
                                     <div className="bg-slate-900/80 rounded-2xl p-3 border border-white/5 text-center">
@@ -91,7 +91,7 @@ const InteractiveTasbih: React.FC = () => {
                                         />
                                     </svg>
                                     <div className="text-center">
-                                        <motion.div 
+                                        <motion.div
                                             key={count}
                                             initial={{ scale: 0.8, opacity: 0 }}
                                             animate={{ scale: 1, opacity: 1 }}
@@ -123,7 +123,7 @@ const InteractiveTasbih: React.FC = () => {
                                     >
                                         <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent" />
                                         <FaFingerprint className="text-3xl text-white drop-shadow-lg" />
-                                        <motion.div 
+                                        <motion.div
                                             className="absolute inset-0 bg-white"
                                             initial={{ scale: 0, opacity: 0 }}
                                             whileTap={{ scale: 3, opacity: [0.2, 0], transition: { duration: 0.4 } }}
