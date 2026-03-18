@@ -12,6 +12,7 @@ import FamilySection from './components/FamilySection'
 import CommunityTools from './components/CommunityTools'
 import SmartWidgets from './components/SmartWidgets'
 import AudioShowcase from './components/AudioShowcase'
+import TelegramSection from './components/TelegramSection'
 import InteractiveTasbih from './components/InteractiveTasbih'
 import Leaderboard from './components/Leaderboard'
 import Statistics from './components/Statistics'
@@ -19,6 +20,8 @@ import Testimonials from './components/Testimonials'
 import FAQ from './components/FAQ'
 import Download from './components/Download'
 import Footer from './components/Footer'
+import CountdownSection from './components/CountdownSection'
+import FloatingWhatsApp from './components/FloatingWhatsApp'
 import FloatingCTA from './components/FloatingCTA'
 import LanguageSwitcher from './components/LanguageSwitcher'
 import './index.css'
@@ -49,6 +52,7 @@ function App() {
           <QuranSection />
           <Journey />
           <GroupKhatma />
+          <TelegramSection />
           <ZakatShowcase />
           <Screenshots />
           <SocialFeatures />
@@ -61,10 +65,12 @@ function App() {
           <Statistics />
           <Testimonials />
           <FAQ />
+          <CountdownSection />
           <Download />
           <Footer />
         </main>
         <FloatingCTA />
+        <FloatingWhatsApp />
       </div>
     </div>
   )

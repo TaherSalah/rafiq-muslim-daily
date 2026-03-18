@@ -134,7 +134,10 @@
         "forMuslims": "for Muslims everywhere",
         "rights": "All rights reserved.",
         "blessing": "May Allah place it in our balance of good deeds and yours",
-        "appName": "Daily Muslim Companion"
+        "appName": "Daily Muslim Companion",
+        "social": {
+            "telegram": "https://t.me/rafiqMuslim"
+        }
     },
     "stats": {
         "liveLabel": "Live stats from the control panel",
@@ -563,5 +566,17 @@
             }
         ],
         "cta": "Start Reading Now"
+    },
+    "telegramSection": {
+        "tag": "Telegram Channel",
+        "title": "Join Our Telegram Community",
+        "subtitle": "Be the first to know about new Khatmas and upcoming features",
+        "description": "Join thousands of subscribers in our official channel. We announce group completion dates, share daily cards, and the latest app updates.",
+        "cta": "Join the Channel Now",
+        "benefits": [
+            "New Khatma Alerts",
+            "Daily Da'wah Cards",
+            "Technical Support & FAQ"
+        ]
     }
 }

@@ -13,7 +13,8 @@ interface Testimonial {
 }
 
 const Testimonials: React.FC = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const isRtl = i18n.language === 'ar';
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const testimonials: Testimonial[] = [
@@ -76,7 +77,11 @@ const Testimonials: React.FC = () => {
                             transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
                             className="absolute inset-0 flex flex-col items-center"
                         >
-                            <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.08)] border border-slate-50 relative w-full flex flex-col items-center">
+                            <motion.div 
+                                whileHover={{ scale: 1.02 }}
+                                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                                className="bg-white rounded-[3rem] p-8 md:p-12 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.08)] border border-slate-50 relative w-full flex flex-col items-center"
+                            >
                                 {/* Profile Image with Indicator */}
                                 <div className="relative mb-8">
                                     <div className="w-24 h-24 rounded-full p-1.5 bg-gradient-to-tr from-emerald-500 to-teal-400">
@@ -108,7 +113,7 @@ const Testimonials: React.FC = () => {
                                     <h4 className="text-lg font-black text-slate-900 mb-1">{testimonials[currentIndex].name}</h4>
                                     <p className="text-xs text-slate-400 font-bold uppercase tracking-widest">{t(testimonials[currentIndex].roleKey)}</p>
                                 </div>
-                            </div>
+                            </motion.div>
                         </motion.div>
                     </AnimatePresence>
                 </div>
@@ -119,7 +124,11 @@ const Testimonials: React.FC = () => {
                         onClick={prevSlide}
                         className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-emerald-500/20 group"
                     >
-                        <FaChevronLeft className="group-active:scale-90 transition-transform" />
+                        {isRtl ? (
+                            <FaChevronRight className="group-active:scale-90 transition-transform" />
+                        ) : (
+                            <FaChevronLeft className="group-active:scale-90 transition-transform" />
+                        )}
                     </button>
                     <div className="flex gap-2">
                         {testimonials.map((_, i) => (
@@ -133,7 +142,11 @@ const Testimonials: React.FC = () => {
                         onClick={nextSlide}
                         className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-emerald-500/20 group"
                     >
-                        <FaChevronRight className="group-active:scale-90 transition-transform" />
+                        {isRtl ? (
+                            <FaChevronLeft className="group-active:scale-90 transition-transform" />
+                        ) : (
+                            <FaChevronRight className="group-active:scale-90 transition-transform" />
+                        )}
                     </button>
                 </div>
             </div>

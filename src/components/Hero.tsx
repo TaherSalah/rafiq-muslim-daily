@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
 import { SiHuawei } from 'react-icons/si';
 import { useTranslation } from 'react-i18next';
-import HeroImage from "../assets/IMG_20260209_102138_900.jpg";
+import HeroImage from "../assets/image.jpg";
 
 const Hero: React.FC = () => {
     const { t, i18n } = useTranslation();

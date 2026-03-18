@@ -1,0 +1,16 @@
+{
+    "premium": {
+        "countdown": {
+            "eidTitle": "Prepare for Eid Al-Fitr",
+            "ramadanTitle": "Last Days of Ramadan .. Seize the Opportunity",
+            "days": "Days",
+            "hours": "Hours",
+            "minutes": "Mins",
+            "seconds": "Secs"
+        },
+        "support": {
+            "whatsapp": "Chat with us on WhatsApp",
+            "responseTime": "Usually responds in minutes"
+        }
+    }
+}

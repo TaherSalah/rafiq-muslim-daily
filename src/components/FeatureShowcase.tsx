@@ -16,9 +16,11 @@ import ScreenLibrary from '../assets/5.jpg';
 import ScreenKhatma from '../assets/golbal1.jpg';
 import ScreenCommunity from '../assets/radio.jpg';
 import ScreenFamily from '../assets/childCornar.jpg';
-import ScreenEncyclopedia   from '../assets/Hadith Encyclopedia.jpg';
+import ScreenEncyclopedia from '../assets/Hadith Encyclopedia.jpg';
 import ScreenInheritance from '../assets/mawrith.jpg';
 import ScreenExpiation from '../assets/kafrat.jpg';
+import ScreenZakat from '../assets/IMG_20260209_102138_411.jpg';
+
 
 interface ShowcaseItem {
     id: number;
@@ -127,12 +129,12 @@ const FeatureShowcase: React.FC = () => {
         },
         {
             id: 10,
-            titleKey: "features.items.muslimCorner.title",
-            descKey: "features.items.muslimCorner.desc",
-            phoneImg: ScreenFamily,
-            bgImg: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1000&auto=format&fit=crop",
-            icon: <FaMosque />,
-            color: "emerald"
+            titleKey: "features.items.zakat.title",
+            descKey: "features.items.zakat.desc",
+            phoneImg: ScreenZakat,
+            bgImg: "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?q=80&w=1000&auto=format&fit=crop",
+            icon: <FaCalculator />,
+            color: "teal"
         },
         {
             id: 11,
@@ -156,7 +158,6 @@ const FeatureShowcase: React.FC = () => {
 
     const extraFeatures: ExtraFeature[] = [
         { icon: <FaCompass />, titleKey: "features.items.qibla.title", color: "red" },
-        { icon: <FaCalculator />, titleKey: "features.items.zakat.title", color: "teal" },
         { icon: <FaCalendarAlt />, titleKey: "features.items.calendar.title", color: "emerald" },
         { icon: <FaMapMarkerAlt />, titleKey: "features.items.mosques.title", color: "lime" },
         { icon: <FaBell />, titleKey: "features.items.fajr.title", color: "rose" },

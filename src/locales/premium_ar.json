@@ -1,0 +1,16 @@
+{
+    "premium": {
+        "countdown": {
+            "eidTitle": "استعدوا لعيد الفطر المبارك",
+            "ramadanTitle": "أواخر رمضان .. اغتنم الفرصة",
+            "days": "يوم",
+            "hours": "ساعة",
+            "minutes": "دقيقة",
+            "seconds": "ثانية"
+        },
+        "support": {
+            "whatsapp": "تحدث معنا عبر واتساب",
+            "responseTime": "عادة ما نرد في غضون دقائق"
+        }
+    }
+}

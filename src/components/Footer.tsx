@@ -1,10 +1,9 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaEnvelope, FaHeart } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaEnvelope, FaTelegram } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
-    const { t, i18n } = useTranslation();
-    const isRtl = i18n.language === 'ar';
+    const { t } = useTranslation();
     const currentYear = new Date().getFullYear();
 
     return (
@@ -73,6 +72,15 @@ const Footer: React.FC = () => {
                                 aria-label="Instagram"
                             >
                                 <FaInstagram size={18} />
+                            </a>
+                            <a
+                                href={t('footer.social.telegram')}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-islamic-green transition-colors"
+                                aria-label="Telegram"
+                            >
+                                <FaTelegram size={18} />
                             </a>
                             <a
                                 href="#"
