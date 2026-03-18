@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaTelegram, FaArrowLeft, FaArrowRight, FaBullhorn } from 'react-icons/fa';
+import { FaTelegram, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
 const TelegramSection: React.FC = () => {

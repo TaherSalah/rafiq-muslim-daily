@@ -1,32 +1,42 @@
 import { useTranslation } from 'react-i18next'
-import { useEffect } from 'react'
+import { useEffect, lazy, Suspense } from 'react'
 import Hero from './components/Hero'
 import FeatureShowcase from './components/FeatureShowcase'
 import QuranSection from './components/QuranSection'
-import Journey from './components/Journey'
-import GroupKhatma from './components/GroupKhatma'
-import Screenshots from './components/Screenshots'
-import ZakatShowcase from './components/ZakatShowcase'
-import SocialFeatures from './components/SocialFeatures'
-import FamilySection from './components/FamilySection'
-import CommunityTools from './components/CommunityTools'
-import SmartWidgets from './components/SmartWidgets'
-import AudioShowcase from './components/AudioShowcase'
-import TelegramSection from './components/TelegramSection'
-import InteractiveTasbih from './components/InteractiveTasbih'
-import Leaderboard from './components/Leaderboard'
-import Statistics from './components/Statistics'
-import Testimonials from './components/Testimonials'
-import FAQ from './components/FAQ'
-import Download from './components/Download'
-import Footer from './components/Footer'
-import CountdownSection from './components/CountdownSection'
+import LanguageSwitcher from './components/LanguageSwitcher'
 import FloatingWhatsApp from './components/FloatingWhatsApp'
 import FloatingCTA from './components/FloatingCTA'
-import LanguageSwitcher from './components/LanguageSwitcher'
 import './index.css'
 
+// Lazy loaded components
+const Journey = lazy(() => import('./components/Journey'));
+const GroupKhatma = lazy(() => import('./components/GroupKhatma'));
+const TelegramSection = lazy(() => import('./components/TelegramSection'));
+const ZakatShowcase = lazy(() => import('./components/ZakatShowcase'));
+const Screenshots = lazy(() => import('./components/Screenshots'));
+const SocialFeatures = lazy(() => import('./components/SocialFeatures'));
+const FamilySection = lazy(() => import('./components/FamilySection'));
+const CommunityTools = lazy(() => import('./components/CommunityTools'));
+const SmartWidgets = lazy(() => import('./components/SmartWidgets'));
+const AudioShowcase = lazy(() => import('./components/AudioShowcase'));
+const InteractiveTasbih = lazy(() => import('./components/InteractiveTasbih'));
+const Leaderboard = lazy(() => import('./components/Leaderboard'));
+const Statistics = lazy(() => import('./components/Statistics'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const FAQ = lazy(() => import('./components/FAQ'));
+const CountdownSection = lazy(() => import('./components/CountdownSection'));
+const Download = lazy(() => import('./components/Download'));
+const Footer = lazy(() => import('./components/Footer'));
+
+// Loading component
+const SectionLoader = () => (
+  <div className="w-full h-24 flex items-center justify-center">
+    <div className="w-6 h-6 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
+
 function App() {
+
   const { i18n } = useTranslation();
 
   useEffect(() => {
@@ -50,24 +60,27 @@ function App() {
           <Hero />
           <FeatureShowcase />
           <QuranSection />
-          <Journey />
-          <GroupKhatma />
-          <TelegramSection />
-          <ZakatShowcase />
-          <Screenshots />
-          <SocialFeatures />
-          <FamilySection />
-          <CommunityTools />
-          <SmartWidgets />
-          <AudioShowcase />
-          <InteractiveTasbih />
-          <Leaderboard />
-          <Statistics />
-          <Testimonials />
-          <FAQ />
-          <CountdownSection />
-          <Download />
-          <Footer />
+          <Suspense fallback={<SectionLoader />}>
+            <Journey />
+            <GroupKhatma />
+            <TelegramSection />
+            <ZakatShowcase />
+            <Screenshots />
+            <SocialFeatures />
+            <FamilySection />
+            <CommunityTools />
+            <SmartWidgets />
+            <AudioShowcase />
+            <InteractiveTasbih />
+            <Leaderboard />
+            <Statistics />
+            <Testimonials />
+            <FAQ />
+            <CountdownSection />
+            <Download />
+            <Footer />
+          </Suspense>
+
         </main>
         <FloatingCTA />
         <FloatingWhatsApp />
