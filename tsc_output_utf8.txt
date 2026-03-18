@@ -1,0 +1,13 @@
+﻿src/components/Footer.tsx(2,69): error TS6133: 'FaHeart' is declared but its value is never read.
+src/components/Footer.tsx(7,11): error TS6133: 'isRtl' is declared but its value is never read.
+src/components/InteractiveTasbih.tsx(5,1): error TS6133: 'ScreenTasbih' is declared but its value is never read.
+src/components/Screenshots.tsx(2,18): error TS6133: 'AnimatePresence' is declared but its value is never read.
+src/components/Screenshots.tsx(3,68): error TS6133: 'FaChevronLeft' is declared but its value is never read.
+src/components/Screenshots.tsx(3,83): error TS6133: 'FaChevronRight' is declared but its value is never read.
+src/components/Screenshots.tsx(16,1): error TS6133: 'ScreenFamily' is declared but its value is never read.
+src/components/SmartWidgets.tsx(8,11): error TS6133: 'isRtl' is declared but its value is never read.
+src/components/SocialFeatures.tsx(3,43): error TS6133: 'FaListUl' is declared but its value is never read.
+src/components/SocialFeatures.tsx(9,11): error TS6133: 'isRtl' is declared but its value is never read.
+src/components/Statistics.tsx(50,11): error TS6133: 'isRtl' is declared but its value is never read.
+src/components/ZakatShowcase.tsx(5,1): error TS6133: 'ScreenZakat' is declared but its value is never read.
+src/components/ZakatShowcase.tsx(6,1): error TS6133: 'PDFReport' is declared but its value is never read.

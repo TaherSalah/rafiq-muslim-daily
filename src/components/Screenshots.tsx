@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaBookOpen, FaQuran, FaSearch, FaListUl, FaUsers, FaPray, FaChevronLeft, FaChevronRight, FaMapMarkedAlt, FaShareAlt, FaBook, FaFingerprint, FaCalculator } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { FaBookOpen, FaQuran, FaSearch, FaListUl, FaUsers, FaPray, FaMapMarkedAlt, FaShareAlt, FaBook, FaFingerprint, FaCalculator } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import ScreenLibrary from '../assets/5.jpg';
 import ScreenQuran from '../assets/2.jpg';
@@ -13,7 +13,7 @@ import ScreenJourney from '../assets/childCornar.jpg';
 import ScreenShare from '../assets/Screenshot_2026_02_09_12_56_57_76_4bfa514ba3a89880002cd1121a611476.jpg';
 import ScreenTafsir from '../assets/Screenshot_2026_02_09_12_58_39_69_4bfa514ba3a89880002cd1121a611476.jpg';
 import ScreenModernSibha from '../assets/sebha.jpg';
-import ScreenFamily from '../assets/childCornar.jpg';
+
 import ScreenInheritance from '../assets/mawrith.jpg';
 import ScreenExpiation from '../assets/kafrat.jpg';
 
@@ -123,11 +123,10 @@ const Screenshots: React.FC = () => {
                         <button
                             key={i}
                             onClick={() => setCurrentIndex(i)}
-                            className={`transition-all duration-300 rounded-full h-2 ${
-                                i === currentIndex 
-                                    ? 'bg-emerald-500 w-10 shadow-lg shadow-emerald-500/30' 
+                            className={`transition-all duration-300 rounded-full h-2 ${i === currentIndex
+                                    ? 'bg-emerald-500 w-10 shadow-lg shadow-emerald-500/30'
                                     : 'bg-slate-300 w-2 hover:bg-slate-400'
-                            }`}
+                                }`}
                             aria-label={`Go to screen ${i + 1}`}
                         />
                     ))}

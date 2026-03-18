@@ -2,8 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaCalculator, FaFilePdf, FaHandHoldingHeart, FaHistory, FaBell } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import ScreenZakat from '../assets/6.jpg';
-import PDFReport from '../assets/photo_5787532109005130988_y.jpg';
+
 
 const ZakatShowcase: React.FC = () => {
     const { t, i18n } = useTranslation();

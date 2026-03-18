@@ -47,7 +47,7 @@ const Statistics: React.FC = () => {
     const { t, i18n } = useTranslation();
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
-    const isRtl = i18n.language === 'ar';
+
 
     const statsList: Stat[] = [
         {

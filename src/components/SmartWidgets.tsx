@@ -4,21 +4,20 @@ import { FaBell, FaCalendarAlt, FaMoon, FaPray } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
 const SmartWidgets: React.FC = () => {
-    const { t, i18n } = useTranslation();
-    const isRtl = i18n.language === 'ar';
+    const { t } = useTranslation();
 
     return (
         <section className="py-20 bg-white overflow-hidden">
             <div className="container mx-auto px-4 max-w-lg">
                 <div className="text-center mb-16">
-                    <motion.h2 
+                    <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         className="text-5xl font-black mb-4 text-slate-900 leading-[1.1]"
                     >
                         {t('smartWidgets.title')}
                     </motion.h2>
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
@@ -26,7 +25,7 @@ const SmartWidgets: React.FC = () => {
                     >
                         {t('smartWidgets.subtitle')}
                     </motion.div>
-                    <motion.p 
+                    <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
@@ -79,7 +78,7 @@ const SmartWidgets: React.FC = () => {
                             <div className="text-4xl font-black text-white mb-1">15</div>
                             <div className="text-2xl font-black text-white mb-1">{t('smartWidgets.hijri.date')}</div>
                             <div className="text-xs text-slate-500 font-bold uppercase mb-4 tracking-tighter">1447 هجري</div>
-                            
+
                             <div className="bg-white/5 backdrop-blur-md rounded-3xl p-6 border border-white/10 w-full mt-4">
                                 <p className="text-white text-lg font-bold leading-relaxed">
                                     {t('smartWidgets.hijri.dhikr')}

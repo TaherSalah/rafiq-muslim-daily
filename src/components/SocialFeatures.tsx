@@ -1,12 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaShareAlt, FaPenFancy, FaImage, FaListUl } from 'react-icons/fa';
+import { FaShareAlt, FaPenFancy, FaImage } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import ScreenShare from '../assets/Screenshot_2026_02_09_12_56_57_76_4bfa514ba3a89880002cd1121a611476.jpg';
 
 const SocialFeatures: React.FC = () => {
-    const { t, i18n } = useTranslation();
-    const isRtl = i18n.language === 'ar';
+    const { t } = useTranslation();
 
     return (
         <section className="py-20 bg-white">
@@ -83,7 +82,7 @@ const SocialFeatures: React.FC = () => {
                                 alt="Share Feature"
                                 className="w-44 h-auto rounded-3xl shadow-2xl transform group-hover:scale-105 transition-transform duration-700"
                             />
-                            
+
                             {/* Floating Social Icons */}
                             <motion.div
                                 className={`absolute bottom-8 right-12 w-12 h-12 rounded-full bg-white shadow-2xl flex items-center justify-center text-indigo-600 z-10 border border-slate-100`}
