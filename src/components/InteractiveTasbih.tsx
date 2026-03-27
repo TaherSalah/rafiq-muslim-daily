@@ -51,8 +51,8 @@ const InteractiveTasbih: React.FC = () => {
 
                     {/* Interactive Mockup Side */}
                     <div className="flex-1 w-full max-w-[360px]">
-                        <div className="bg-slate-800/20 backdrop-blur-xl rounded-[3rem] p-3 border border-white/5 shadow-2xl shadow-emerald-500/5">
-                            <div className="bg-[#0B101B] rounded-[2.5rem] p-6 h-[550px] flex flex-col items-center justify-between border border-white/10 relative overflow-hidden">
+                        <div className="glass-dark rounded-[3rem] p-3 shadow-2xl shadow-emerald-500/10">
+                            <div className="bg-[#0B101B] rounded-[2.5rem] p-6 h-[550px] flex flex-col items-center justify-between border border-white/5 relative overflow-hidden">
 
                                 {/* Top Stats */}
                                 <div className="w-full grid grid-cols-2 gap-3 z-10">
@@ -108,16 +108,23 @@ const InteractiveTasbih: React.FC = () => {
                                 {/* Interaction Area */}
                                 <div className="w-full flex flex-col items-center gap-4 pb-4">
                                     <div className="text-center">
-                                        <div className="text-xl font-black text-white mb-2 underline decoration-emerald-500/50 decoration-4 underline-offset-8">
+                                        <motion.div 
+                                            animate={{ 
+                                                scale: [1, 1.05, 1],
+                                                textShadow: ["0 0 0px #10b981", "0 0 10px #10b981", "0 0 0px #10b981"]
+                                            }}
+                                            transition={{ duration: 2, repeat: Infinity }}
+                                            className="text-xl font-black text-white mb-2 underline decoration-emerald-500/50 decoration-4 underline-offset-8"
+                                        >
                                             اضغط هنا للتجربة!
-                                        </div>
+                                        </motion.div>
                                         <div className="text-[10px] font-bold text-slate-500">
                                             {t('interactiveTasbih.tryIt')}
                                         </div>
                                     </div>
 
                                     <motion.button
-                                        whileTap={{ scale: 0.9 }}
+                                        whileTap={{ scale: 0.8, rotate: [0, -5, 5, 0] }}
                                         onClick={handleTap}
                                         className="w-20 h-20 rounded-full bg-emerald-500 shadow-[0_20px_40px_-10px_rgba(16,185,129,0.5)] flex items-center justify-center relative overflow-hidden"
                                     >
@@ -126,7 +133,8 @@ const InteractiveTasbih: React.FC = () => {
                                         <motion.div
                                             className="absolute inset-0 bg-white"
                                             initial={{ scale: 0, opacity: 0 }}
-                                            whileTap={{ scale: 3, opacity: [0.2, 0], transition: { duration: 0.4 } }}
+                                            animate={count > 0 ? { scale: [0, 1.5], opacity: [0.5, 0] } : {}}
+                                            transition={{ duration: 0.3 }}
                                         />
                                     </motion.button>
                                 </div>

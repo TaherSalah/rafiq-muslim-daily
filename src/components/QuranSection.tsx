@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-    FaBookOpen, FaMoon, FaSearch, FaBookmark, FaArrowLeft, FaArrowRight,
+    FaBookOpen, FaMoon, FaSearch, FaBookmark,
     FaMicrophone, FaChartBar, FaPen, FaTag, FaPalette, FaLanguage,
     FaHeadphones, FaMobileAlt, FaImage, FaArrowsAltV, FaShareAlt,
     FaLightbulb, FaSun, FaPrayingHands, FaStar
@@ -122,18 +122,27 @@ const QuranSection: React.FC = () => {
                 </div>
 
                 <motion.div
-                    className="mt-12 text-center"
+                    className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 px-4"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                 >
                     <a
-                        href="https://quranhayat.com/wp-content/uploads/E-Quran-PDF.pdf"
+                        href={`https://docs.google.com/viewer?url=https://quranhayat.com/wp-content/uploads/E-Quran-PDF.pdf&embedded=true`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-emerald-600 text-white px-8 py-4 rounded-full font-black text-lg shadow-xl shadow-emerald-500/20 hover:bg-emerald-700 transition-all flex items-center gap-3 mx-auto w-fit"
+                        className="bg-emerald-600 text-white px-8 py-4 rounded-full font-black text-lg shadow-xl shadow-emerald-500/20 hover:bg-emerald-700 transition-all flex items-center justify-center gap-3 w-full sm:w-fit"
                     >
-                        {t('quranSection.cta')}
-                        {isRtl ? <FaArrowLeft /> : <FaArrowRight />}
+                        <FaBookOpen />
+                        {t('quranSection.ctaView') || (isRtl ? 'عرض المصحف أونلاين' : 'View Quran Online')}
+                    </a>
+                    
+                    <a
+                        href="https://quranhayat.com/wp-content/uploads/E-Quran-PDF.pdf"
+                        download
+                        className="bg-slate-800 text-white px-8 py-4 rounded-full font-black text-lg shadow-xl shadow-slate-500/20 hover:bg-slate-900 transition-all flex items-center justify-center gap-3 w-full sm:w-fit"
+                    >
+                        <FaMobileAlt />
+                        {t('quranSection.ctaDownload') || (isRtl ? 'تحميل مباشر (PDF)' : 'Direct Download (PDF)')}
                     </a>
                 </motion.div>
             </div>

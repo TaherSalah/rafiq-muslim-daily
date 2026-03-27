@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaMosque, FaBroadcastTower, FaMapMarkedAlt } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
+import QiblaCompass from './QiblaCompass';
 
 const CommunityTools: React.FC = () => {
     const { t, i18n } = useTranslation();
@@ -86,6 +87,17 @@ const CommunityTools: React.FC = () => {
                             <span className="w-2 h-2 bg-white rounded-full animate-pulse shadow-[0_0_8px_white]" />
                             {t('communityTools.radio.live')}
                         </motion.button>
+                    </motion.div>
+
+                    {/* Feature 3: Qibla Compass */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="relative z-30"
+                    >
+                        <QiblaCompass />
                     </motion.div>
                 </div>
             </div>

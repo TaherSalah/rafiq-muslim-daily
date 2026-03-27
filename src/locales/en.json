@@ -486,7 +486,10 @@
     "quranSection": {
         "title": "Holy Quran",
         "subtitle": "Immersive Reading Experience",
-        "desc": "Read the Holy Quran with a comfortable design that makes it easy for you to reflect on the verses of Allah, with advanced features that help you in your journey with the Book of Allah.",
+        "desc": "Enjoy reading the Holy Quran with a unique experience and smart features that help you memorize and reflect.",
+        "cta": "Start Reading Now",
+        "ctaView": "View Quran Online",
+        "ctaDownload": "Direct Download (PDF)",
         "features": [
             {
                 "title": "Night Reading",
@@ -564,8 +567,7 @@
                 "title": "Virtues of Reading",
                 "desc": "Constant reminders of the rewards of reciting to renew your intention daily."
             }
-        ],
-        "cta": "Start Reading Now"
+        ]
     },
     "telegramSection": {
         "tag": "Telegram Channel",
@@ -577,6 +579,23 @@
             "New Khatma Alerts",
             "Daily Da'wah Cards",
             "Technical Support & FAQ"
+        ]
+    },
+    "sunnah": {
+        "title": "Sunnah of the Day",
+        "subtitle": "Revive the Sunnah of Prophet Muhammad ﷺ",
+        "share": "Share Sunnah",
+        "items": [
+            "Using Siwak during Wudu and prayer",
+            "Starting with the right side when dressing",
+            "Dua when leaving the house",
+            "Duha prayer (Salat al-Awwabin)",
+            "Saying: (Bismillah) when starting anything",
+            "Spreading peace (Salam) to everyone",
+            "Praying two Rak'ahs after Wudu",
+            "Visiting the sick and praying for them",
+            "Dusting the bed before sleeping",
+            "Rinsing mouth and nose from one palm"
         ]
     }
 }

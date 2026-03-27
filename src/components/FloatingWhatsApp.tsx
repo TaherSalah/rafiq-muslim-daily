@@ -19,7 +19,7 @@ const FloatingWhatsApp: React.FC = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 2 }}
-                className="bg-white px-3 py-1.5 rounded-xl shadow-xl text-[10px] font-black text-slate-700 border border-slate-100 whitespace-nowrap"
+                className="glass px-3 py-1.5 rounded-xl shadow-xl text-[10px] font-black text-emerald-800 border-emerald-500/20 whitespace-nowrap"
             >
                 {t('premium.support.whatsapp')}
             </motion.div>

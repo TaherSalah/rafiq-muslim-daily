@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import LiveUserCounter from './LiveUserCounter';
 
 interface Stat {
     valueEnd: number;
@@ -89,12 +90,15 @@ const Statistics: React.FC = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-12"
                 >
-                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full mb-6 border border-white/20">
-                        <span className="relative flex h-2.5 w-2.5">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
-                        </span>
-                        <span className="text-xs font-bold">{t('stats.liveLabel')}</span>
+                    <div className="flex flex-col items-center gap-4 mb-8">
+                        <LiveUserCounter className="shadow-2xl bg-white/20 border-white/30 text-white" />
+                        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20">
+                            <span className="relative flex h-2.5 w-2.5">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+                            </span>
+                            <span className="text-xs font-bold">{t('stats.liveLabel')}</span>
+                        </div>
                     </div>
 
                     <h2 className="text-3xl font-bold mb-3">

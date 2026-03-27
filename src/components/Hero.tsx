@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
 import { SiHuawei } from 'react-icons/si';
 import { useTranslation } from 'react-i18next';
 import HeroImage from "../assets/image.jpg";
+import LiveUserCounter from './LiveUserCounter';
 
 const Hero: React.FC = () => {
     const { t, i18n } = useTranslation();
+    const { scrollY } = useScroll();
+
+    // Parallax values
+    const y1 = useTransform(scrollY, [0, 500], [0, -100]);
+    const y2 = useTransform(scrollY, [0, 500], [0, -200]);
+    const rotate = useTransform(scrollY, [0, 500], [0, 45]);
     const [nextPrayerData, setNextPrayerData] = useState({
         name: '',
         timeStr: '',
@@ -70,6 +77,7 @@ const Hero: React.FC = () => {
                         transition={{ duration: 0.5, type: "spring" }}
                     >
                         <div className="relative w-20 h-20">
+                            <LiveUserCounter className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap z-50 shadow-xl" />
                             <img
                                 src="/logo.png"
                                 alt="رفيق المسلم"
@@ -87,7 +95,7 @@ const Hero: React.FC = () => {
                     >
                         <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight flex flex-col gap-1">
                             <span className="text-emerald-600 drop-shadow-sm">{t('hero.titlePrefix')}</span>
-                            <span className="text-slate-800 text-3xl sm:text-4xl">{t('hero.titleSuffix')}</span>
+                            <span className="text-slate-800 text-3xl lg:text-2xl sm:text-4xl">{t('hero.titleSuffix')}</span>
                         </h1>
 
                         <p className="text-lg text-slate-600 mb-8 max-w-xs mx-auto leading-relaxed">
@@ -97,10 +105,11 @@ const Hero: React.FC = () => {
 
                     {/* Next Prayer Widget */}
                     <motion.div
-                        className="mb-4 bg-emerald-500/10 backdrop-blur-md rounded-2xl p-4 border border-emerald-500/20 flex flex-col items-center gap-1 shadow-sm"
+                        className="mb-4 glass rounded-2xl p-4 border border-emerald-500/20 flex flex-col items-center gap-1 shadow-sm"
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
+                        whileHover={{ scale: 1.02 }}
                     >
                         <div className="flex items-center gap-2 text-emerald-700 font-black text-sm uppercase tracking-wider">
                             <span className="relative flex h-2 w-2">
@@ -121,12 +130,18 @@ const Hero: React.FC = () => {
                     {/* Phone Mockup Row */}
                     <div className="relative w-full flex justify-center items-center py-4">
                         <motion.div
-                            className="relative w-48 z-10"
+                            className="relative w-48 z-10 cursor-pointer"
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
+                            whileHover={{
+                                rotateY: 15,
+                                rotateX: -5,
+                                perspective: 1000,
+                                scale: 1.05
+                            }}
                         >
-                            <div className="relative bg-slate-900 rounded-[2.5rem] p-2.5 shadow-2xl border-4 border-slate-800">
+                            <div className="relative bg-slate-900 rounded-[2.5rem] p-2.5 shadow-2xl border-4 border-slate-800 transition-shadow duration-500 hover:shadow-emerald-500/20">
                                 <div className="bg-white rounded-[1.8rem] overflow-hidden aspect-[9/19]">
                                     <img
                                         src={HeroImage}
@@ -134,20 +149,28 @@ const Hero: React.FC = () => {
                                         className="w-full h-full object-cover object-top"
                                     />
                                 </div>
-                                {/* Floating Icons */}
+                                {/* Floating Icons with Parallax */}
                                 <motion.div
-                                    className="absolute -top-4 -right-4 bg-white rounded-2xl shadow-lg p-2.5 border border-slate-100"
-                                    animate={{ y: [0, 8, 0] }}
-                                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                                    className="absolute -top-10 -right-8 bg-white rounded-2xl shadow-2xl p-4 border border-slate-100 z-30"
+                                    style={{ y: y1, rotate }}
+                                    animate={{
+                                        y: [0, 10, 0],
+                                        boxShadow: ["0 10px 20px rgba(0,0,0,0.1)", "0 20px 40px rgba(16,185,129,0.2)", "0 10px 20px rgba(0,0,0,0.1)"]
+                                    }}
+                                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                                 >
-                                    <span className="text-xl">🕌</span>
+                                    <span className="text-3xl">🕌</span>
                                 </motion.div>
                                 <motion.div
-                                    className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-lg p-2.5 border border-slate-100"
-                                    animate={{ y: [0, -8, 0] }}
-                                    transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                                    className="absolute -bottom-10 -left-8 bg-white rounded-2xl shadow-2xl p-4 border border-slate-100 z-30"
+                                    style={{ y: y2, rotate: -rotate }}
+                                    animate={{
+                                        y: [0, -10, 0],
+                                        boxShadow: ["0 10px 20px rgba(0,0,0,0.1)", "0 20px 40px rgba(16,185,129,0.2)", "0 10px 20px rgba(0,0,0,0.1)"]
+                                    }}
+                                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                                 >
-                                    <span className="text-xl">📿</span>
+                                    <span className="text-3xl">📿</span>
                                 </motion.div>
                             </div>
                         </motion.div>

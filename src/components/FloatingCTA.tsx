@@ -44,10 +44,11 @@ const FloatingCTA: React.FC = () => {
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0, opacity: 0 }}
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.1, backgroundColor: "rgba(16, 185, 129, 0.9)" }}
                     whileTap={{ scale: 0.9 }}
-                    className={`fixed bottom-8 ${isRtl ? 'left-8' : 'right-8'} z-50 bg-gradient-to-r from-islamic-green to-primary-600 text-white p-4 rounded-full shadow-lg hover:shadow-2xl transition-shadow duration-300 flex items-center justify-center group`}
+                    className={`fixed bottom-8 ${isRtl ? 'left-8' : 'right-8'} z-50 glass text-emerald-700 p-4 rounded-full shadow-2xl transition-all duration-300 flex items-center justify-center group border-emerald-500/30 overflow-hidden`}
                 >
+                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <FaDownload className="text-xl" />
                     <span className={`max-w-0 overflow-hidden group-hover:max-w-xs ${isRtl ? 'group-hover:mr-2' : 'group-hover:ml-2'} transition-all duration-300 ease-in-out whitespace-nowrap font-bold`}>
                         {t('floatingCTA.text')}

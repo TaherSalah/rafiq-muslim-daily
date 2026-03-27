@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { useEffect, lazy, Suspense } from 'react'
 import Hero from './components/Hero'
 import FeatureShowcase from './components/FeatureShowcase'
+import SunnahOfTheDay from './components/SunnahOfTheDay'
 import QuranSection from './components/QuranSection'
 import LanguageSwitcher from './components/LanguageSwitcher'
 import FloatingWhatsApp from './components/FloatingWhatsApp'
@@ -24,7 +25,6 @@ const Leaderboard = lazy(() => import('./components/Leaderboard'));
 const Statistics = lazy(() => import('./components/Statistics'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const FAQ = lazy(() => import('./components/FAQ'));
-const CountdownSection = lazy(() => import('./components/CountdownSection'));
 const Download = lazy(() => import('./components/Download'));
 const Footer = lazy(() => import('./components/Footer'));
 
@@ -58,6 +58,7 @@ function App() {
         <LanguageSwitcher />
         <main className="flex-1 w-full flex flex-col">
           <Hero />
+          <SunnahOfTheDay />
           <FeatureShowcase />
           <QuranSection />
           <Suspense fallback={<SectionLoader />}>
@@ -76,7 +77,6 @@ function App() {
             <Statistics />
             <Testimonials />
             <FAQ />
-            <CountdownSection />
             <Download />
             <Footer />
           </Suspense>

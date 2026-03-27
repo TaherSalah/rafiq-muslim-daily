@@ -1,16 +1,17 @@
 {
     "premium": {
-        "countdown": {
-            "eidTitle": "Prepare for Eid Al-Fitr",
-            "ramadanTitle": "Last Days of Ramadan .. Seize the Opportunity",
-            "days": "Days",
-            "hours": "Hours",
-            "minutes": "Mins",
-            "seconds": "Secs"
-        },
         "support": {
             "whatsapp": "Chat with us on WhatsApp",
             "responseTime": "Usually responds in minutes"
+        },
+        "liveUser": {
+            "now": "Users online now"
+        },
+        "qibla": {
+            "active": "Compass Active",
+            "demo": "Demo Mode",
+            "degrees": "Degrees",
+            "mobileDesc": "Now you can determine Qibla accurately from your phone"
         }
     }
 }

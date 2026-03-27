@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import {
     FaQuran, FaPrayingHands, FaBook, FaMosque, FaUsers,
@@ -239,9 +239,13 @@ const FeatureShowcase: React.FC = () => {
 };
 
 const ShowcaseCard: React.FC<{ item: ShowcaseItem, index: number, isRtl: boolean, t: any }> = ({ item, index, isRtl, t }) => {
+    const { scrollYProgress } = useScroll();
+    const yParallax = useTransform(scrollYProgress, [0, 1], [0, index % 2 === 0 ? -50 : 50]);
+    
     return (
         <motion.div
             className="relative flex flex-col items-center group"
+            style={{ y: yParallax }}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
