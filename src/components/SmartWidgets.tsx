@@ -106,6 +106,28 @@ const SmartWidgets: React.FC = () => {
                         </div>
                     </motion.div>
 
+                    {/* Widget 4: Worship Tracker */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.5 }}
+                        className="bg-[#1c1c1e] p-6 rounded-[2.5rem] shadow-2xl relative overflow-hidden ring-1 ring-slate-800"
+                    >
+                        <h4 className="text-slate-300 text-center font-bold text-sm mb-5">{t('worshipTracker.badge')}</h4>
+                        <div className="flex justify-between items-center px-1">
+                            {['isha', 'maghrib', 'asr', 'dhuhr', 'fajr'].map((prayer, i) => {
+                                const isCompleted = i > 1; // Mark first 3 as completed (fajr, dhuhr, asr)
+                                return (
+                                <div key={prayer} className="flex flex-col items-center gap-2">
+                                    <div className={`w-10 h-10 rounded-full ${isCompleted ? 'bg-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.3)]' : 'bg-[#2c2c2e] border-2 border-[#3c3c3e]'} transition-all`}>
+                                    </div>
+                                    <span className="text-[10px] text-slate-400 font-bold">{t(`hero.prayers.${prayer}`)}</span>
+                                </div>
+                            )})}
+                        </div>
+                    </motion.div>
+
                     {/* Widget Mini-Features */}
                     <div className="grid grid-cols-1 gap-8 mt-12 px-4">
                         <div className="flex items-center gap-4">

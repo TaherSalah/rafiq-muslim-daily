@@ -13,6 +13,7 @@ import './index.css'
 const Journey = lazy(() => import('./components/Journey'));
 const GroupKhatma = lazy(() => import('./components/GroupKhatma'));
 const TelegramSection = lazy(() => import('./components/TelegramSection'));
+const WhatsAppChannel = lazy(() => import('./components/WhatsAppChannel'));
 const ZakatShowcase = lazy(() => import('./components/ZakatShowcase'));
 const Screenshots = lazy(() => import('./components/Screenshots'));
 const SocialFeatures = lazy(() => import('./components/SocialFeatures'));
@@ -21,6 +22,10 @@ const CommunityTools = lazy(() => import('./components/CommunityTools'));
 const SmartWidgets = lazy(() => import('./components/SmartWidgets'));
 const AudioShowcase = lazy(() => import('./components/AudioShowcase'));
 const InteractiveTasbih = lazy(() => import('./components/InteractiveTasbih'));
+const WorshipTracker = lazy(() => import('./components/WorshipTracker'));
+const IslamicLibrary = lazy(() => import('./components/IslamicLibrary'));
+const QuranicMaqraa = lazy(() => import('./components/QuranicMaqraa'));
+const TafseerLibrary = lazy(() => import('./components/TafseerLibrary'));
 const Leaderboard = lazy(() => import('./components/Leaderboard'));
 const Statistics = lazy(() => import('./components/Statistics'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
@@ -65,6 +70,7 @@ function App() {
             <Journey />
             <GroupKhatma />
             <TelegramSection />
+            <WhatsAppChannel />
             <ZakatShowcase />
             <Screenshots />
             <SocialFeatures />
@@ -73,6 +79,10 @@ function App() {
             <SmartWidgets />
             <AudioShowcase />
             <InteractiveTasbih />
+            <WorshipTracker />
+            <IslamicLibrary />
+            <QuranicMaqraa />
+            <TafseerLibrary />
             <Leaderboard />
             <Statistics />
             <Testimonials />

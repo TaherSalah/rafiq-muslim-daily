@@ -8,7 +8,7 @@
         "downloadAppGallery": "AppGallery",
         "downloadLabel": "Download from",
         "links": {
-            "appStore": "https://apps.apple.com/ai/app/%D8%B1%D9%81%D9%8A%D9%82-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D9%85-%D8%A7%D9%84%D9%8A%D9%88%D9%85%D9%8A/id6749927338",
+            "appStore": "https://apps.apple.com/us/app/%D8%AA%D8%B7%D8%A8%D9%8A%D9%82-%D8%B1%D9%81%D9%8A%D9%82-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D9%85-%D8%A7%D9%84%D9%8A%D9%88%D9%85%D9%8A/id6794677777",
             "googlePlay": "https://play.google.com/store/apps/details?id=com.rafiq.muslimdaily&hl=en-US",
             "appGallery": "https://appgallery.huawei.com/app/C114956477"
         },
@@ -136,7 +136,9 @@
         "blessing": "May Allah place it in our balance of good deeds and yours",
         "appName": "Daily Muslim Companion",
         "social": {
-            "telegram": "https://t.me/rafiqMuslim"
+            "telegram": "https://t.me/rafiqMuslim",
+            "facebook": "https://www.facebook.com/share/1FJUU1dBxu/",
+            "whatsapp": "https://whatsapp.com/channel/0029VbDMIqaGE56rEzRccS2x"
         }
     },
     "stats": {
@@ -596,6 +598,122 @@
             "Visiting the sick and praying for them",
             "Dusting the bed before sleeping",
             "Rinsing mouth and nose from one palm"
+        ]
+    },
+    "worshipTracker": {
+        "badge": "Worship Tracker",
+        "title": "Track Your Daily Worships",
+        "subtitle": "A comprehensive system to track your prayers, fasts, adhkar, and daily habits",
+        "desc": "Keep track of your spiritual progress with detailed daily, weekly, and monthly reports. The app helps you stay consistent with your obligations and encourages you to perform voluntary acts of worship.",
+        "tabs": {
+            "today": "Today",
+            "week": "Week",
+            "month": "Month",
+            "year": "Year"
+        },
+        "report": "My Worship Report",
+        "recorder": "Worship Recorder",
+        "quran": {
+            "missed": "You haven't read Quran today",
+            "action": "Tap to go to Khatma tracker"
+        },
+        "morningAdhkar": {
+            "missed": "You haven't read morning Adhkar",
+            "action": "Tap to read and protect your day"
+        },
+        "eveningAdhkar": {
+            "done": "Evening Adhkar completed",
+            "action": "Praise be to Allah"
+        },
+        "prayers": "Did you pray obligatory prayers?",
+        "prayerTable": {
+            "mosque": "Mosque",
+            "congregation": "Jama'ah",
+            "onTime": "On Time",
+            "makeup": "Qada'"
+        },
+        "sunnah": "Did you pray voluntary prayers?",
+        "fasting": "Did you fast?",
+        "charity": "Did you give charity?"
+    },
+    "islamicLibrary": {
+        "badge": "Islamic Library",
+        "title": "Your Comprehensive Islamic Library",
+        "subtitle": "Lessons, educational series, and Quranic stories",
+        "desc": "Listen to lessons and lectures by a selection of scholars and sheikhs. Browse the latest additions and educational series to understand your religion better.",
+        "scholars": "Scholars & Sheikhs",
+        "latest": "Latest Additions to the Library",
+        "tags": {
+            "beginner": "Beginner",
+            "stories": "Stories & Lessons",
+            "general": "General Library"
+        },
+        "names": {
+            "amjad": "Amjad Samir",
+            "minshawi": "Al-Minshawi",
+            "huwaini": "Al-Huwaini"
+        },
+        "videos": {
+            "animalStories": "Animal Stories from Qur'an | Episode 5",
+            "womenStories28": "Women Stories from Qur'an | Ep 28",
+            "repentance": "How to move from leaving sin to closeness to Allah?"
+        },
+        "authors": {
+            "alrawi": "Sheikh Al-Rawi"
+        }
+    },
+    "quranicMaqraa": {
+        "badge": "Quranic Maqraa",
+        "title": "Recite and Reflect with a Quranic Community",
+        "subtitle": "Interactive Quranic circles with qualified teachers",
+        "desc": "Join the Quranic circles that suit you, learn correct recitation, and review your memorization in an interactive spiritual atmosphere.",
+        "welcome": "Welcome, Mohamed Mahmoud",
+        "student": "Student",
+        "explore": "Explore Quranic Maqraa",
+        "circles": {
+            "all": {
+                "title": "Circle for Everyone",
+                "tag": "New",
+                "subtitle": "General Community",
+                "status": "Joined",
+                "desc": "An open Quranic and spiritual circle for everyone, to learn, review, and reflect in a spiritual atmosphere, benefiting from qualified teachers and community members sharing a special Quranic journey."
+            },
+            "men": {
+                "title": "Men Only Circle",
+                "tag": "Men Only",
+                "subtitle": "Private Community",
+                "status": "Join",
+                "desc": "A spiritual space dedicated to men to learn, review, and reflect in a suitable atmosphere, benefiting from qualified teachers and brothers sharing a special Quranic and spiritual journey."
+            }
+        }
+    },
+    "tafseerLibrary": {
+        "badge": "Tafseer Library",
+        "title": "More than 45 Tafseer Books",
+        "subtitle": "Understand the Quran in multiple languages",
+        "desc": "Access a massive library of Quranic exegesis (Tafseer) books by renowned scholars, available in multiple languages to help you understand the meanings of the Holy Quran.",
+        "books": {
+            "ibn_katheer": "Tafseer Ibn Katheer",
+            "jalalayn": "Tafseer al-Jalalayn",
+            "qurtubi": "Tafseer al-Qurtubi",
+            "tabari": "Tafseer al-Tabari",
+            "muyassar": "Al-Tafseer Al-Muyassar",
+            "saadi": "Tafseer Al-Sa'di"
+        },
+        "languages": "Languages",
+        "action": "Read Now",
+        "search": "Search for a Tafseer book..."
+    },
+    "whatsappChannel": {
+        "tag": "WhatsApp Channel",
+        "title": "Join Our WhatsApp Channel",
+        "subtitle": "Get daily reminders and app updates directly on WhatsApp",
+        "description": "Join our official WhatsApp channel to receive daily Da'wah cards, new Khatma alerts, and stay connected with the Muslim Daily Companion community.",
+        "cta": "Join WhatsApp Channel",
+        "benefits": [
+            "Daily Reminders",
+            "App Updates",
+            "Community Support"
         ]
     }
 }

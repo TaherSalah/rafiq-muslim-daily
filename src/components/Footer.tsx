@@ -53,7 +53,9 @@ const Footer: React.FC = () => {
                         <h4 className="text-lg font-bold mb-4">{t('footer.followUs')}</h4>
                         <div className="flex gap-4 mb-4">
                             <a
-                                href="#"
+                                href={t('footer.social.facebook')}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-islamic-green transition-colors"
                                 aria-label="Facebook"
                             >
